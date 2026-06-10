@@ -6,6 +6,7 @@ import StatsBand from '@/components/StatsBand';
 import WhyLandmark from '@/components/WhyLandmark';
 import Courses from '@/components/Courses';
 import Results from '@/components/Results';
+import VideoTestimonials from '@/components/VideoTestimonials';
 import Faculty from '@/components/Faculty';
 import { Testimonials, GoogleReviews } from '@/components/Testimonials';
 import ExamsHub from '@/components/ExamsHub';
@@ -32,6 +33,9 @@ export default function Home() {
       <div className="section-divider" />
 
       <Results />
+      <div className="section-divider" />
+
+      <VideoTestimonials />
       <div className="section-divider" />
 
       <Faculty />

@@ -130,7 +130,8 @@ export default function ExamsPage() {
       </div>
 
       {/* CSS Overrides */}
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .exams-section {
           padding: 60px 0 80px;
           background: var(--bg);
@@ -249,7 +250,7 @@ export default function ExamsPage() {
       {/* Main Content Section */}
       <section className="exams-section">
         <div className="container" style={{ maxWidth: '1000px' }}>
-          
+
           {examsData.map((exam) => (
             <div className="custom-exam-card" key={exam.name}>
               {/* Flag Icon */}
@@ -307,12 +308,12 @@ export default function ExamsPage() {
                   <a href="/#contact" className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '13px' }}>
                     Enquire for Batch →
                   </a>
-                  <a href="#" className="btn btn-outline" style={{ padding: '8px 16px', fontSize: '13px' }}>
+                  {/* <a href="#" className="btn btn-outline" style={{ padding: '8px 16px', fontSize: '13px' }}>
                     Download Syllabus
                   </a>
                   <a href="#" className="btn btn-outline" style={{ padding: '8px 16px', fontSize: '13px', borderColor: 'transparent' }}>
                     Previous Year Papers
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>

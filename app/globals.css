@@ -99,7 +99,7 @@ h5 {
 
 .wa-badge {
   background: var(--green);
-  color: #fff;
+  color: #fff !important;
   padding: 4px 12px;
   border-radius: var(--r-full);
   font-size: 12px;

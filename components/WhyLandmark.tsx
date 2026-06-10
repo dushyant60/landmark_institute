@@ -1,3 +1,7 @@
+'use client';
+
+import { motion, Variants } from 'framer-motion';
+
 const cards = [
   {
     icon: 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z',
@@ -31,21 +35,53 @@ const cards = [
   },
 ];
 
+const headerVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+
+const gridVariants: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+};
+
 export default function WhyLandmark() {
   return (
     <section>
       <div className="container">
-        <div className="section-header center">
+        <motion.div
+          className="section-header center"
+          variants={headerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-100px' }}
+        >
           <span className="section-eyebrow">Why Choose Us</span>
           <h2 className="section-title">India&apos;s #1 MCA Entrance Institute</h2>
           <p className="section-sub">
             17 years of consistent top results across every major MCA entrance exam. Here&apos;s
             what sets us apart.
           </p>
-        </div>
-        <div className="why-grid">
+        </motion.div>
+
+        <motion.div
+          className="why-grid"
+          variants={gridVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-100px' }}
+        >
           {cards.map((card) => (
-            <div className="why-card" key={card.title}>
+            <motion.div className="why-card" key={card.title} variants={cardVariants}>
               <div className="why-icon">
                 <svg viewBox="0 0 24 24">
                   <path d={card.icon} />
@@ -53,9 +89,9 @@ export default function WhyLandmark() {
               </div>
               <h3>{card.title}</h3>
               <p>{card.desc}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

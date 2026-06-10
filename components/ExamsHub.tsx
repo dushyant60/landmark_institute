@@ -1,3 +1,7 @@
+'use client';
+
+import { motion, Variants } from 'framer-motion';
+
 const exams = [
   {
     code: 'NIM',
@@ -43,21 +47,53 @@ const exams = [
   },
 ];
 
+const headerVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+
+const gridVariants: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 25 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+
 export default function ExamsHub() {
   return (
     <section className="exams-bg" id="exams">
       <div className="container">
-        <div className="section-header center">
+        <motion.div
+          className="section-header center"
+          variants={headerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-100px' }}
+        >
           <span className="section-eyebrow">Exam Information Hub</span>
           <h2 className="section-title">Know Your Target Exam Inside Out</h2>
           <p className="section-sub">
             Detailed guides on eligibility, syllabus, exam pattern, and previous year papers for
             every MCA entrance exam.
           </p>
-        </div>
-        <div className="exams-grid">
+        </motion.div>
+
+        <motion.div
+          className="exams-grid"
+          variants={gridVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-100px' }}
+        >
           {exams.map((exam) => (
-            <div className="exam-card" key={exam.name}>
+            <motion.div className="exam-card" key={exam.name} variants={cardVariants}>
               <div className="exam-flag" style={exam.flagStyle}>
                 {exam.code}
               </div>
@@ -70,9 +106,9 @@ export default function ExamsHub() {
                   </a>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

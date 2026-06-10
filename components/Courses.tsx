@@ -1,3 +1,7 @@
+'use client';
+
+import { motion, Variants } from 'framer-motion';
+
 const checkPath = 'M5 13l4 4L19 7';
 const arrowPath = 'M5 12h14M12 5l7 7-7 7';
 
@@ -40,21 +44,57 @@ const courses = [
   },
 ];
 
+const headerVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+
+const gridVariants: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+};
+
 export default function Courses() {
   return (
     <section id="courses">
       <div className="container">
-        <div className="section-header">
+        <motion.div
+          className="section-header"
+          variants={headerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-100px' }}
+        >
           <span className="section-eyebrow">Our Programmes</span>
           <h2 className="section-title">Choose the Right Batch for You</h2>
           <p className="section-sub">
             From intensive year-long preparation to focused crash courses — we have a batch for
             every schedule and goal.
           </p>
-        </div>
-        <div className="courses-grid">
+        </motion.div>
+
+        <motion.div
+          className="courses-grid"
+          variants={gridVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-100px' }}
+        >
           {courses.map((course) => (
-            <div className={`course-card${course.featured ? ' featured' : ''}`} key={course.title}>
+            <motion.div
+              className={`course-card${course.featured ? ' featured' : ''}`}
+              key={course.title}
+              variants={cardVariants}
+            >
               <div>
                 <span className={`course-tag ${course.tagClass}`}>{course.tag}</span>
               </div>
@@ -78,9 +118,9 @@ export default function Courses() {
                   <svg viewBox="0 0 24 24"><path d={arrowPath} /></svg>
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

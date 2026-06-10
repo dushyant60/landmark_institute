@@ -1,3 +1,7 @@
+'use client';
+
+import { motion, Variants } from 'framer-motion';
+
 const checkPath = 'M5 13l4 4L19 7';
 
 const faculty = [
@@ -47,21 +51,57 @@ const faculty = [
   },
 ];
 
+const headerVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+
+const gridVariants: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+};
+
 export default function Faculty() {
   return (
     <section className="faculty-section" id="faculty">
       <div className="container">
-        <div className="section-header center">
+        <motion.div
+          className="section-header center"
+          variants={headerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-100px' }}
+        >
           <span className="section-eyebrow">Meet Our Faculty</span>
           <h2 className="section-title">Taught by India&apos;s Best MCA Coaching Experts</h2>
           <p className="section-sub">
             Our faculty combines deep academic expertise with years of exam-focused teaching
             experience.
           </p>
-        </div>
-        <div className="faculty-grid">
+        </motion.div>
+
+        <motion.div
+          className="faculty-grid"
+          variants={gridVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-100px' }}
+        >
           {faculty.map((f) => (
-            <div className={`faculty-card${f.isDirector ? ' director' : ''}`} key={f.name}>
+            <motion.div
+              className={`faculty-card${f.isDirector ? ' director' : ''}`}
+              key={f.name}
+              variants={cardVariants}
+            >
               <div className="faculty-header">
                 <div className="faculty-avatar" style={f.avatarStyle}>
                   {f.initials}
@@ -102,9 +142,9 @@ export default function Faculty() {
                   </div>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

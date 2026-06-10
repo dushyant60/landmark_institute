@@ -751,3 +751,11 @@ footer { background: var(--slate); color: #94A3B8; padding: 48px 0 0; }
   .courses-grid, .results-grid, .faculty-grid, .testimonials-grid, .exams-grid, .reviews-row, .faq-grid, .why-grid, .footer-grid { grid-template-columns: 1fr; }
   .hero-btns { flex-direction: column; }
 }
+
+/* ── GPU HARDWARE ACCELERATION (Prevents animation flickering) ── */
+.why-card, .course-card, .exam-card, .faculty-card {
+  will-change: transform, opacity;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}

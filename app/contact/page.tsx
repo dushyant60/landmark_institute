@@ -115,6 +115,14 @@ export default function ContactPage() {
           text-align: center;
           padding: 20px;
           margin-top: 20px;
+          text-decoration: none;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+        }
+        .map-placeholder:hover {
+          background: rgba(11, 94, 215, 0.12);
+          border-style: solid;
+          transform: translateY(-1px);
         }
         .map-placeholder svg {
           width: 32px;
@@ -175,7 +183,12 @@ export default function ContactPage() {
                 <li><strong>Parking:</strong> Visitor parking is available directly in the service lane adjacent to the main road entrance.</li>
               </ul>
               
-              <div className="map-placeholder">
+              <a
+                href="https://maps.app.goo.gl/BrzaYLDeE9WWURZR8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="map-placeholder"
+              >
                 <div>
                   <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -184,7 +197,7 @@ export default function ContactPage() {
                   <h5>West Patel Nagar, Metro Pillar 220</h5>
                   <p style={{ fontSize: '11px', color: 'var(--blue-dark)', margin: 0 }}>Opposite Metro Station Exit, West Patel Nagar, New Delhi, Delhi 110008</p>
                 </div>
-              </div>
+              </a>
             </div>
 
           </div>

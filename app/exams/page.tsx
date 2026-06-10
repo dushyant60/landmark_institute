@@ -279,7 +279,7 @@ export default function ExamsPage() {
 
                 {/* Exam Pattern Table */}
                 <div style={{ marginBottom: '24px', background: 'var(--bg)', borderRadius: '8px', padding: '16px', border: '1px solid var(--border)' }}>
-                  <h5 style={{ fontFamily: 'Poppins', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', color: var(--slate), marginBottom: '10px', letter-spacing: '0.5px' }}>Exam Pattern Breakdown</h5>
+                  <h5 style={{ fontFamily: 'Poppins', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', color: 'var(--slate)', marginBottom: '10px', letterSpacing: '0.5px' }}>Exam Pattern Breakdown</h5>
                   <table className="pattern-table">
                     <tbody>
                       <tr>

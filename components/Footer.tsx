@@ -1,16 +1,32 @@
+import Link from 'next/link';
+
 const socials = ['YT', 'FB', 'IG', 'TW'];
 
 const courses = [
-  '1 Year Online Batch',
-  'Offline Regular Batch',
-  'Weekend Batch',
-  'Crash Course',
-  'Test Series',
+  { label: '1 Year Online Batch', href: '/courses' },
+  { label: 'Offline Regular Batch', href: '/courses' },
+  { label: 'Weekend Batch', href: '/courses' },
+  { label: 'Crash Course', href: '/courses' },
+  { label: 'Test Series', href: '/courses' },
 ];
 
-const exams = ['NIMCET', 'CUET PG MCA', 'DU MCA', 'JNU MCA', 'BHU MCA', 'MAH MCA CET'];
+const exams = [
+  { label: 'NIMCET', href: '/exams' },
+  { label: 'CUET PG MCA', href: '/exams' },
+  { label: 'DU MCA', href: '/exams' },
+  { label: 'JNU MCA', href: '/exams' },
+  { label: 'BHU MCA', href: '/exams' },
+  { label: 'MAH MCA CET', href: '/exams' },
+];
 
-const quickLinks = ['About Us', 'Results', 'Faculty', 'Free Resources', 'Blog', 'Contact'];
+const quickLinks = [
+  { label: 'About Us', href: '/about' },
+  { label: 'Results', href: '/#results' },
+  { label: 'Faculty', href: '/faculty' },
+  { label: 'Free Resources', href: '/#resources' },
+  { label: 'Blog', href: '#' },
+  { label: 'Contact', href: '/contact' },
+];
 
 export default function Footer() {
   return (
@@ -54,7 +70,9 @@ export default function Footer() {
             <h4>Courses</h4>
             <ul className="footer-links">
               {courses.map((c) => (
-                <li key={c}><a href="#">{c}</a></li>
+                <li key={c.label}>
+                  <Link href={c.href}>{c.label}</Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -64,7 +82,9 @@ export default function Footer() {
             <h4>Exams</h4>
             <ul className="footer-links">
               {exams.map((e) => (
-                <li key={e}><a href="#">{e}</a></li>
+                <li key={e.label}>
+                  <Link href={e.href}>{e.label}</Link>
+                </li>
               ))}
             </ul>
           </div>
@@ -74,7 +94,9 @@ export default function Footer() {
             <h4>Quick Links</h4>
             <ul className="footer-links">
               {quickLinks.map((l) => (
-                <li key={l}><a href="#">{l}</a></li>
+                <li key={l.label}>
+                  <Link href={l.href}>{l.label}</Link>
+                </li>
               ))}
             </ul>
           </div>

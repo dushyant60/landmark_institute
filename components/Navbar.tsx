@@ -9,7 +9,7 @@ const navLinks = [
   { label: 'Courses', href: '/courses' },
   { label: 'Results', href: '/#results' },
   { label: 'Faculty', href: '/faculty' },
-  { label: 'Exams', href: '/#exams' },
+  { label: 'Exams', href: '/exams' },
   { label: 'Resources', href: '/#resources' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
@@ -41,7 +41,8 @@ export default function Navbar() {
               (link.href === '/courses' && pathname === '/courses') ||
               (link.href === '/faculty' && pathname === '/faculty') ||
               (link.href === '/about' && pathname === '/about') ||
-              (link.href === '/contact' && pathname === '/contact');
+              (link.href === '/contact' && pathname === '/contact') ||
+              (link.href === '/exams' && pathname === '/exams');
             return (
               <li key={link.label}>
                 <Link href={link.href} className={isActive ? 'active' : ''}>

@@ -1,4 +1,6 @@
-import type { Metadata } from 'next';
+'use client';
+
+import { motion, Variants } from 'framer-motion';
 import Topbar from '@/components/Topbar';
 import Navbar from '@/components/Navbar';
 import Contact from '@/components/Contact';
@@ -6,29 +8,60 @@ import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import LeadCapturePopup from '@/components/LeadCapturePopup';
 
-export const metadata: Metadata = {
-  title: 'Contact Us – Landmark Institute',
-  description:
-    'Get in touch with Landmark Institute West Patel Nagar, New Delhi. Call, email, WhatsApp, or visit us for expert MCA entrance exam guidance.',
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
 };
 
-export default function ContactPage() {
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+
+const leftItemVariants: Variants = {
+  hidden: { opacity: 0, x: -30 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+};
+
+const rightItemVariants: Variants = {
+  hidden: { opacity: 0, x: 30 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+};
+
+export default function ContactPageClient() {
   return (
     <>
       <Topbar />
       <Navbar />
 
       {/* Hero Header */}
-      <div className="hero" style={{ padding: '60px 0 40px', textAlign: 'center' }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
-          <span className="hero-badge">Get in Touch</span>
-          <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', marginBottom: '16px' }}>
+      <div className="hero" style={{ padding: '60px 0 40px', textAlign: 'center', overflow: 'hidden' }}>
+        <motion.div
+          className="container"
+          style={{ maxWidth: '800px' }}
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+        >
+          <motion.span variants={itemVariants} className="hero-badge">
+            Get in Touch
+          </motion.span>
+          <motion.h1 variants={itemVariants} style={{ fontSize: 'clamp(32px, 5vw, 48px)', marginBottom: '16px' }}>
             Contact <span className="accent">Our Experts</span>
-          </h1>
-          <p className="hero-sub" style={{ margin: '0 auto', fontSize: '16px', color: '#94A3B8' }}>
+          </motion.h1>
+          <motion.p
+            variants={itemVariants}
+            className="hero-sub"
+            style={{ margin: '0 auto', fontSize: '16px', color: '#94A3B8' }}
+          >
             Have questions about NIMCET, CUET PG, or batch formats? Our counsellors are available 7 days a week to help guide your path to top-tier NITs and colleges.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         <div className="hero-wave" style={{ marginTop: '30px', height: '40px' }}>
           <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="var(--bg)">
             <path d="M0,60 L0,30 Q360,0 720,30 Q1080,60 1440,30 L1440,60 Z" />
@@ -47,6 +80,7 @@ export default function ContactPage() {
           padding: 60px 0 80px;
           background: var(--bg);
           border-top: 1px solid var(--border);
+          overflow: hidden;
         }
         .info-grid-custom {
           display: grid;
@@ -147,10 +181,15 @@ export default function ContactPage() {
       {/* Supplementary office info */}
       <section className="info-section">
         <div className="container">
-          <div className="info-grid-custom">
-            
+          <motion.div
+            className="info-grid-custom"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: '-100px' }}
+          >
             {/* Office Hours */}
-            <div className="info-block">
+            <motion.div className="info-block" variants={leftItemVariants}>
               <h3>Office Hours</h3>
               <ul className="hours-list">
                 <li className="hours-row">
@@ -169,10 +208,10 @@ export default function ContactPage() {
               <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginTop: '20px', lineHeight: '1.5' }}>
                 Note: Telephonic counselling is active 24/7. Classroom visits are recommended during regular office hours for mock material review.
               </p>
-            </div>
+            </motion.div>
 
             {/* Metro directions */}
-            <div className="info-block directions-block">
+            <motion.div className="info-block directions-block" variants={rightItemVariants}>
               <h3>How to Reach Landmark Delhi</h3>
               <p>
                 Our head office is located in West Patel Nagar, New Delhi, situated at an extremely accessible location for local and commuting students:
@@ -198,9 +237,9 @@ export default function ContactPage() {
                   <p style={{ fontSize: '11px', color: 'var(--blue-dark)', margin: 0 }}>Opposite Metro Station Exit, West Patel Nagar, New Delhi, Delhi 110008</p>
                 </div>
               </a>
-            </div>
+            </motion.div>
 
-          </div>
+          </motion.div>
         </div>
       </section>
 

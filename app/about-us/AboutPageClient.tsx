@@ -76,22 +76,22 @@ const heroContainerVariants: Variants = {
 
 const heroItemVariants: Variants = {
   hidden: { opacity: 0, y: 15 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
 };
 
 const introVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' as const } },
 };
 
 const leftItemVariants: Variants = {
   hidden: { opacity: 0, x: -40 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' as const } },
 };
 
 const rightItemVariants: Variants = {
   hidden: { opacity: 0, x: 40 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  show: { opacity: 1, x: 0, transition: { duration: 0.6, ease: 'easeOut' as const } },
 };
 
 const pillarGridVariants: Variants = {
@@ -103,12 +103,12 @@ const pillarGridVariants: Variants = {
 
 const pillarCardVariants: Variants = {
   hidden: { opacity: 0, y: 25 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
 };
 
 const quoteVariants: Variants = {
   hidden: { opacity: 0, scale: 0.98 },
-  show: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: 'easeOut' } },
+  show: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: 'easeOut' as const } },
 };
 
 export default function AboutPageClient() {

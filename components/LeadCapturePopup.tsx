@@ -28,6 +28,19 @@ export default function LeadCapturePopup() {
   }, [showPopup]);
 
   useEffect(() => {
+    const handleTriggerClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest('a');
+      if (anchor && anchor.hash && (anchor.hash.startsWith('#popmake-') || anchor.classList.contains('trigger-popup'))) {
+        e.preventDefault();
+        showPopup();
+      }
+    };
+    document.addEventListener('click', handleTriggerClick);
+    return () => document.removeEventListener('click', handleTriggerClick);
+  }, [showPopup]);
+
+  useEffect(() => {
     const handleVisibilityChange = () => {
       if (!document.hidden && !isOpen && !submitted) {
         const timer = setTimeout(showPopup, 1000);

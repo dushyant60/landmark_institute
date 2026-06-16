@@ -57,7 +57,8 @@ export default function Hero() {
               Apply Now →
             </a>
             <a
-              href="#"
+              href="/documents/Landmark%20Institute.pdf"
+              download
               className="btn btn-outline btn-lg"
               style={{ borderColor: 'rgba(255,255,255,.3)', color: '#fff' }}
             >

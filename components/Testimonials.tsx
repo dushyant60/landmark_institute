@@ -41,11 +41,11 @@ const testimonials = [
 ];
 
 const googleReviews = [
-  { initials: 'PK', name: 'Piyush Kumar',  text: 'Best institute for MCA entrance. The faculty is very supportive and the test series is excellent.' },
-  { initials: 'SS', name: 'Sagar Sharma',  text: 'R. Chadha Sir is a legend. His teaching style is unique and his notes are absolutely complete. Highly recommended.' },
-  { initials: 'TG', name: 'Tushar Garg',   text: 'Joined the online batch. The recordings are very clear and doubt sessions are very helpful. Got selected in NIT!' },
+  { initials: 'PK', name: 'Piyush Kumar', text: 'Best institute for MCA entrance. The faculty is very supportive and the test series is excellent.' },
+  { initials: 'SS', name: 'Sagar Sharma', text: 'R. Chadha Sir is a legend. His teaching style is unique and his notes are absolutely complete. Highly recommended.' },
+  { initials: 'TG', name: 'Tushar Garg', text: 'Joined the online batch. The recordings are very clear and doubt sessions are very helpful. Got selected in NIT!' },
   { initials: 'SK', name: 'Samiran Kundu', text: 'Truly the best institute for NIMCET. Environment is very competitive which keeps you motivated throughout.' },
-  { initials: 'MS', name: 'Meenakshi',     text: 'Landmark gave wings to my career. I never imagined such success. Best institute for MCA entrance prep!' },
+  { initials: 'MS', name: 'Meenakshi', text: 'Landmark gave wings to my career. I never imagined such success. Best institute for MCA entrance prep!' },
 ];
 
 const GStars = () => (
@@ -85,11 +85,6 @@ export function Testimonials() {
             </div>
           ))}
         </div>
-        <div style={{ textAlign: 'center', marginTop: '32px' }}>
-          <a href="#" className="btn btn-outline btn-lg" style={{ fontSize: '14px' }}>
-            View All Reviews →
-          </a>
-        </div>
       </div>
     </section>
   );
@@ -102,7 +97,7 @@ export function GoogleReviews() {
         <div className="section-header center" style={{ marginBottom: '32px' }}>
           <span className="section-eyebrow">Google Reviews</span>
           <h2 className="section-title" style={{ fontSize: '28px' }}>
-            4.9 ★ on Google · 200+ Reviews
+            4.4 ★ on Google · 200+ Reviews
           </h2>
         </div>
         <div className="reviews-row">
@@ -116,6 +111,17 @@ export function GoogleReviews() {
               </div>
             </div>
           ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '32px' }}>
+          <a
+            href="https://maps.app.goo.gl/BrzaYLDeE9WWURZR8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline btn-lg"
+            style={{ fontSize: '14px' }}
+          >
+            View All Reviews →
+          </a>
         </div>
       </div>
     </section>

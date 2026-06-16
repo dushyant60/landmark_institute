@@ -5,15 +5,22 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+const normalizePath = (path: string) => path.replace(/\/$/, '') || '/';
+
 const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Courses', href: '/courses' },
-  { label: 'Results', href: '/#results' },
-  { label: 'Faculty', href: '/faculty' },
-  { label: 'Exams', href: '/exams' },
-  { label: 'Resources', href: '/#resources' },
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'About Us', href: '/about-us/' },
+  { label: 'Notification', href: '/notification/' },
+  { label: 'NIMCET', href: '/nimcet/' },
+  { label: 'Online MCA', href: '/online-mca-entrance-exam/' },
+  { label: 'Exams', href: '/exams/' },
+  { label: 'Syllabus', href: '/syllabus/' },
+  { label: 'Courses', href: '/our-courses/' },
+  { label: 'Results', href: '/results/' },
+  { label: 'Previous Paper', href: '/cuet-pg-previous-year-question-papers/' },
+  { label: 'Soft-tech', href: '/notifications/' },
+  { label: 'Student Central', href: '/student-central/' },
+  { label: 'Contact Us', href: '/contactus/' },
 ];
 
 export default function Navbar() {
@@ -41,12 +48,8 @@ export default function Navbar() {
           <ul className="nav-links">
             {navLinks.map((link) => {
               const isActive =
-                (link.href === '/' && pathname === '/') ||
-                (link.href === '/courses' && pathname === '/courses') ||
-                (link.href === '/faculty' && pathname === '/faculty') ||
-                (link.href === '/about' && pathname === '/about') ||
-                (link.href === '/contact' && pathname === '/contact') ||
-                (link.href === '/exams' && pathname === '/exams');
+                normalizePath(pathname) === normalizePath(link.href) ||
+                (link.href !== '/' && normalizePath(pathname).startsWith(normalizePath(link.href) + '/'));
               return (
                 <li key={link.label}>
                   <Link href={link.href} className={isActive ? 'active' : ''}>
@@ -57,14 +60,14 @@ export default function Navbar() {
             })}
           </ul>
 
-          <div className="nav-ctas">
-            <a href="#" className="btn btn-outline" style={{ padding: '8px 16px', fontSize: '13px' }}>
+          {/* <div className="nav-ctas">
+            <a href="/documents/Landmark%20Institute.pdf" download className="btn btn-outline" style={{ padding: '8px 16px', fontSize: '13px' }}>
               Download Brochure
             </a>
             <a href="/#contact" className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '13px' }}>
               Apply Now →
             </a>
-          </div>
+          </div> */}
 
           {/* Mobile Hamburger Toggle */}
           <button
@@ -96,12 +99,8 @@ export default function Navbar() {
         <ul className="mobile-nav-links">
           {navLinks.map((link) => {
             const isActive =
-              (link.href === '/' && pathname === '/') ||
-              (link.href === '/courses' && pathname === '/courses') ||
-              (link.href === '/faculty' && pathname === '/faculty') ||
-              (link.href === '/about' && pathname === '/about') ||
-              (link.href === '/contact' && pathname === '/contact') ||
-              (link.href === '/exams' && pathname === '/exams');
+              normalizePath(pathname) === normalizePath(link.href) ||
+              (link.href !== '/' && normalizePath(pathname).startsWith(normalizePath(link.href) + '/'));
             return (
               <li key={link.label}>
                 <Link
@@ -115,28 +114,16 @@ export default function Navbar() {
             );
           })}
         </ul>
-        <div className="mobile-nav-ctas">
-          <a
-            href="#"
-            className="btn btn-outline"
-            style={{ justifyContent: 'center', padding: '12px' }}
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Download Brochure
-          </a>
-          <a
-            href="/#contact"
-            className="btn btn-primary"
-            style={{ justifyContent: 'center', padding: '12px' }}
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Apply Now →
-          </a>
-        </div>
       </div>
 
       {/* Local Styles for Hamburger and Overlay Drawer */}
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        @media (min-width: 1251px) {
+          .mobile-menu-overlay {
+            display: none !important;
+          }
+        }
         .mobile-menu-overlay {
           position: fixed;
           top: 68px; /* navbar height */
@@ -190,7 +177,7 @@ export default function Navbar() {
           margin-top: auto;
           padding-bottom: 20px;
         }
-        @media (max-width: 900px) {
+        @media (max-width: 1250px) {
           .mobile-nav-toggle {
             display: block !important;
           }

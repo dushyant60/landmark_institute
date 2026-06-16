@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, Variants } from 'framer-motion';
+import Link from 'next/link';
 
 const checkPath = 'M5 13l4 4L19 7';
 const arrowPath = 'M5 12h14M12 5l7 7-7 7';
@@ -113,10 +114,10 @@ export default function Courses() {
                   <span className="seats-dot"></span>
                   {course.seats}
                 </span>
-                <a href="#" className="course-link">
+                <Link href="/our-courses/" className="course-link">
                   View Details{' '}
                   <svg viewBox="0 0 24 24"><path d={arrowPath} /></svg>
-                </a>
+                </Link>
               </div>
             </motion.div>
           ))}

@@ -1,23 +1,58 @@
+'use client';
+
+import { motion, Variants } from 'framer-motion';
+
 const waPath =
   'M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347';
 
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+};
+
 export default function Contact() {
   return (
-    <section className="contact-bg" id="contact">
+    <section className="contact-bg" id="contact" style={{ overflow: 'hidden' }}>
       <div className="container">
-        <div className="section-header center">
-          <span className="section-eyebrow">Get in Touch</span>
-          <h2 className="section-title">Visit Us or Reach Out Anytime</h2>
-          <p className="section-sub">
+        <motion.div
+          className="section-header center"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-100px' }}
+        >
+          <motion.span variants={itemVariants} className="section-eyebrow">
+            Get in Touch
+          </motion.span>
+          <motion.h2 variants={itemVariants} className="section-title">
+            Visit Us or Reach Out Anytime
+          </motion.h2>
+          <motion.p variants={itemVariants} className="section-sub">
             Our counsellors are available 7 days a week to answer your questions.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="contact-grid">
+        <motion.div
+          className="contact-grid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-100px' }}
+        >
           {/* Left: contact info */}
-          <div className="contact-info">
+          <motion.div className="contact-info" variants={containerVariants}>
             {/* Phone */}
-            <div className="contact-item">
+            <motion.div className="contact-item" variants={itemVariants}>
               <div className="contact-icon">
                 <svg viewBox="0 0 24 24">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.36 11 19.79 19.79 0 0 1 1.27 2.38 2 2 0 0 1 3.24 0h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.08 6.08l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -28,10 +63,10 @@ export default function Contact() {
                 <a href="tel:9999992338">+91 999 999 2338</a>
                 <a href="tel:9953692399">+91 995 369 2399</a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Email */}
-            <div className="contact-item">
+            <motion.div className="contact-item" variants={itemVariants}>
               <div className="contact-icon">
                 <svg viewBox="0 0 24 24">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -42,10 +77,10 @@ export default function Contact() {
                 <h4>Email Us</h4>
                 <a href="mailto:info@landmarkinstitute.com">info@landmarkinstitute.com</a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Location */}
-            <div className="contact-item">
+            <motion.div className="contact-item" variants={itemVariants}>
               <div className="contact-icon">
                 <svg viewBox="0 0 24 24">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -59,10 +94,10 @@ export default function Contact() {
                   Near Metro Station, Delhi 110008
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* WhatsApp */}
-            <div className="contact-item">
+            <motion.div className="contact-item" variants={itemVariants}>
               <div className="contact-icon" style={{ background: 'var(--green-bg)' }}>
                 <svg viewBox="0 0 24 24" style={{ stroke: 'var(--green-dark)' }}>
                   <path d={waPath} />
@@ -75,11 +110,11 @@ export default function Contact() {
                 </a>
                 <p style={{ fontSize: '13px' }}>Available 9 AM – 9 PM daily</p>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right: contact form */}
-          <div className="contact-form">
+          <motion.div className="contact-form" variants={itemVariants}>
             <h3 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--slate)', marginBottom: '4px' }}>
               Send us a message
             </h3>
@@ -115,8 +150,8 @@ export default function Contact() {
             >
               Send Message →
             </button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

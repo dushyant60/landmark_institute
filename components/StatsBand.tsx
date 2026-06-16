@@ -1,9 +1,9 @@
 const stats = [
-  { num: '17+',   label: 'Years of Excellence' },
+  { num: '17+', label: 'Years of Excellence' },
   { num: '6000+', label: 'Students Trained' },
-  { num: '500+',  label: 'NIT Selections' },
-  { num: '100+',  label: 'NIMCET 2025 Selections' },
-  { num: '4.9★',  label: 'Google Rating' },
+  { num: '500+', label: 'NIT Selections' },
+  { num: '100+', label: 'NIMCET 2025 Selections' },
+  { num: '4.4★', label: 'Google Rating' },
 ];
 
 export default function StatsBand() {

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const toppers = [
   { initials: 'RK', variant: '',       name: 'Rahul Kumar',       exam: 'NIMCET',       air: 'AIR 1',  college: 'NIT Trichy MCA',  year: '2025' },
   { initials: 'PS', variant: 'green',  name: 'Priya Sharma',      exam: 'NIMCET',       air: 'AIR 3',  college: 'NIT Warangal MCA', year: '2025' },
@@ -32,9 +34,9 @@ export default function Results() {
             And hundreds more across NIT Allahabad, NIT Kurukshetra, NIT Bhopal, IGDTUW, JNU, DU
             &amp; more.
           </p>
-          <a href="#" className="btn btn-primary btn-lg">
+          <Link href="/results" className="btn btn-primary btn-lg">
             View All Results →
-          </a>
+          </Link>
         </div>
       </div>
     </section>

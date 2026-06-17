@@ -62,7 +62,6 @@ const myPagesCol1 = [
   { label: 'Best Institute for Cuet Pg Mca Coaching', href: '/cuet-pg-mca/' },
   { label: 'Blog', href: '/blog/' },
   { label: 'Enquiry', href: '/enquiry/' },
-  { label: 'Home', href: '/' },
   { label: 'MCA Entrance Syllabus', href: '/syllabus/' },
   { label: 'Nimcet', href: '/nimcet/' },
   { label: 'Notification', href: '/notification/' },

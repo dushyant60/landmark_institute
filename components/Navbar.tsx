@@ -25,12 +25,26 @@ const navLinks = [
 export default function Navbar() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const toggleMobileMenu = () => {
+    const nextState = !isMobileMenuOpen;
+    setIsMobileMenuOpen(nextState);
+    if (nextState) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    document.body.style.overflow = '';
+  };
 
   return (
     <>
       <nav>
         <div className="nav-inner">
-          <Link href="/" className="logo" onClick={() => setIsMobileMenuOpen(false)}>
+          <Link href="/" className="logo" onClick={closeMobileMenu}>
             <div className="logo-mark">
               <Image
                 src="http://www.landmarkinstitute.com/wp-content/uploads/2018/01/landmarklogo4vrt-1.png"
@@ -59,19 +73,10 @@ export default function Navbar() {
             })}
           </ul>
 
-          {/* <div className="nav-ctas">
-            <a href="/documents/Landmark%20Institute.pdf" download className="btn btn-outline" style={{ padding: '8px 16px', fontSize: '13px' }}>
-              Download Brochure
-            </a>
-            <a href="/#contact" className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '13px' }}>
-              Apply Now →
-            </a>
-          </div> */}
-
           {/* Mobile Hamburger Toggle */}
           <button
             className="mobile-nav-toggle"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={toggleMobileMenu}
             aria-label="Toggle Navigation Menu"
             style={{
               background: 'none',
@@ -91,29 +96,29 @@ export default function Navbar() {
             </svg>
           </button>
         </div>
-      </nav>
 
-      {/* Mobile Nav Overlay Menu Drawer */}
-      <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
-        <ul className="mobile-nav-links">
-          {navLinks.map((link) => {
-            const isActive =
-              normalizePath(pathname) === normalizePath(link.href) ||
-              (link.href !== '/' && normalizePath(pathname).startsWith(normalizePath(link.href) + '/'));
-            return (
-              <li key={link.label}>
-                <Link
-                  href={link.href}
-                  className={isActive ? 'active' : ''}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+        {/* Mobile Nav Overlay Menu Drawer */}
+        <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
+          <ul className="mobile-nav-links">
+            {navLinks.map((link) => {
+              const isActive =
+                normalizePath(pathname) === normalizePath(link.href) ||
+                (link.href !== '/' && normalizePath(pathname).startsWith(normalizePath(link.href) + '/'));
+              return (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className={isActive ? 'active' : ''}
+                    onClick={closeMobileMenu}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </nav>
 
       {/* Local Styles for Hamburger and Overlay Drawer */}
       <style dangerouslySetInnerHTML={{
@@ -124,11 +129,11 @@ export default function Navbar() {
           }
         }
         .mobile-menu-overlay {
-          position: fixed;
-          top: 68px; /* navbar height */
+          position: absolute;
+          top: 100%;
           left: 0;
           right: 0;
-          bottom: 0;
+          height: calc(100vh - 68px);
           background: #fff;
           z-index: 99;
           display: flex;
@@ -140,6 +145,7 @@ export default function Navbar() {
           pointer-events: none;
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           border-top: 1px solid var(--border);
+          overflow-y: auto;
         }
         .mobile-menu-overlay.open {
           transform: translateY(0);

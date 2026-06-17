@@ -18,7 +18,7 @@ const navLinks = [
   { label: 'Courses', href: '/our-courses/' },
   { label: 'Results', href: '/results/' },
   { label: 'Previous Paper', href: '/cuet-pg-previous-year-question-papers/' },
-  { label: 'Soft-tech', href: '/notifications/' },
+  // { label: 'Soft-tech', href: '/notifications/' },
   { label: 'Contact Us', href: '/contactus/' },
 ];
 

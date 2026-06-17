@@ -7,22 +7,22 @@ import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
 const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
+	hidden: { opacity: 0 },
+	show: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.1,
+		},
+	},
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+	hidden: { opacity: 0, y: 20 },
+	show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
 export default function SyllabusPageClient() {
-  const htmlContent = `
+	const htmlContent = `
 <img src="/images/migrated/NIMCET-Syllabus-2026-Mca-Entrance-Exam-Syllabus-Updated​.jpeg" alt="NIMCET Syllabus 2026-27 covering Mathematics, Logical Reasoning, Computer Awareness, English, and MCA Entrance Exam Pattern" style="max-width: 100%; height: auto; border-radius: var(--r-sm); margin: 24px 0; display: block;" />
 <a href="#">Syllabus</a>
 <p>If you are planning to pursue an MCA from a National Institute of Technology (NIT), understanding the <strong>NIMCET syllabus</strong> is the first step toward effective preparation. Every year, thousands of students appear for the NIT MCA Common Entrance Test (NIMCET) to secure admission into top MCA programs across India. A clear understanding of the <strong>MCA entrance exam syllabus</strong> helps students identify important topics, plan their studies, and improve their chances of achieving a high rank.</p>
@@ -393,125 +393,125 @@ export default function SyllabusPageClient() {
 <p>The <strong>NIMCET syllabus 2026</strong> is designed to evaluate a candidate's aptitude in Mathematics, Logical Reasoning, Computer Awareness, and English. A clear understanding of the <strong>MCA entrance exam syllabus</strong>, combined with knowledge of the <strong>NIMCET exam pattern</strong>, can help students prepare more effectively. By following a structured study plan, practicing regularly, and revising important topics, candidates can improve their performance and increase their chances of securing admission to a prestigious NIT MCA program.</p>
 `;
 
-  return (
-    <>
-      <Topbar />
-      <Navbar />
+	return (
+		<>
+			<Topbar />
+			<Navbar />
 
-      <div className="hero" style={{ padding: '60px 0 40px', textAlign: 'center', overflow: 'hidden' }}>
-        <motion.div
-          className="container"
-          style={{ maxWidth: '800px' }}
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
-        >
-          <motion.span variants={itemVariants} className="hero-badge">Landmark Institute</motion.span>
-          <motion.h1 variants={itemVariants} style={{ fontSize: 'clamp(30px, 4vw, 42px)', fontWeight: 700, lineHeight: 1.2, margin: '0 auto' }}>
-            NIMCET Syllabus 2026
-          </motion.h1>
-        </motion.div>
-      </div>
+			<div className="hero" style={{ padding: '60px 0 40px', textAlign: 'center', overflow: 'hidden' }}>
+				<motion.div
+					className="container"
+					style={{ maxWidth: '800px' }}
+					variants={containerVariants}
+					initial="hidden"
+					animate="show"
+				>
+					<motion.span variants={itemVariants} className="hero-badge">Landmark Institute</motion.span>
+					<motion.h1 variants={itemVariants} style={{ fontSize: 'clamp(30px, 4vw, 42px)', fontWeight: 700, lineHeight: 1.2, margin: '0 auto' }}>
+						NIMCET Syllabus 2026
+					</motion.h1>
+				</motion.div>
+			</div>
 
-      <main style={{ padding: '60px 0 80px', background: 'var(--bg)', overflow: 'hidden' }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
-          <motion.div
-            className="prose-custom"
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: '-100px' }}
-            dangerouslySetInnerHTML={{ __html: htmlContent }}
-          />
+			<main style={{ padding: '60px 0 80px', background: 'var(--bg)', overflow: 'hidden' }}>
+				<div className="container" style={{ maxWidth: '800px' }}>
 
-          <motion.h2
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: '-100px' }}
-            style={{ fontFamily: "'Poppins', sans-serif", fontSize: '24px', fontWeight: 800, marginTop: '48px', marginBottom: '8px', color: 'var(--slate)', borderBottom: '2px solid var(--border-light)', paddingBottom: '8px' }}
-          >
-            Official Syllabus & Brochures Download
-          </motion.h2>
-          <motion.p
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: '-100px' }}
-            style={{ fontSize: '15px', color: 'var(--text-muted)', marginBottom: '32px' }}
-          >
-            Select from the official guides and syllabus documents below. Click to request the download package.
-          </motion.p>
+					<motion.h2
+						variants={itemVariants}
+						initial="hidden"
+						whileInView="show"
+						viewport={{ once: true, margin: '-100px' }}
+						style={{ fontFamily: "'Poppins', sans-serif", fontSize: '24px', fontWeight: 800, marginTop: '48px', marginBottom: '8px', color: 'var(--slate)', borderBottom: '2px solid var(--border-light)', paddingBottom: '8px' }}
+					>
+						Official Syllabus & Brochures Download
+					</motion.h2>
+					<motion.p
+						variants={itemVariants}
+						initial="hidden"
+						whileInView="show"
+						viewport={{ once: true, margin: '-100px' }}
+						style={{ fontSize: '15px', color: 'var(--text-muted)', marginBottom: '32px' }}
+					>
+						Select from the official guides and syllabus documents below. Click to request the download package.
+					</motion.p>
 
-          <motion.div
-            className="downloads-grid"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: '-100px' }}
-          >
-            {/* NIMCET Syllabus Card */}
-            <motion.div className="download-card" variants={itemVariants}>
-              <div>
-                <div className="download-card-header">
-                  <div className="download-card-icon">📄</div>
-                  <h3 className="download-card-title">NIMCET Syllabus 2026 PDF</h3>
-                </div>
-                <div className="download-card-tagline">
-                  NIMCET Complete Information: Eligibility, Syllabus, Exam Pattern & Counselling
-                </div>
-                <p className="download-card-desc">
-                  If you need personalized guidance, preparation strategies, or help with the admission process, you can connect with our expert counsellors.
-                </p>
-              </div>
-              <a href="/documents/NIMCET%20Syllabus%202026%20PDF.pdf" download className="btn btn-primary" style={{ justifyContent: 'center', width: '100%' }}>
-                Syllabus Download
-              </a>
-            </motion.div>
+					<motion.div
+						className="downloads-grid"
+						variants={containerVariants}
+						initial="hidden"
+						whileInView="show"
+						viewport={{ once: true, margin: '-100px' }}
+					>
+						{/* NIMCET Syllabus Card */}
+						<motion.div className="download-card" variants={itemVariants}>
+							<div>
+								<div className="download-card-header">
+									<div className="download-card-icon">📄</div>
+									<h3 className="download-card-title">NIMCET Syllabus 2026 PDF</h3>
+								</div>
+								<div className="download-card-tagline">
+									NIMCET Complete Information: Eligibility, Syllabus, Exam Pattern & Counselling
+								</div>
+								<p className="download-card-desc">
+									If you need personalized guidance, preparation strategies, or help with the admission process, you can connect with our expert counsellors.
+								</p>
+							</div>
+							<a href="/documents/NIMCET%20Syllabus%202026%20PDF.pdf" download className="btn btn-primary" style={{ justifyContent: 'center', width: '100%' }}>
+								Syllabus Download
+							</a>
+						</motion.div>
 
-            {/* NIMCET Information Brochure Card */}
-            <motion.div className="download-card" variants={itemVariants}>
-              <div>
-                <div className="download-card-header">
-                  <div className="download-card-icon">📕</div>
-                  <h3 className="download-card-title">NIMCET Information Brochure</h3>
-                </div>
-                <div className="download-card-tagline">
-                  NIMCET Complete Information: Eligibility, Syllabus, Exam Pattern & Counselling
-                </div>
-                <p className="download-card-desc">
-                  If you need personalized guidance, preparation strategies, or help with the admission process, you can connect with our expert counsellors.
-                </p>
-              </div>
-              <a href="/documents/NIMCET%20Information%20Brochure.pdf" download className="btn btn-primary" style={{ justifyContent: 'center', width: '100%' }}>
-                Syllabus Download
-              </a>
-            </motion.div>
+						{/* NIMCET Information Brochure Card */}
+						<motion.div className="download-card" variants={itemVariants}>
+							<div>
+								<div className="download-card-header">
+									<div className="download-card-icon">📕</div>
+									<h3 className="download-card-title">NIMCET Information Brochure</h3>
+								</div>
+								<div className="download-card-tagline">
+									NIMCET Complete Information: Eligibility, Syllabus, Exam Pattern & Counselling
+								</div>
+								<p className="download-card-desc">
+									If you need personalized guidance, preparation strategies, or help with the admission process, you can connect with our expert counsellors.
+								</p>
+							</div>
+							<a href="/documents/NIMCET%20Information%20Brochure.pdf" download className="btn btn-primary" style={{ justifyContent: 'center', width: '100%' }}>
+								Syllabus Download
+							</a>
+						</motion.div>
 
-            {/* CUET PG MCA Syllabus Card */}
-            <motion.div className="download-card" variants={itemVariants}>
-              <div>
-                <div className="download-card-header">
-                  <div className="download-card-icon">📘</div>
-                  <h3 className="download-card-title">Syllabus for CUET PG MCA</h3>
-                </div>
-                <div className="download-card-tagline">
-                  CUET PG Complete Information: Eligibility, Syllabus, Exam Pattern & Participating Universities
-                </div>
-                <p className="download-card-desc">
-                  If you need personalized guidance, preparation strategies, or help with the admission process, you can connect with our expert counsellors.
-                </p>
-              </div>
-              <a href="/documents/Syllabus%20for%20CUET%20PG%20MCA.pdf" download className="btn btn-primary" style={{ justifyContent: 'center', width: '100%' }}>
-                Syllabus Download
-              </a>
-            </motion.div>
-          </motion.div>
-        </div>
-      </main>
+						{/* CUET PG MCA Syllabus Card */}
+						<motion.div className="download-card" variants={itemVariants}>
+							<div>
+								<div className="download-card-header">
+									<div className="download-card-icon">📘</div>
+									<h3 className="download-card-title">Syllabus for CUET PG MCA</h3>
+								</div>
+								<div className="download-card-tagline">
+									CUET PG Complete Information: Eligibility, Syllabus, Exam Pattern & Participating Universities
+								</div>
+								<p className="download-card-desc">
+									If you need personalized guidance, preparation strategies, or help with the admission process, you can connect with our expert counsellors.
+								</p>
+							</div>
+							<a href="/documents/Syllabus%20for%20CUET%20PG%20MCA.pdf" download className="btn btn-primary" style={{ justifyContent: 'center', width: '100%' }}>
+								Syllabus Download
+							</a>
+						</motion.div>
+					</motion.div>
+					<motion.div
+						className="prose-custom"
+						variants={itemVariants}
+						initial="hidden"
+						whileInView="show"
+						viewport={{ once: true, margin: '-100px' }}
+						dangerouslySetInnerHTML={{ __html: htmlContent }}
+					/>
+				</div>
+			</main>
 
-      <Footer />
-      <FloatingWhatsApp />
-    </>
-  );
+			<Footer />
+			<FloatingWhatsApp />
+		</>
+	);
 }

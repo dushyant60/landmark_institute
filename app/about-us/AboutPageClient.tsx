@@ -133,7 +133,7 @@ export default function AboutPageClient() {
             Empowering Tech Leaders <span className="accent">Since 2007</span>
           </motion.h1>
           <motion.p variants={heroItemVariants} className="hero-sub" style={{ margin: '0 auto', fontSize: '16px', color: '#94A3B8' }}>
-            How a single classroom in West Patel Nagar, New Delhi evolved into India&apos;s premier MCA Entrance Coaching Institute, mentoring over 6,000+ graduates into NITs and top universities.
+            How a single classroom at Ground Floor, 3/24, Block 1, West Patel Nagar, Patel Nagar, New Delhi -110008 evolved into India&apos;s premier MCA Entrance Coaching Institute, mentoring over 6,000+ graduates into NITs and top universities.
           </motion.p>
         </motion.div>
         <div className="hero-wave" style={{ marginTop: '30px', height: '40px' }}>
@@ -427,7 +427,7 @@ export default function AboutPageClient() {
                 Landmark Institute is India&apos;s leading training center for MCA entrance examinations, including <strong>NIMCET</strong>, <strong>CUET PG MCA</strong>, <strong>DU MCA</strong>, and other premier national university entrances.
               </p>
               <p>
-                Headquartered in West Patel Nagar, New Delhi, we bridge the gap between graduate mathematics and high-stakes competitive examinations. Our courses are structured to nurture problem-solving speeds and analytical logic in students, translating complex topics into masterable elements.
+                Headquartered at Ground Floor, 3/24, Block 1, West Patel Nagar, Patel Nagar, New Delhi -110008, we bridge the gap between graduate mathematics and high-stakes competitive examinations. Our courses are structured to nurture problem-solving speeds and analytical logic in students, translating complex topics into masterable elements.
               </p>
             </div>
             

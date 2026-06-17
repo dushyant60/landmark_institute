@@ -214,7 +214,7 @@ export default function ContactPageClient() {
             <motion.div className="info-block directions-block" variants={rightItemVariants}>
               <h3>How to Reach Landmark Delhi</h3>
               <p>
-                Our head office is located in West Patel Nagar, New Delhi, situated at an extremely accessible location for local and commuting students:
+                Our head office is located at Ground Floor, 3/24, Block 1, West Patel Nagar, Patel Nagar, New Delhi -110008, situated at an extremely accessible location for local and commuting students:
               </p>
               <ul className="directions-list">
                 <li><strong>By Metro:</strong> Take the Blue Line Metro. Get off at West Patel Nagar Station. We are a 1-minute walk from the station exit (Pillar no. 220).</li>
@@ -233,8 +233,8 @@ export default function ContactPageClient() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  <h5>West Patel Nagar, Metro Pillar 220</h5>
-                  <p style={{ fontSize: '11px', color: 'var(--blue-dark)', margin: 0 }}>Opposite Metro Station Exit, West Patel Nagar, New Delhi, Delhi 110008</p>
+                  <h5>Ground Floor, 3/24, Block 1, West Patel Nagar</h5>
+                  <p style={{ fontSize: '11px', color: 'var(--blue-dark)', margin: 0 }}>Patel Nagar, New Delhi -110008</p>
                 </div>
               </a>
             </motion.div>

@@ -11,7 +11,7 @@ export default function Topbar() {
           <a href="mailto:info@landmarkinstitute.com">✉️ info@landmarkinstitute.com</a>
         </div>
         <div className="topbar-right">
-          <span>West Patel Nagar, New Delhi</span>
+          <span>Ground Floor, 3/24, Block 1, West Patel Nagar, Patel Nagar, New Delhi -110008</span>
           <a href="https://wa.me/919999992338" className="wa-badge">
             <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
               <path d={waPath} />

@@ -1,240 +1,535 @@
 'use client';
 
+import { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
 import Topbar from '@/components/Topbar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
+const stagger: Variants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.1 } },
+};
+
+const faqData = [
+  {
+    q: 'Is the Landmark Institute NIMCET good for online coaching?',
+    a: 'Yes. It is a top-rated NIMCET coaching institute known for extraordinary results and comprehensive student support.',
+  },
+  {
+    q: 'Can I crack NIMCET without coaching?',
+    a: 'You can try, but NIMCET coaching online gives you expert guidance, structure and tested strategies that significantly improve your chances.',
+  },
+  {
+    q: 'What is the duration of the NIMCET course at Landmark?',
+    a: 'Usually 6–9 months, based on batch. Fast-track and weekend class options are available.',
+  },
+  {
+    q: 'Does Landmark Institute provide mock tests?',
+    a: 'Yes. Weekly Mock Tests and Analysis are a core part of the coaching strategy for NIMCET preparation.',
+  },
+  {
+    q: 'Is it only for students in Delhi?',
+    a: 'While Landmark Institute started as NIMCET coaching in Delhi, its online coaching is available nationwide and globally.',
+  },
+];
+
 export default function NimcetPageClient() {
-  const htmlContent = `
-<strong><img src="/images/migrated/online-nimcet-coaching-1024x578.jpg" alt="nimcet coaching online" style="max-width: 100%; height: auto; border-radius: var(--r-sm); margin: 24px 0; display: block;" /></strong>
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-Thinking of cracking Nimcet and searching for the best Nimcet coaching? You are on the right track! NIT MCA Common Entrance Test (NIMCET) is the key to your MCA dreams through reputed knots. In today's fast-traditional world, NIMCET coaching is becoming a Go-Two solution for online nationwide candidates.
+  const examSections = [
+    { subject: 'Mathematics', count: '50', icon: '📐', color: '#3B82F6', bg: '#EFF6FF' },
+    { subject: 'Logical Reasoning', count: '40', icon: '🧠', color: '#8B5CF6', bg: '#F5F3FF' },
+    { subject: 'Computer Awareness', count: '10', icon: '💻', color: '#0891B2', bg: '#ECFEFF' },
+    { subject: 'English', count: '20', icon: '📝', color: '#059669', bg: '#ECFDF5' },
+  ];
 
-If you are planning to appear <b>nimcet</b> exam and want to know more about it and about<strong> Nimcet Coaching Online</strong><b> </b>here i discussed about landmark institute.After earning mca degree from recognised university candidates can apply for job in private as well as government sectors.
+  const features = [
+    { icon: '🎥', title: 'Live Classes + Recordings', desc: 'Access classes live or replay them anytime for flexible learning.' },
+    { icon: '📋', title: 'Customized Practice Sheets', desc: 'Subject-wise sheets and PYQs designed by expert faculty.' },
+    { icon: '📊', title: 'Weekly Progress Reports', desc: 'Track your performance with detailed weekly analysis.' },
+    { icon: '🎯', title: 'Dedicated Mentorship', desc: 'One-on-one guidance to address your weak areas personally.' },
+    { icon: '📱', title: 'Mobile App Access', desc: 'Study anywhere via the Landmark Institute app — iOS & Android.' },
+    { icon: '💬', title: 'Doubt Clearing Sessions', desc: 'Real-time doubt resolution via live sessions and WhatsApp.' },
+  ];
 
-MCA is an amazing career option today, this is because after getting an mca degree from recognized university there is a lots of job opportunities available in market. Master of computer applications is a three year master degree course.
+  const topNITs = ['NIT Trichy', 'NIT Warangal', 'NIT Surathkal', 'NIT Calicut', 'NIT Allahabad', 'NIT Rourkela'];
 
-NIMCET entrance exam preparation under expert guidance is very important to prepare systematically to achieve good rank. landmark institute is one of the leading <b>mca coaching institute </b>provides offline mca entrance coaching or online mca entrance coaching on landmark institute app. we prepared students for getting admission in NIMCET,DU,JNU,PUNE,HCU,BHU,BITS,IP,JAMIA and other top universities. we have experienced expert faculty for each subject helps students to prepare better for mca entrance exam in a best possible way. we provides both offline or online mca entrance coaching. if students are not comfortable to join coaching institutes and want to prepare for nimcet at comfort of home. <a href="/nimcet/"><b>online nimcet coaching </b></a>is an amazing option for better <a href="/"><strong>nimcet preparation</strong></a>.
-<h2>Understanding the NIMCET Exam</h2>
-The NIMCET is a national level entrance exam organized by NIT’s every year for selecting the candidates for mca programme. They judge the candidates on the basis of knowledge of computer science, mathematics, english, logical reasoning. Any graduate student who has appearing final year exam or passed can apply for nimcet exam. The question paper is purely based on objective questions and it also includes negative marking. It is important to be sure and confident while attempting each answer. however, admission in a top colleges is totally depend on rank obtained by the student in nimcet exam.
-<h2><b>Eligibility Criteria to Appear NIMCET Exam</b></h2>
-1.Candidates should have Bachelor’s degree of full time or  three year programme from recognized university. candidates who are studied from open university can also apply for nimcet.
+  const careerOptions = [
+    'System Analysts', 'Software Consultants', 'Hardware Engineer',
+    'Systems Developer / Engineer', 'Web Designer & Developer', 'Technical Writer',
+    'Software Application Architect',
+  ];
 
-2.Candidates must have 60% marks in Bachelor’s degree with Mathematics / Statistics / Business Maths subjects to appear <strong>Nimcet Coaching Online</strong>.
-
-3.Indian citizens are only eligible to appear for NIMCET Entrance Exam.
-
-4.BE/BTECH students passed from recognized university can apply for nimcet entrance exam.
-
-5.Candidates who are appearing final year exam or passed can apply for nimcet entrance exam.
-<h4>Exam Pattern and Syllabus</h4>
-If you are considering joining the NIMCET coaching institute, you should know the exam format. Nimcet has:
-<ul>
-	<li><strong>Mathematics</strong> – 50 Questions</li>
-	<li><strong>Logical Reasoning</strong> – 40 Questions</li>
-	<li><strong>Computer Awareness</strong> – 10 Questions</li>
-	<li><strong>English</strong> – 20 Questions</li>
-</ul>
-<h4>Eligibility Criteria</h4>
-To enroll in any coaching for NIMCET, candidates have to conduct BCA/B.Sc/Bit with 60% (55% for SC/ST).
-<h4>Top NIT's Accepting Nimcet Score</h4>
-Before selecting your NIMCET course, learn participating colleges:
-<ul>
-	<li>NIT Trichy</li>
-	<li>NIT Warangal</li>
-	<li>NIT Surathkal</li>
-	<li>NIT Calicut and others.</li>
-</ul>
-<h2>Why Nimcet Coaching is growing online</h2>
-<h4>Online nimcet coaching facility</h4>
-Let's accept it, it is unbeatable to participate in classes in your pajamas! Online Nimcet coaching is booming due to flexibility, strength and easy access.
-<h4>Nimcet online coaching benefits</h4>
-<ul>
-	<li>Learn from home</li>
-	<li>Access to top-rested Nimcet coaching in Delhi without travel</li>
-	<li>Repley recorded lectures</li>
-	<li>Personalized advice</li>
-</ul>
-<h2>What makes the best online coaching for Nimcet?</h2>
-<h4>Top faculty</h4>
-Whether you go to me for NIMCET coaching or national level institute, faculty expertise is non-perfect.
-<h4>Comprehensive study material</h4>
-The correct NIMCET course comes with updated notes, worksheets and mock tests.
-<h4>Doubt</h4>
-I have to offer a real-time solution to suspect reliable Nimcet coaching centers with me-Landmark Institute does the same!
-<h4>Regular mock test</h4>
-Any severe Nimcet preparation coaching includes full-length mock examination and micro evaluation.
-<h2>A leader in online nimcet coaching</h2>
-The Landmark Institute is one of the most prestigious NIMCET coaching institutes, known for its result-oriented teaching style and support system.
-<h4>Unique teaching functioning</h4>
-From interactive lecture to doubt session and continuous response, Landmark is re -defining NIMCET coaching online.
-<h4>Stories of real success</h4>
-Landmark students have cracked the top rank, establishing a benchmark for the best online coaching for NIMCET.
-<h2>Key Features of Nimcet Online Coaching</h2>
-<ul>
-	<li><strong>Live Classes + Recordings</strong> for future access</li>
-	<li><strong>Customized Practice Sheets</strong> and PYQs</li>
-	<li><strong>Weekly Progress Reports</strong></li>
-	<li><strong>Dedicated Mentorship</strong></li>
-</ul>
-Whether you are looking for Nimcet coaching in Delhi or simply typing "Nimcet coaching", there is an online appearance of landmark institute that distribute at the national level.
-<h2>Flexible Batch for All Types of Aspirations</h2>
-<ul>
-	<li>Weekend online classes for working professionals</li>
-	<li>Self-book nimcet courses for independent learners</li>
-</ul>
-<h2>Nimcet Coaching Fees & Affordability</h2>
-<h4>Budget Friendly Nimcet Coaching</h4>
-The NIMCET coaching fee on the landmark institute is designed to be cheap without sacrificing quality.
-<ul>
-	<li>EMI option</li>
-	<li>Discounts for Early Registrations</li>
-	<li>Demo Class available</li>
-</ul>
-Compared to traditional Nimcet coaching in Delhi, online versions distribute less cost and more.
-<h2>Full Student Support Ecosystem</h2>
-<ul>
-	<li>Regular doubt</li>
-	<li>Co -worker interaction through Telegram and WhatsApp</li>
-	<li>One-on-one mentorship and mental health assistance</li>
-	<li>Post-NIMCET career planning</li>
-</ul>
-How to use the maximum of online Nimcet coaching
-<ul>
-	<li>Follow a strict study routine
-</li>
-	<li>Actively engage in classes
-</li>
-	<li>Appear for every mock test
-</li>
-	<li>
-Revise using recorded content
-</li>
-</ul><br><br>
-<iframe width="100%" height="450" src="https://www.youtube.com/embed/fKdfNDW32YQ?si=px29UaSLCrg_znLv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border-radius: var(--r-md); margin-bottom: 24px;"></iframe>
-<br><br>
-<h3><b>Why landmark Institute is a perfect choice for NIMCET preparation:</b></h3>
-<p><strong>1. Both online or offline classes for nimcet preparation available for students.</strong></p>
-
-2. Experienced or dedicated faculty member for each subject.
-
-3. Appropriate study material for each subject.
-
-4. Mock test available to track performance.
-
-5. Regular tests or assignment to strengthen weak topics.
-<h2>Online Coaching vs Offline Coaching for NIMCET</h2>
-<table>
-<thead>
-<tr>
-<th>Criteria</th>
-<th>Online Nimcet Coaching</th>
-<th>Offline Coaching</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Flexibility</td>
-<td>&#x2705; High</td>
-<td>&#x274c; Low</td>
-</tr>
-<tr>
-<td>Cost-Effective</td>
-<td>&#x2705; Yes</td>
-<td>&#x274c; Expensive</td>
-</tr>
-<tr>
-<td>Accessibility</td>
-<td>&#x2705; Anywhere</td>
-<td>&#x274c; Location-bound</td>
-</tr>
-<tr>
-<td>Doubt Clearance</td>
-<td>&#x2705; Instant</td>
-<td>&#x2705; Limited by class time</td>
-</tr>
-</tbody>
-</table>
-<h2><b>Landmark Students Who Cracked NIMCET</b></h2>
-Ritika (AIR 58) balanced a part -time job and still took the exam through the online course of Landmark.
-
-<strong>Aditya (AIR 27)</strong> says, “Switching to <strong>Landmark’s online NIMCET coaching</strong> saved me travel time and gave me 3 extra study hours every day!”
-<h2>After Earning MCA Degree from Recognized University Candidates can Apply for these Positions</h2>
-1.System Analysts.
-
-2.Software Consultants.
-
-3.Hardware Engineer.
-
-4.Systems Developer/Engineer.
-
-5.Web designer and developer.
-
-6.Technical Writer.
-
-7.Software Application Architect.
-<h2>Conclusion</h2>
-Choosing the right coaching for NIMCET may be a step defined in your MCA trip. Whether you are sitting in Delhi, Pune, or a remote city, the Landmark Institute brings you the best NIMCET coaching online on your fingers. With experienced faculty, a powerful digital platform and inexpensive Nimcet coaching fee, this is your one-stop destination for success.
-
-<h2>Frequently Asked Questions</h2>
-<ul>
-	<li><strong>Q1. Is the Landmark Institute NIMCET good for online coaching?</strong><br />Yes. It is a top-rated NIMCET coaching institute known for extraordinary results and comprehensive student support.</li>
-	<li><strong>Q2. Can I crack Nimset without coaching?</strong><br />You can try, but NIMCET coaching online gives you expert guidance, structure and tested strategies.</li>
-	<li><strong>Q3. What is the duration of the NIMCET course of the landmark institute?</strong><br />Usually 6-9 months, based on batch. Fast-track and weekend classes options are available.</li>
-	<li><strong>Q4. Does the landmark institute provide a mock test?</strong><br />Yes. Weekly Mock Tests and Analysis NimceT preparations are the main part of coaching strategy.</li>
-	<li><strong>Q5. Is it only located in Delhi?</strong><br />While Landmark institute started as NIMCET coaching in Delhi, its online Nimcet coaching is available at the country and globally.</li>
-</ul>
-`;
+  const successStories = [
+    { name: 'Ritika', rank: 'AIR 58', quote: 'Balanced a part-time job and still cracked NIMCET through the Landmark online course.' },
+    { name: 'Aditya', rank: 'AIR 27', quote: 'Switching to Landmark\'s online NIMCET coaching saved me travel time and gave me 3 extra study hours every day!' },
+  ];
 
   return (
     <>
       <Topbar />
       <Navbar />
 
-      <div className="hero" style={{ padding: '60px 0 40px', textAlign: 'center', overflow: 'hidden' }}>
+      {/* ── HERO ── */}
+      <div className="hero" style={{ padding: '56px 0 0', overflow: 'hidden' }}>
         <motion.div
           className="container"
-          style={{ maxWidth: '800px' }}
-          variants={containerVariants}
+          variants={stagger}
           initial="hidden"
           animate="show"
         >
-          <motion.span variants={itemVariants} className="hero-badge">Landmark Institute</motion.span>
-          <motion.h1 variants={itemVariants} style={{ fontSize: 'clamp(30px, 4vw, 42px)', fontWeight: 700, lineHeight: 1.2, margin: '0 auto' }}>
-            Nimcet Coaching Online
-          </motion.h1>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', maxWidth: '680px' }}>
+            <motion.span variants={fadeUp} className="hero-badge">
+              <span /> Landmark Institute
+            </motion.span>
+            <motion.h1
+              variants={fadeUp}
+              style={{ fontSize: 'clamp(32px, 4.5vw, 52px)', fontWeight: 900, lineHeight: 1.1, marginBottom: '16px', letterSpacing: '-1px' }}
+            >
+              NIMCET Coaching <span className="accent">Online</span>
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              className="hero-sub"
+              style={{ marginBottom: '28px' }}
+            >
+              Crack the NIT MCA entrance exam with India&apos;s trusted online NIMCET coaching.
+              Expert faculty · Live + recorded classes · Weekly mock tests.
+            </motion.p>
+            <motion.div variants={fadeUp} style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '48px' }}>
+              <a href="/enquiry" className="btn btn-green btn-lg">Enroll Now — Free Demo</a>
+              <a href="/our-courses" className="btn btn-outline btn-lg" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.4)' }}>View Courses</a>
+            </motion.div>
+          </div>
+
+          {/* Stats strip */}
+          <motion.div
+            variants={fadeUp}
+            className="hero-stats"
+            style={{ maxWidth: '680px', marginBottom: '0' }}
+          >
+            <div className="hero-stat">
+              <div className="hero-stat-num">120 <span>Q</span></div>
+              <div className="hero-stat-label">Total Questions</div>
+            </div>
+            <div className="hero-stat">
+              <div className="hero-stat-num">60<span>%</span></div>
+              <div className="hero-stat-label">Min. Eligibility</div>
+            </div>
+            <div className="hero-stat">
+              <div className="hero-stat-num">6–9<span>mo</span></div>
+              <div className="hero-stat-label">Course Duration</div>
+            </div>
+            <div className="hero-stat">
+              <div className="hero-stat-num">10<span>+</span></div>
+              <div className="hero-stat-label">NITs Accepting</div>
+            </div>
+          </motion.div>
         </motion.div>
+        <div className="hero-wave">
+          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0 60V30C240 0 480 60 720 30C960 0 1200 60 1440 30V60H0Z" fill="var(--bg)" />
+          </svg>
+        </div>
       </div>
 
-      <main style={{ padding: '60px 0 80px', background: 'var(--bg)', overflow: 'hidden' }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
-          <motion.div
-            className="prose-custom"
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: '-100px' }}
-            dangerouslySetInnerHTML={{ __html: htmlContent }}
-          />
+      {/* ── MAIN CONTENT AREA ── */}
+      <main style={{ background: 'var(--bg)', paddingBottom: '80px' }}>
+        <div className="container" style={{ maxWidth: '1200px' }}>
+
+          {/* Two-column layout */}
+          <div className="page-content-grid">
+
+            {/* ── LEFT COLUMN ── */}
+            <div>
+
+              {/* About NIMCET */}
+              <motion.section
+                variants={stagger}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: '-80px' }}
+                style={{ marginBottom: '48px' }}
+              >
+                <motion.div variants={fadeUp} style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+                  <span className="section-eyebrow">About the Exam</span>
+                </motion.div>
+                <motion.h2 variants={fadeUp} className="section-title" style={{ marginBottom: '12px' }}>
+                  Understanding the NIMCET Exam
+                </motion.h2>
+                <motion.p variants={fadeUp} style={{ color: 'var(--text-mid)', lineHeight: 1.75, marginBottom: '20px' }}>
+                  The NIMCET is a national-level entrance exam organized by NITs every year for selecting candidates for the MCA programme. It tests knowledge of Computer Science, Mathematics, English, and Logical Reasoning. Any graduate student who has appeared in or passed their final year exam can apply.
+                </motion.p>
+                <motion.p variants={fadeUp} style={{ color: 'var(--text-mid)', lineHeight: 1.75 }}>
+                  The question paper is entirely objective-type with negative marking — making accuracy and speed both critical. Admission to a top NIT depends entirely on the rank obtained in NIMCET.
+                </motion.p>
+              </motion.section>
+
+              {/* Exam Pattern */}
+              <motion.section
+                variants={stagger}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: '-80px' }}
+                style={{ marginBottom: '48px' }}
+              >
+                <motion.div variants={fadeUp}>
+                  <span className="section-eyebrow">Exam Pattern</span>
+                  <h2 className="section-title" style={{ marginBottom: '20px' }}>Syllabus & Question Distribution</h2>
+                </motion.div>
+                <motion.div
+                  variants={stagger}
+                  className="page-cards-2col"
+                >
+                  {examSections.map((s) => (
+                    <motion.div
+                      key={s.subject}
+                      variants={fadeUp}
+                      style={{
+                        background: '#fff',
+                        border: '1px solid var(--border)',
+                        borderRadius: 'var(--r)',
+                        padding: '20px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '16px',
+                        transition: '.2s',
+                        cursor: 'default',
+                      }}
+                      whileHover={{ y: -3, boxShadow: 'var(--shadow-md)' }}
+                    >
+                      <div style={{ width: 52, height: 52, borderRadius: 12, background: s.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24, flexShrink: 0 }}>
+                        {s.icon}
+                      </div>
+                      <div>
+                        <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 800, fontSize: 26, color: s.color, lineHeight: 1 }}>{s.count}</div>
+                        <div style={{ fontSize: 13, color: 'var(--text-muted)', marginTop: 2 }}>Questions</div>
+                        <div style={{ fontWeight: 600, fontSize: 14, color: 'var(--slate)', marginTop: 2 }}>{s.subject}</div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.section>
+
+              {/* Why Online Coaching */}
+              <motion.section
+                variants={stagger}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: '-80px' }}
+                style={{ marginBottom: '48px' }}
+              >
+                <motion.div variants={fadeUp}>
+                  <span className="section-eyebrow">Why Landmark</span>
+                  <h2 className="section-title" style={{ marginBottom: '20px' }}>Key Features of Nimcet Online Coaching</h2>
+                </motion.div>
+                <motion.div
+                  variants={stagger}
+                  className="page-cards-2col"
+                >
+                  {features.map((f) => (
+                    <motion.div key={f.title} variants={fadeUp} className="why-card">
+                      <div style={{ fontSize: 28, marginBottom: 12 }}>{f.icon}</div>
+                      <h3 style={{ fontSize: 15, fontWeight: 700, color: 'var(--slate)', marginBottom: 6 }}>{f.title}</h3>
+                      <p style={{ fontSize: 13.5, color: 'var(--text-muted)', lineHeight: 1.6, margin: 0 }}>{f.desc}</p>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.section>
+
+              {/* Online vs Offline comparison */}
+              <motion.section
+                variants={stagger}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: '-80px' }}
+                style={{ marginBottom: '48px' }}
+              >
+                <motion.div variants={fadeUp}>
+                  <span className="section-eyebrow">Comparison</span>
+                  <h2 className="section-title" style={{ marginBottom: '20px' }}>Online vs Offline Coaching for NIMCET</h2>
+                </motion.div>
+                <motion.div variants={fadeUp} style={{ background: '#fff', borderRadius: 'var(--r-lg)', border: '1px solid var(--border)', overflow: 'hidden' }}>
+                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
+                    <thead>
+                      <tr style={{ background: 'var(--blue-light)' }}>
+                        <th style={{ padding: '14px 20px', textAlign: 'left', color: 'var(--slate)', fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}>Criteria</th>
+                        <th style={{ padding: '14px 20px', textAlign: 'center', color: 'var(--blue)', fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}>Online (Landmark)</th>
+                        <th style={{ padding: '14px 20px', textAlign: 'center', color: 'var(--slate-light)', fontFamily: "'Poppins', sans-serif", fontWeight: 700 }}>Offline Coaching</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        ['Flexibility', '✅ High', '❌ Low'],
+                        ['Cost-Effective', '✅ Yes', '❌ Expensive'],
+                        ['Accessibility', '✅ Anywhere', '❌ Location-bound'],
+                        ['Doubt Clearance', '✅ Instant', '⏱ Limited by class time'],
+                      ].map(([label, online, offline], i) => (
+                        <tr key={label} style={{ borderTop: '1px solid var(--border)', background: i % 2 === 0 ? '#fff' : 'var(--bg)' }}>
+                          <td style={{ padding: '12px 20px', fontWeight: 600, color: 'var(--slate-mid)' }}>{label}</td>
+                          <td style={{ padding: '12px 20px', textAlign: 'center', color: 'var(--text-mid)' }}>{online}</td>
+                          <td style={{ padding: '12px 20px', textAlign: 'center', color: 'var(--text-muted)' }}>{offline}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </motion.div>
+              </motion.section>
+
+              {/* Success Stories */}
+              <motion.section
+                variants={stagger}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: '-80px' }}
+                style={{ marginBottom: '48px' }}
+              >
+                <motion.div variants={fadeUp}>
+                  <span className="section-eyebrow">Student Success</span>
+                  <h2 className="section-title" style={{ marginBottom: '20px' }}>Landmark Students Who Cracked NIMCET</h2>
+                </motion.div>
+                <motion.div variants={stagger} className="page-cards-2col" style={{ gap: 16 }}>
+                  {successStories.map((s) => (
+                    <motion.div
+                      key={s.name}
+                      variants={fadeUp}
+                      className="testimonial-card"
+                    >
+                      <div className="stars">
+                        {[...Array(5)].map((_, i) => (
+                          <svg key={i} className="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
+                        ))}
+                      </div>
+                      <p className="testimonial-text">{s.quote}</p>
+                      <div className="testimonial-author">
+                        <div className="t-avatar">{s.name[0]}</div>
+                        <div className="t-author-info">
+                          <span>{s.name}</span>
+                          <span>NIMCET Qualified</span>
+                        </div>
+                        <div className="t-rank-badge">{s.rank}</div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.section>
+
+              {/* Career Options */}
+              <motion.section
+                variants={stagger}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: '-80px' }}
+                style={{ marginBottom: '48px' }}
+              >
+                <motion.div variants={fadeUp}>
+                  <span className="section-eyebrow">After MCA</span>
+                  <h2 className="section-title" style={{ marginBottom: '20px' }}>Career Opportunities After MCA Degree</h2>
+                </motion.div>
+                <motion.div variants={stagger} style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+                  {careerOptions.map((c) => (
+                    <motion.div
+                      key={c}
+                      variants={fadeUp}
+                      style={{
+                        background: '#fff',
+                        border: '1px solid var(--border)',
+                        borderRadius: 'var(--r-full)',
+                        padding: '8px 18px',
+                        fontSize: 14,
+                        fontWeight: 600,
+                        color: 'var(--slate-mid)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 8,
+                      }}
+                    >
+                      <span style={{ width: 8, height: 8, background: 'var(--green)', borderRadius: '50%', display: 'inline-block', flexShrink: 0 }} />
+                      {c}
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.section>
+
+              {/* Video */}
+              <motion.section
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: '-80px' }}
+                style={{ marginBottom: '48px' }}
+              >
+                <span className="section-eyebrow">Watch & Learn</span>
+                <h2 className="section-title" style={{ marginBottom: '20px' }}>See Landmark NIMCET Coaching in Action</h2>
+                <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, borderRadius: 'var(--r-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/fKdfNDW32YQ?si=px29UaSLCrg_znLv"
+                    title="Landmark NIMCET Coaching"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+                  />
+                </div>
+              </motion.section>
+
+              {/* FAQ */}
+              <motion.section
+                variants={stagger}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: '-80px' }}
+              >
+                <motion.div variants={fadeUp}>
+                  <span className="section-eyebrow">FAQ</span>
+                  <h2 className="section-title" style={{ marginBottom: '20px' }}>Frequently Asked Questions</h2>
+                </motion.div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  {faqData.map((item, i) => (
+                    <motion.div
+                      key={i}
+                      variants={fadeUp}
+                      className={`faq-item${openFaq === i ? ' open' : ''}`}
+                    >
+                      <div className="faq-q" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                        {item.q}
+                        <div className="faq-toggle">
+                          <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                        </div>
+                      </div>
+                      {openFaq === i && (
+                        <div className="faq-a" style={{ display: 'block' }}>{item.a}</div>
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.section>
+            </div>
+
+            {/* ── RIGHT SIDEBAR ── */}
+            <div className="page-sidebar">
+
+              {/* Eligibility Quick Card */}
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 'var(--r-lg)', padding: '24px', boxShadow: 'var(--shadow)' }}
+              >
+                <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 16, fontWeight: 700, color: 'var(--slate)', marginBottom: 16, paddingBottom: 8, borderBottom: '2px solid var(--border-light)' }}>
+                  📋 Eligibility Criteria
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  {[
+                    'Bachelor\'s degree (full-time / 3-year) from a recognized university',
+                    '60% marks in graduation with Maths / Stats / Business Maths',
+                    'Only Indian citizens are eligible',
+                    'BE/BTech students from recognized universities can also apply',
+                    'Final-year appearing students are eligible',
+                  ].map((pt, i) => (
+                    <li key={i} style={{ fontSize: 13, color: 'var(--text-mid)', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+                      <span style={{ width: 18, height: 18, background: 'var(--blue-light)', borderRadius: '50%', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: 'var(--blue)', fontWeight: 800, fontSize: 10, marginTop: 1 }}>{i + 1}</span>
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              {/* Top NITs */}
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 'var(--r-lg)', padding: '24px', boxShadow: 'var(--shadow)' }}
+              >
+                <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 16, fontWeight: 700, color: 'var(--slate)', marginBottom: 16, paddingBottom: 8, borderBottom: '2px solid var(--border-light)' }}>
+                  🏛 Top NITs Accepting NIMCET
+                </h3>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                  {topNITs.map((nit) => (
+                    <span key={nit} style={{ background: 'var(--blue-light)', color: 'var(--blue)', borderRadius: 'var(--r-full)', padding: '5px 12px', fontSize: 12.5, fontWeight: 600 }}>{nit}</span>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* CTA Card */}
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                style={{
+                  background: 'linear-gradient(135deg, var(--slate) 0%, #0F2A5E 100%)',
+                  borderRadius: 'var(--r-lg)',
+                  padding: '28px',
+                  color: '#fff',
+                  position: 'relative',
+                  overflow: 'hidden',
+                }}
+              >
+                <div style={{ position: 'absolute', top: -20, right: -20, width: 100, height: 100, borderRadius: '50%', background: 'rgba(59, 130, 246, 0.2)' }} />
+                <div style={{ fontSize: 32, marginBottom: 12 }}>🚀</div>
+                <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 18, fontWeight: 700, marginBottom: 8, color: '#fff' }}>
+                  Start Your NIMCET Journey
+                </h3>
+                <p style={{ fontSize: 13.5, color: '#94A3B8', marginBottom: 20, lineHeight: 1.6 }}>
+                  Join thousands of students who cracked NIMCET with Landmark&apos;s structured coaching program.
+                </p>
+                <a href="/enquiry" className="btn btn-green" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
+                  Book Free Demo Class
+                </a>
+                <a href="/our-courses" className="btn btn-outline" style={{ width: '100%', justifyContent: 'center', display: 'flex', marginTop: 10, color: '#94A3B8', borderColor: 'rgba(255,255,255,0.2)' }}>
+                  View All Courses
+                </a>
+              </motion.div>
+
+              {/* Batch options */}
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 'var(--r-lg)', padding: '24px', boxShadow: 'var(--shadow)' }}
+              >
+                <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 16, fontWeight: 700, color: 'var(--slate)', marginBottom: 16, paddingBottom: 8, borderBottom: '2px solid var(--border-light)' }}>
+                  📅 Flexible Batches
+                </h3>
+                {[
+                  { label: 'Regular Batch', desc: '6–9 month comprehensive prep', tag: 'Most Popular', tagColor: 'var(--blue)' },
+                  { label: 'Weekend Batch', desc: 'For working professionals', tag: 'Flexible', tagColor: '#7C3AED' },
+                  { label: 'Crash Course', desc: 'Fast-track intensive session', tag: 'Quick', tagColor: '#EA580C' },
+                ].map((b) => (
+                  <div key={b.label} style={{ padding: '12px 0', borderBottom: '1px solid var(--border-light)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div>
+                      <div style={{ fontWeight: 600, fontSize: 14, color: 'var(--slate)' }}>{b.label}</div>
+                      <div style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 2 }}>{b.desc}</div>
+                    </div>
+                    <span style={{ background: `${b.tagColor}18`, color: b.tagColor, borderRadius: 'var(--r-full)', padding: '3px 10px', fontSize: 11, fontWeight: 700 }}>{b.tag}</span>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
         </div>
       </main>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .nimcet-layout { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
 
       <Footer />
       <FloatingWhatsApp />

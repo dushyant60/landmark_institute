@@ -19,7 +19,6 @@ const navLinks = [
   { label: 'Results', href: '/results/' },
   { label: 'Previous Paper', href: '/cuet-pg-previous-year-question-papers/' },
   { label: 'Soft-tech', href: '/notifications/' },
-  { label: 'Student Central', href: '/student-central/' },
   { label: 'Contact Us', href: '/contactus/' },
 ];
 

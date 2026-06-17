@@ -89,9 +89,9 @@ export default function Contact() {
               </div>
               <div>
                 <h4>Visit Us</h4>
-                <p>West Patel Nagar, New Delhi</p>
+                <p>Ground Floor, 3/24, Block 1, West Patel Nagar,</p>
                 <p style={{ fontSize: '13px', marginTop: '4px' }}>
-                  Near Metro Station, Delhi 110008
+                  Patel Nagar, New Delhi -110008
                 </p>
               </div>
             </motion.div>

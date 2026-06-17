@@ -95,8 +95,8 @@ export default function LeadCapturePopup() {
                 <span className="pulse-dot"></span>
                 Exclusive Guide
               </div>
-              <h2>Get Your Free MCA Entrance Guide</h2>
-              <p>Complete preparation roadmap for NIMCET, CUET PG MCA, DU MCA & more</p>
+              <h2>Hey you looking for MCA Entrace Exam Coaching?</h2>
+              <p>Enroll Now and Get Online & Offline Both MCA Entrance Classes from our Experts</p>
             </div>
 
             <div className="form-field">
@@ -141,10 +141,6 @@ export default function LeadCapturePopup() {
             </button>
 
             <div className="trust-badges">
-              <div className="trust-badge">
-                <svg viewBox="0 0 24 24"><path d={checkPath} /></svg>
-                Instant Download
-              </div>
               <div className="trust-badge">
                 <svg viewBox="0 0 24 24"><path d={checkPath} /></svg>
                 No Spam Guarantee

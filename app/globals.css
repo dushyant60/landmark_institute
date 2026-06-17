@@ -1421,6 +1421,7 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
+  align-items: start;
 }
 
 .faq-item {
@@ -2109,6 +2110,68 @@ footer {
 
   .hero-btns {
     flex-direction: column;
+  }
+}
+
+/* ── PAGE LAYOUTS (NIMCET / Online MCA / CUET PG) ── */
+.page-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 32px;
+  align-items: start;
+  padding-top: 48px;
+}
+
+.page-sidebar {
+  position: sticky;
+  top: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── INNER CARD GRIDS on page content (exam-pattern, features, benefits etc.) ── */
+.page-cards-2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Tablet — collapse sidebar to single column */
+@media (max-width: 1024px) {
+  .page-content-grid {
+    grid-template-columns: 1fr;
+  }
+  .page-sidebar {
+    position: static;
+  }
+}
+
+/* Mobile — collapse all 2-col inner grids */
+@media (max-width: 640px) {
+  .page-cards-2col {
+    grid-template-columns: 1fr;
+  }
+  /* Hero stats: 2x2 grid on mobile */
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Hero buttons: stack */
+  .hero-btns {
+    flex-direction: column;
+  }
+  /* Download cards in CUET PG: single col */
+  .downloads-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Featured download card: normal layout */
+  .download-card.featured {
+    grid-column: span 1;
+    padding: 20px;
+  }
+  .download-card-featured-inner {
+    flex-direction: column !important;
+    align-items: stretch !important;
   }
 }
 

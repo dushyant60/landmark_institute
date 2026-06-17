@@ -272,7 +272,7 @@ export default function EnquiryPageClient() {
                 <h3>📞 Contact Us Directly</h3>
                 <div className="contact-row"><span>📱</span><div><strong>Phone / WhatsApp</strong><br />+91 9999992338</div></div>
                 <div className="contact-row"><span>✉️</span><div><strong>Email</strong><br />info@landmarkinstitute.com</div></div>
-                <div className="contact-row"><span>📍</span><div><strong>Address</strong><br />West Patel Nagar, New Delhi</div></div>
+                <div className="contact-row"><span>📍</span><div><strong>Address</strong><br />Ground Floor, 3/24, Block 1, West Patel Nagar, Patel Nagar, New Delhi -110008</div></div>
               </div>
               <div>
                 <h3>🎯 Quick Links</h3>

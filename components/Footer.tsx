@@ -64,12 +64,12 @@ const myPagesCol1 = [
   { label: 'Enquiry', href: '/enquiry/' },
   { label: 'MCA Entrance Syllabus', href: '/syllabus/' },
   { label: 'Nimcet', href: '/nimcet/' },
-  { label: 'Notification', href: '/notification/' },
+  { label: 'Notifications', href: '/notification/' },
 ];
 
 const myPagesCol2 = [
   { label: 'Online MCA Entrance', href: '/online-mca-entrance-exam/' },
-  { label: 'SOFT-TECH', href: '/notifications/' },
+  { label: 'Top MCA Colleges', href: '/notifications/' },
   { label: 'Student Central', href: '/student-central/' },
   { label: 'Top #1 MCA Entrance Coaching in Kanpur – Landmark Institute', href: '/mca-entrance-coaching-in-kanpur/' },
   { label: 'Videos', href: '/videos/' },

@@ -176,7 +176,7 @@ Admission to this course is through an entrance exam conducted by different univ
         >
           <motion.span variants={itemVariants} className="hero-badge">Landmark Institute</motion.span>
           <motion.h1 variants={itemVariants} style={{ fontSize: 'clamp(30px, 4vw, 42px)', fontWeight: 700, lineHeight: 1.2, margin: '0 auto' }}>
-            SOFT-TECH
+            Top MCA Colleges
           </motion.h1>
         </motion.div>
       </div>

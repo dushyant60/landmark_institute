@@ -49,7 +49,7 @@ const sitemapData = [
     description: 'Latest notifications, updates, blog posts, and video testimonials.',
     links: [
       { label: 'Latest Notifications', href: '/notification/' },
-      { label: 'Soft-Tech Updates', href: '/notifications/' },
+      { label: 'Top MCA Colleges', href: '/notifications/' },
       { label: 'Video Testimonials', href: '/videos/' },
       { label: 'Official Blog', href: '/blog/' },
     ],

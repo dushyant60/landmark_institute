@@ -2,46 +2,27 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import Topbar from '@/components/Topbar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
-const toppers2025 = [
-  { rank: 'AIR 1', name: 'Arpit Kumar', college: 'NIT Trichy', score: '487/510', batch: 'Online 2024-25' },
-  { rank: 'AIR 2', name: 'Sneha Gupta', college: 'NIT Warangal', score: '481/510', batch: 'Regular 2024-25' },
-  { rank: 'AIR 4', name: 'Rahul Verma', college: 'NIT Surathkal', score: '476/510', batch: 'Regular 2024-25' },
-  { rank: 'AIR 7', name: 'Priya Sharma', college: 'MNNIT Allahabad', score: '471/510', batch: 'Weekend 2024-25' },
-  { rank: 'AIR 11', name: 'Amit Singh', college: 'NIT Rourkela', score: '465/510', batch: 'Online 2024-25' },
-  { rank: 'AIR 15', name: 'Deepika Rao', college: 'NIT Bhopal', score: '458/510', batch: 'Regular 2024-25' },
-  { rank: 'AIR 19', name: 'Vivek Mishra', college: 'NIT Jamshedpur', score: '453/510', batch: 'Crash Course' },
-  { rank: 'AIR 23', name: 'Kavita Patel', college: 'IIIT Allahabad', score: '448/510', batch: 'Online 2024-25' },
+const resultImages = [
+  { src: '/images/migrated/nimcet_toopers_2025.jpeg', alt: 'NIMCET Results & Toppers' },
+  { src: '/images/migrated/CUET_PG_MCA_2025.jpeg', alt: 'CUET PG MCA Toppers' },
+  { src: '/images/migrated/cuet_pg_2026.jpeg', alt: 'CUET PG Selection Details' },
+  { src: '/images/migrated/nimcet_2024.jpeg', alt: 'NIMCET Ranks & Results' },
+  { src: '/images/migrated/ipucet_mca_2024.jpeg', alt: 'IPU CET MCA Selections' },
+  { src: '/images/migrated/mahcet_mca_2024.jpeg', alt: 'MAH CET MCA Ranks' },
 ];
 
-const toppers2024 = [
-  { rank: 'AIR 3', name: 'Rohit Sharma', college: 'NIT Trichy', score: '479/510' },
-  { rank: 'AIR 5', name: 'Anjali Mehta', college: 'NIT Warangal', score: '473/510' },
-  { rank: 'AIR 8', name: 'Suresh Kumar', college: 'NIT Surathkal', score: '466/510' },
-  { rank: 'AIR 12', name: 'Pooja Singh', college: 'MNNIT Allahabad', score: '460/510' },
-  { rank: 'AIR 16', name: 'Kiran Joshi', college: 'NIT Rourkela', score: '455/510' },
-  { rank: 'AIR 20', name: 'Manoj Tiwari', college: 'NIT Bhopal', score: '449/510' },
-];
-
-const toppers2023 = [
-  { rank: 'AIR 2', name: 'Ankit Pandey', college: 'NIT Trichy', score: '482/510' },
-  { rank: 'AIR 6', name: 'Ritu Yadav', college: 'NIT Warangal', score: '469/510' },
-  { rank: 'AIR 9', name: 'Akash Gupta', college: 'NIT Surathkal', score: '462/510' },
-  { rank: 'AIR 13', name: 'Shivani Verma', college: 'MNNIT Allahabad', score: '457/510' },
-  { rank: 'AIR 17', name: 'Naveen Rana', college: 'NIT Rourkela', score: '451/510' },
-  { rank: 'AIR 22', name: 'Anamika Sinha', college: 'NIT Bhopal', score: '446/510' },
-];
-
-const stats = [
-  { value: '500+', label: 'NIT Selections', icon: '🎓' },
-  { value: 'AIR 1', label: 'All India Rank', icon: '🏆' },
-  { value: '6000+', label: 'Students Placed', icon: '👨‍💻' },
-  { value: '17+', label: 'Years Results', icon: '📅' },
-];
+// const stats = [
+//   { value: '500+', label: 'NIT Selections', icon: '🎓' },
+//   { value: 'AIR 1', label: 'All India Rank', icon: '🏆' },
+//   { value: '6000+', label: 'Students Placed', icon: '👨‍💻' },
+//   { value: '17+', label: 'Years Results', icon: '📅' },
+// ];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -59,7 +40,8 @@ export default function ResultsPageClient() {
       <Topbar />
       <Navbar />
 
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .results-hero {
           background: linear-gradient(135deg, #0F1A2E 0%, #1a2f5e 100%);
           padding: 70px 0 50px;
@@ -174,60 +156,43 @@ export default function ResultsPageClient() {
         }
 
         /* Toppers grid */
-        .toppers-grid {
+        .results-images-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 16px;
+          grid-template-columns: 1fr;
+          gap: 48px;
+          margin-bottom: 70px;
+          max-width: 1200px;
+          margin-left: auto;
+          margin-right: auto;
+          width: 100%;
         }
-        .topper-card {
-          background: #fff;
-          border: 1px solid var(--border);
-          border-radius: var(--r-lg);
-          padding: 20px;
+        .result-image-card {
+          background: transparent;
+          border: none;
+          padding: 0;
+          box-shadow: none;
+          display: flex;
+          flex-direction: column;
+        }
+        .result-image-wrapper {
           position: relative;
+          width: 100%;
+          border-radius: 8px;
           overflow: hidden;
-          transition: 0.2s;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
-        .topper-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
-        .topper-card.gold { border-top: 3px solid #F59E0B; }
-        .topper-card.silver { border-top: 3px solid #94A3B8; }
-        .topper-card.bronze { border-top: 3px solid #CD7F32; }
-        .topper-card.blue { border-top: 3px solid var(--blue); }
-        .topper-rank {
-          font-family: 'Poppins', sans-serif;
-          font-size: 13px;
-          font-weight: 800;
-          color: var(--blue);
-          margin-bottom: 8px;
-          text-transform: uppercase;
-          letter-spacing: 0.04em;
+        .result-image-wrapper img {
+          width: 100%;
+          height: auto;
+          display: block;
         }
-        .topper-name {
+        .result-image-title {
           font-family: 'Poppins', sans-serif;
           font-size: 16px;
           font-weight: 700;
           color: var(--slate);
-          margin-bottom: 6px;
-        }
-        .topper-college {
-          font-size: 12px;
-          color: var(--text-muted);
-          margin-bottom: 8px;
-          line-height: 1.4;
-        }
-        .topper-score {
-          display: inline-block;
-          background: var(--blue-light);
-          color: var(--blue);
-          padding: 3px 10px;
-          border-radius: 100px;
-          font-size: 12px;
-          font-weight: 700;
-        }
-        .topper-batch {
-          font-size: 11px;
-          color: var(--text-muted);
-          margin-top: 6px;
+          margin-top: 14px;
+          text-align: center;
         }
 
         /* CTA Banner */
@@ -258,11 +223,11 @@ export default function ResultsPageClient() {
 
         @media (max-width: 900px) {
           .results-stats { grid-template-columns: repeat(2, 1fr); }
-          .toppers-grid { grid-template-columns: repeat(2, 1fr); }
+          .results-images-grid { grid-template-columns: 1fr; gap: 16px; }
         }
         @media (max-width: 600px) {
           .results-stats { grid-template-columns: 1fr 1fr; }
-          .toppers-grid { grid-template-columns: 1fr 1fr; }
+          .results-images-grid { grid-template-columns: 1fr; gap: 16px; }
         }
       `}} />
 
@@ -297,87 +262,57 @@ export default function ResultsPageClient() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            style={{ marginBottom: '40px', textAlign: 'center' }}
+            style={{ marginBottom: '50px', textAlign: 'center' }}
           >
-            <p><span><strong>Landmark Institute Nimcet Result | Mca Entrance Exam Result | Highest performers | Top performers list. 100+ selections in NIMCET - 2025</strong></span></p>
+            <h2 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '32px', fontWeight: 800, color: 'var(--slate)', marginBottom: '12px' }}>
+              NIMCET Top Performers
+            </h2>
+            <h3 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '20px', fontWeight: 600, color: '#bc1600', marginBottom: '24px' }}>
+              100+ Selections in NIMCET
+            </h3>
+            <p style={{ fontSize: '16px', color: 'var(--text-muted)', maxWidth: '1200px', margin: '0 auto 30px', lineHeight: '1.6' }}>
+              Landmark Institute NIMCET Result & MCA Entrance Exam Result. Below is the list of our highest performers and top achievers.
+            </p>
+
+            {/* Callout box */}
+            <div style={{
+              background: '#FFF5F5',
+              borderLeft: '4px solid #bc1600',
+              padding: '20px 24px',
+              borderRadius: '8px',
+              maxWidth: '1200px',
+              margin: '0 auto',
+              textAlign: 'left',
+              boxShadow: '0 2px 8px rgba(188, 22, 0, 0.05)'
+            }}>
+              <h4 style={{ fontFamily: 'Poppins, sans-serif', fontSize: '16px', fontWeight: 700, color: '#bc1600', marginBottom: '6px', display: 'flex', alignItems: 'center', gap: '8px', marginTop: 0 }}>
+                📢 Important Note About Our Results
+              </h4>
+              <p style={{ fontSize: '14.5px', color: 'var(--slate)', margin: 0, lineHeight: '1.5' }}>
+                These flyers showcase our top rankers and performers. Please note that our complete list of selections is far more extensive, with many more students achieving outstanding success across various prestigious institutions.
+              </p>
+            </div>
           </motion.div>
 
-          {/* Stats */}
-          <motion.div className="results-stats" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
-            {stats.map(s => (
-              <motion.div className="result-stat-card" key={s.label} variants={fadeUp}>
-                <div className="result-stat-icon">{s.icon}</div>
-                <h3>{s.value}</h3>
-                <p>{s.label}</p>
-              </motion.div>
+
+
+          {/* Results Images Grid */}
+          <div className="results-images-grid" >
+            {resultImages.map((img) => (
+              <div className="result-image-card" key={img.alt}>
+                <div className="result-image-wrapper">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    width={1200}
+                    height={800}
+                    className="result-image"
+                    unoptimized
+                  />
+                </div>
+                <div className="result-image-title">{img.alt}</div>
+              </div>
             ))}
-          </motion.div>
-
-          {/* 2025 Toppers */}
-          <div className="year-section">
-            <div className="year-header">
-              <span className="year-badge">2025</span>
-              <h2>NIMCET 2025 — Our Toppers</h2>
-              <div className="year-divider" />
-            </div>
-            <motion.div className="toppers-grid" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
-              {toppers2025.map((t, i) => {
-                const colorClass = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : 'blue';
-                return (
-                  <motion.div className={`topper-card ${colorClass}`} key={t.name} variants={fadeUp}>
-                    <div className="topper-rank">🏅 {t.rank}</div>
-                    <div className="topper-name">{t.name}</div>
-                    <div className="topper-college">{t.college}</div>
-                    <span className="topper-score">{t.score}</span>
-                    <div className="topper-batch">Batch: {t.batch}</div>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          </div>
-
-          {/* 2024 Toppers */}
-          <div className="year-section">
-            <div className="year-header">
-              <span className="year-badge" style={{ background: 'linear-gradient(135deg, #6366F1, #4F46E5)' }}>2024</span>
-              <h2>NIMCET 2024 — Our Toppers</h2>
-              <div className="year-divider" />
-            </div>
-            <motion.div className="toppers-grid" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
-              {toppers2024.map((t, i) => {
-                const colorClass = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : 'blue';
-                return (
-                  <motion.div className={`topper-card ${colorClass}`} key={t.name} variants={fadeUp}>
-                    <div className="topper-rank">🏅 {t.rank}</div>
-                    <div className="topper-name">{t.name}</div>
-                    <div className="topper-college">{t.college}</div>
-                    <span className="topper-score">{t.score}</span>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          </div>
-
-          {/* 2023 Toppers */}
-          <div className="year-section">
-            <div className="year-header">
-              <span className="year-badge" style={{ background: 'linear-gradient(135deg, #059669, #10B981)' }}>2023</span>
-              <h2>NIMCET 2023 — Our Toppers</h2>
-              <div className="year-divider" />
-            </div>
-            <motion.div className="toppers-grid" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
-              {toppers2023.map((t, i) => {
-                const colorClass = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : 'blue';
-                return (
-                  <motion.div className={`topper-card ${colorClass}`} key={t.name} variants={fadeUp}>
-                    <div className="topper-rank">🏅 {t.rank}</div>
-                    <div className="topper-name">{t.name}</div>
-                    <div className="topper-college">{t.college}</div>
-                    <span className="topper-score">{t.score}</span>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
           </div>
 
           {/* CTA */}

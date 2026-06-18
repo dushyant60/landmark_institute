@@ -10,15 +10,15 @@ const normalizePath = (path: string) => path.replace(/\/$/, '') || '/';
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about-us/' },
-  { label: 'Notification', href: '/notification/' },
+  { label: 'Courses', href: '/our-courses/' },
+  { label: 'Syllabus', href: '/syllabus/' },
+  { label: 'Exams', href: '/exams/' },
+  { label: 'Results', href: '/results/' },
+  { label: 'Notifications', href: '/notification/' },
   { label: 'NIMCET', href: '/nimcet/' },
   { label: 'Online MCA', href: '/online-mca-entrance-exam/' },
-  { label: 'Exams', href: '/exams/' },
-  { label: 'Syllabus', href: '/syllabus/' },
-  { label: 'Courses', href: '/our-courses/' },
-  { label: 'Results', href: '/results/' },
-  { label: 'Previous Paper', href: '/cuet-pg-previous-year-question-papers/' },
-  // { label: 'Soft-tech', href: '/notifications/' },
+  { label: 'Previous Papers', href: '/cuet-pg-previous-year-question-papers/' },
+  { label: 'Top MCA Colleges', href: '/notifications/' },
   { label: 'Contact Us', href: '/contactus/' },
 ];
 

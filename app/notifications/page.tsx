@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import NotificationsPageClient from './NotificationsPageClient';
 
 export const metadata: Metadata = {
-	title: 'Soft-tech | Course | Program overview | Landmark Institute',
-	description: 'Check about the Courses, Study module, Time duration & Career scope in brief. This way these modules will help students to achieve their dream in easy & smart way',
+	title: 'Top MCA Colleges | Landmark Institute',
+	description: 'Check about the top colleges of MCA, study modules, program durations, and career scope. Learn how Landmark Institute prepares you to get into premium NITs and top universities.',
 	openGraph: {
-		title: 'Soft-tech | Course | Program overview | Landmark Institute',
-		description: 'Check about the Courses, Study module, Time duration & Career scope in brief. This way these modules will help students to achieve their dream in easy & smart way',
+		title: 'Top MCA Colleges | Landmark Institute',
+		description: 'Check about the top colleges of MCA, study modules, program durations, and career scope. Learn how Landmark Institute prepares you to get into premium NITs and top universities.',
 		url: 'https://www.landmarkinstitute.com/notifications/',
 	},
 };

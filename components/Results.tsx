@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
 const toppers = [
-  { initials: 'RK', variant: '',       name: 'Rahul Kumar',       exam: 'NIMCET',       air: 'AIR 1',  college: 'NIT Trichy MCA',  year: '2025' },
-  { initials: 'PS', variant: 'green',  name: 'Priya Sharma',      exam: 'NIMCET',       air: 'AIR 3',  college: 'NIT Warangal MCA', year: '2025' },
-  { initials: 'AC', variant: 'orange', name: 'Ayushi Choudhary',  exam: 'IGDTUW CET',   air: 'AIR 12', college: 'IGDTUW MCA',      year: '2024' },
-  { initials: 'MY', variant: 'purple', name: 'Manjeet Yadav',     exam: 'NIMCET',       air: 'AIR 45', college: 'NIT Trichy MCA',  year: '2023' },
+  { initials: 'MK', variant: '', name: 'Mujeeb Khan', exam: 'NIMCET', air: 'AIR 4', year: '2025' },
+  { initials: 'DS', variant: 'green', name: 'Druv Singla', exam: 'CUET PG', air: 'AIR 1', year: '2024' },
+  { initials: 'RJ', variant: 'orange', name: 'Rishabh Jain', exam: 'IPU CET MCA', air: 'AIR 2', year: '2024' },
+  { initials: 'MY', variant: 'purple', name: 'Manjeet Yadav', exam: 'NIMCET', air: 'AIR 45', year: '2025' },
 ];
 
 export default function Results() {
@@ -24,7 +24,6 @@ export default function Results() {
               <div className="result-air">
                 {t.exam} <strong>{t.air}</strong>
               </div>
-              <span className="result-college">{t.college}</span>
               <div className="result-year">{t.year}</div>
             </div>
           ))}

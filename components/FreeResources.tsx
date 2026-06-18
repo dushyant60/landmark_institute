@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const resources = [
   {
     icon: 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6',
@@ -58,27 +60,20 @@ export default function FreeResources() {
             </div>
           </div>
 
-          {/* Right column — form */}
+          {/* Right column — form replaced with CTA */}
           <div className="resources-form">
             <h3>Get All Resources Free</h3>
-            <p>Fill in your details and we&apos;ll send the download links instantly.</p>
-            <input className="rf-input" type="text" placeholder="Your full name" />
-            <input className="rf-input" type="email" placeholder="Email address" />
-            <input className="rf-input" type="tel" placeholder="Mobile number" />
-            <select className="rf-input" style={{ color: '#94A3B8' }}>
-              <option value="">Target exam</option>
-              <option>NIMCET</option>
-              <option>CUET PG MCA</option>
-              <option>DU MCA</option>
-              <option>Other</option>
-            </select>
-            <button
+            <p style={{ fontSize: '15px', color: '#94A3B8', lineHeight: '1.6', marginBottom: '24px' }}>
+              Access your free study materials, topic-wise NIMCET PDF notes, and formula sheets instantly.
+            </p>
+            <Link
+              href="/enquiry/"
               className="btn btn-green"
-              style={{ width: '100%', justifyContent: 'center', padding: '13px', fontSize: '15px' }}
+              style={{ width: '100%', justifyContent: 'center', padding: '14px', fontSize: '16px', display: 'flex', textDecoration: 'none' }}
             >
-              Download Free Resources →
-            </button>
-            <p style={{ fontSize: '12px', color: '#64748B', textAlign: 'center', marginTop: '10px' }}>
+              Access Free Resources →
+            </Link>
+            <p style={{ fontSize: '12px', color: '#64748B', textAlign: 'center', marginTop: '16px', marginBottom: 0 }}>
               We respect your privacy. No spam ever.
             </p>
           </div>

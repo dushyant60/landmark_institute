@@ -38,13 +38,15 @@ export default function Home() {
       <Navbar />
       <Hero />
       <ResultsTicker />
-      <StatsBand />
+
 
       <WhyLandmark />
       <div className="section-divider" />
 
       <Courses />
       <div className="section-divider" />
+
+      <StatsBand />
 
       <Results />
       <div className="section-divider" />

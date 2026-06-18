@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, Variants } from 'framer-motion';
+import Link from 'next/link';
 
 const checkPath = 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z';
 const waPath =
@@ -38,7 +39,7 @@ export default function Hero() {
           style={{ display: 'flex', flexDirection: 'column' }}
         >
           <motion.div variants={itemVariants} className="hero-badge">
-            <span></span> 100+ NIT Selections in NIMCET 2025
+            <span></span> 100+ NIT Selections in NIMCET
           </motion.div>
           <motion.h1 variants={itemVariants}>
             India&apos;s Most Trusted
@@ -102,53 +103,18 @@ export default function Hero() {
           <h3>Get Free Counselling</h3>
           <p>Talk to our experts &amp; plan your MCA journey</p>
 
-          <div className="form-field">
-            <label>Full Name</label>
-            <input type="text" placeholder="Your full name" />
+          <div style={{ margin: '24px 0 28px', textAlign: 'center' }}>
+            <p style={{ fontSize: '15.5px', color: 'var(--text-muted)', lineHeight: '1.6', marginBottom: '24px' }}>
+              Have questions about batches, fees, or exam patterns? Take the first step towards your dream NIT today with our expert counselors.
+            </p>
+            <Link
+              href="/enquiry/"
+              className="btn btn-primary"
+              style={{ width: '100%', justifyContent: 'center', padding: '14px', fontSize: '16px', display: 'flex', textDecoration: 'none' }}
+            >
+              Get Free Counselling →
+            </Link>
           </div>
-
-          <div className="form-row">
-            <div className="form-field">
-              <label>Phone</label>
-              <input type="tel" placeholder="+91 XXXXX XXXXX" />
-            </div>
-            <div className="form-field">
-              <label>City</label>
-              <input type="text" placeholder="Your city" />
-            </div>
-          </div>
-
-          <div className="form-field">
-            <label>Course Interested In</label>
-            <select>
-              <option>Select a course</option>
-              <option>1 Year Online Batch</option>
-              <option>Offline Regular Batch</option>
-              <option>Weekend Batch</option>
-              <option>Crash Course</option>
-              <option>Test Series</option>
-            </select>
-          </div>
-
-          <div className="form-field">
-            <label>Target Exam</label>
-            <select>
-              <option>Select exam</option>
-              <option>NIMCET</option>
-              <option>CUET PG MCA</option>
-              <option>DU MCA</option>
-              <option>JNU MCA</option>
-              <option>BHU MCA</option>
-              <option>MAH MCA CET</option>
-            </select>
-          </div>
-
-          <button
-            className="btn btn-primary"
-            style={{ width: '100%', justifyContent: 'center', padding: '12px', fontSize: '15px' }}
-          >
-            Get Free Counselling →
-          </button>
 
           <div className="trust-badges">
             <div className="trust-badge">

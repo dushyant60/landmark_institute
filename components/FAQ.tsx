@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: 'What is the fee structure?',
-    a: 'Fee details are shared during the free counselling session as they vary by batch type and duration. We also offer scholarships based on performance in our scholarship test. Call us at 9999992338 for the latest fee information.',
+    a: 'Fee details are shared during the counselling session as they vary by batch type and duration. We also offer scholarships based on performance in our scholarship test. Call us at 9999992338 for the latest fee information.',
   },
   {
     q: 'Do you provide recorded lectures?',

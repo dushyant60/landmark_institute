@@ -100,7 +100,7 @@ export default function Hero() {
           animate="show"
           className="hero-card"
         >
-          <h3>Get Free Counselling</h3>
+          <h3>Get Counselling</h3>
           <p>Talk to our experts &amp; plan your MCA journey</p>
 
           <div style={{ margin: '24px 0 28px', textAlign: 'center' }}>
@@ -112,15 +112,11 @@ export default function Hero() {
               className="btn btn-primary"
               style={{ width: '100%', justifyContent: 'center', padding: '14px', fontSize: '16px', display: 'flex', textDecoration: 'none' }}
             >
-              Get Free Counselling →
+              Get Counselling →
             </Link>
           </div>
 
           <div className="trust-badges">
-            <div className="trust-badge">
-              <svg viewBox="0 0 24 24"><path d={checkPath} /></svg>
-              Free Session
-            </div>
             <div className="trust-badge">
               <svg viewBox="0 0 24 24"><path d={checkPath} /></svg>
               No Spam

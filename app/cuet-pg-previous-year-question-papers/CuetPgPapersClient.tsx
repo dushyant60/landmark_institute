@@ -377,7 +377,7 @@ export default function CuetPgPapersClient() {
                   Join Landmark Institute&apos;s CUET PG coaching for structured preparation, mock tests, and expert faculty support.
                 </p>
                 <a href="/enquiry" className="btn btn-green" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
-                  Book Free Counselling
+                  Book Counselling
                 </a>
                 <a href="/our-courses" className="btn btn-outline" style={{ width: '100%', justifyContent: 'center', display: 'flex', marginTop: 10, color: '#94A3B8', borderColor: 'rgba(255,255,255,0.2)' }}>
                   View Courses

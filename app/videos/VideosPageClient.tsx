@@ -245,7 +245,7 @@ export default function VideosPageClient() {
             </p>
             <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link href="/our-courses/" className="btn btn-primary">View All Courses</Link>
-              <Link href="/contactus/" className="btn btn-outline" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.3)' }}>Free Counselling</Link>
+              <Link href="/contactus/" className="btn btn-outline" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.3)' }}>Counselling</Link>
             </div>
           </motion.div>
         </div>

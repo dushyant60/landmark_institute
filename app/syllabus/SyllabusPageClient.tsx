@@ -1,29 +1,64 @@
 'use client';
 
+import { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
+import Link from 'next/link';
 import Topbar from '@/components/Topbar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
-const containerVariants: Variants = {
-	hidden: { opacity: 0 },
-	show: {
-		opacity: 1,
-		transition: {
-			staggerChildren: 0.1,
-		},
-	},
+const stagger: Variants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.1 } },
 };
 
-const itemVariants: Variants = {
-	hidden: { opacity: 0, y: 20 },
-	show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
+
+const topNITs = ['NIT Trichy', 'NIT Warangal', 'NIT Surathkal', 'NIT Calicut', 'NIT Allahabad', 'NIT Rourkela'];
+
+const faqData = [
+  {
+    q: 'What is included in the NIMCET syllabus?',
+    a: 'The NIMCET syllabus includes Mathematics, Logical Reasoning, Computer Awareness, and General English.',
+  },
+  {
+    q: 'What is the latest NIMCET exam pattern?',
+    a: 'The NIMCET exam pattern consists of multiple-choice questions designed to test mathematical ability, reasoning skills, computer knowledge, and English proficiency.',
+  },
+  {
+    q: 'Is Mathematics important in the MCA NIMCET syllabus?',
+    a: 'Yes. Mathematics is the most important section of the MCA NIMCET syllabus and plays a major role in determining the final rank.',
+  },
+  {
+    q: 'Is NIMCET difficult to crack?',
+    a: 'NIMCET is competitive, but students can achieve a good rank through consistent preparation, regular practice, and mock tests.',
+  },
+  {
+    q: 'How much time is required to complete the MCA entrance exam syllabus?',
+    a: 'Most candidates prepare for approximately 6–12 months depending on their academic background and current preparation level.',
+  },
+  {
+    q: 'Can I crack NIMCET without coaching?',
+    a: 'Yes. With a disciplined study plan, quality study material, previous year papers, and mock tests, students can successfully crack NIMCET through self-study.',
+  },
+  {
+    q: 'Why is understanding the NIMCET exam syllabus important?',
+    a: 'Understanding the NIMCET exam syllabus helps students focus on important topics, allocate study time effectively, and prepare in a structured manner.',
+  },
+  {
+    q: 'What is the best way to prepare for the NIMCET syllabus?',
+    a: 'The best approach is to study regularly, solve previous year papers, attempt mock tests, revise frequently, and focus on Mathematics throughout the preparation journey.',
+  },
+];
 
 export default function SyllabusPageClient() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 	const htmlContent = `
-<img src="/images/migrated/NIMCET-Syllabus-2026-Mca-Entrance-Exam-Syllabus-Updated​.jpeg" alt="NIMCET Syllabus 2026-27 covering Mathematics, Logical Reasoning, Computer Awareness, English, and MCA Entrance Exam Pattern" style="max-width: 100%; height: auto; border-radius: var(--r-sm); margin: 24px 0; display: block;" />
+<img src="/images/migrated/NIMCET-Syllabus-2026-Mca-Entrance-Exam-Syllabus-Updated​.jpeg" alt="NIMCET Syllabus covering Mathematics, Logical Reasoning, Computer Awareness, English, and MCA Entrance Exam Pattern" style="max-width: 100%; height: auto; border-radius: var(--r-sm); margin: 24px 0; display: block;" />
 <a href="#">Syllabus</a>
 <p>If you are planning to pursue an MCA from a National Institute of Technology (NIT), understanding the <strong>NIMCET syllabus</strong> is the first step toward effective preparation. Every year, thousands of students appear for the NIT MCA Common Entrance Test (NIMCET) to secure admission into top MCA programs across India. A clear understanding of the <strong>MCA entrance exam syllabus</strong> helps students identify important topics, plan their studies, and improve their chances of achieving a high rank.</p>
 <p>The latest <strong>MCA NIMCET syllabus</strong> covers Mathematics, Logical Reasoning, Computer Awareness, and General English. Along with the syllabus, candidates should also understand the <strong>NIMCET exam pattern</strong> to develop an effective preparation strategy.</p>
@@ -33,7 +68,7 @@ export default function SyllabusPageClient() {
 <p>The examination evaluates a candidate's aptitude in Mathematics, Logical Reasoning, Computer Awareness, and English Language skills. Due to increasing competition and limited seats, a thorough understanding of the <strong>NIMCET syllabus</strong> and regular practice are essential for success.</p>
 <br><br>
 <iframe width="100%" height="450" src="https://www.youtube.com/embed/40H_dN1Mmhw?si=2KHBIZbNjlB3N5yF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border-radius: var(--r-md); margin-bottom: 24px;"></iframe><br><br>
-<h2><strong>NIMCET 2026 Exam Highlights</strong></h2>
+<h2><strong>NIMCET Exam Highlights</strong></h2>
 <table>
 <tbody>
 <tr>
@@ -42,7 +77,7 @@ export default function SyllabusPageClient() {
 </tr>
 <tr>
 <td>Exam Name</td>
-<td>NIMCET 2026</td>
+<td>NIMCET</td>
 </tr>
 <tr>
 <td>Full Form</td>
@@ -74,7 +109,7 @@ export default function SyllabusPageClient() {
 </tr>
 </tbody>
 </table>
-<h2><strong>NIMCET Exam Pattern 2026</strong></h2>
+<h2><strong>NIMCET Exam Pattern</strong></h2>
 <p>Before starting preparation, candidates should understand the latest <strong>NIMCET exam pattern</strong>. Knowing the structure of the examination helps students manage their preparation effectively and focus on high-weightage sections.</p>
 <p>The <strong>NIMCET exam pattern</strong> is designed to test analytical thinking, mathematical ability, computer knowledge, and language proficiency. Since Mathematics plays a major role in determining the final rank, students should allocate sufficient time to this section.</p>
 <table>
@@ -135,7 +170,7 @@ export default function SyllabusPageClient() {
  	<li>General English</li>
 </ul>
 <p>The <strong>MCA NIMCET syllabus</strong> places significant emphasis on Mathematics, making it the most important subject for candidates targeting a top rank. Students should prepare each section systematically according to the latest <strong>NIMCET syllabus</strong> and exam requirements.</p>
-<h2><strong>NIMCET Syllabus 2026 (Subject-Wise)</strong></h2>
+<h2><strong>NIMCET Syllabus (Subject-Wise)</strong></h2>
 <p>The latest <strong>NIMCET syllabus</strong> consists of multiple topics from Mathematics, Reasoning, Computer Awareness, and English. Understanding the complete <strong>NIMCET exam syllabus</strong> helps students create a focused preparation plan.</p>
 <h2>Mathematics Syllabus</h2>
 <p>Mathematics is the most important section of the <strong>MCA NIMCET syllabus</strong>. Strong mathematical skills can significantly improve a student's overall performance and rank.</p>
@@ -291,7 +326,7 @@ export default function SyllabusPageClient() {
  	<li>Difficulty level</li>
  	<li>Time management requirements</li>
 </ul>
-<h2>NIMCET 2026 Preparation Plan</h2>
+<h2><strong>NIMCET Preparation Plan</strong></h2>
 <h3>Phase 1: Foundation Building (Months 1–2)</h3>
 <ul>
  	<li>Complete Mathematics fundamentals.</li>
@@ -372,25 +407,9 @@ export default function SyllabusPageClient() {
 <p>A thorough understanding of both the <strong>NIMCET syllabus</strong> and <strong>NIMCET exam pattern</strong> is essential for success. The latest <strong>MCA NIMCET syllabus</strong> covers Mathematics, Logical Reasoning, Computer Awareness, and English.</p>
 <p>Students who understand the complete <strong>NIMCET exam syllabus</strong>, practice regularly, solve previous year papers, and attempt mock tests consistently are generally better prepared for the examination.</p>
 <p>Following a structured preparation strategy can significantly improve performance and increase the chances of securing admission to a top NIT MCA program.</p>
-<h2><strong>Frequently Asked Questions (FAQs)</strong></h2>
-<h3>Q1. What is included in the NIMCET syllabus 2026?</h3>
-<p>The <strong>NIMCET syllabus</strong> includes Mathematics, Logical Reasoning, Computer Awareness, and General English.</p>
-<h3>Q2. What is the latest NIMCET exam pattern?</h3>
-<p>The <strong>NIMCET exam pattern</strong> consists of multiple-choice questions designed to test mathematical ability, reasoning skills, computer knowledge, and English proficiency.</p>
-<h3>Q3. Is Mathematics important in the MCA NIMCET syllabus?</h3>
-<p>Yes. Mathematics is the most important section of the <strong>MCA NIMCET syllabus</strong> and plays a major role in determining the final rank.</p>
-<h3>Q4. Is NIMCET difficult to crack?</h3>
-<p>NIMCET is competitive, but students can achieve a good rank through consistent preparation, regular practice, and mock tests.</p>
-<h3>Q5. How much time is required to complete the MCA entrance exam syllabus?</h3>
-<p>Most candidates prepare for approximately 6–12 months depending on their academic background and current preparation level.</p>
-<h3>Q6. Can I crack NIMCET without coaching?</h3>
-<p>Yes. With a disciplined study plan, quality study material, previous year papers, and mock tests, students can successfully crack NIMCET through self-study.</p>
-<h3>Q7. Why is understanding the NIMCET exam syllabus important?</h3>
-<p>Understanding the <strong>NIMCET exam syllabus</strong> helps students focus on important topics, allocate study time effectively, and prepare in a structured manner.</p>
-<h3>Q8. What is the best way to prepare for the NIMCET syllabus?</h3>
-<p>The best approach is to study regularly, solve previous year papers, attempt mock tests, revise frequently, and focus on Mathematics throughout the preparation journey.</p>
+
 <h2><strong>Conclusion</strong></h2>
-<p>The <strong>NIMCET syllabus 2026</strong> is designed to evaluate a candidate's aptitude in Mathematics, Logical Reasoning, Computer Awareness, and English. A clear understanding of the <strong>MCA entrance exam syllabus</strong>, combined with knowledge of the <strong>NIMCET exam pattern</strong>, can help students prepare more effectively. By following a structured study plan, practicing regularly, and revising important topics, candidates can improve their performance and increase their chances of securing admission to a prestigious NIT MCA program.</p>
+<p>The <strong>NIMCET syllabus</strong> is designed to evaluate a candidate's aptitude in Mathematics, Logical Reasoning, Computer Awareness, and English. A clear understanding of the <strong>MCA entrance exam syllabus</strong>, combined with knowledge of the <strong>NIMCET exam pattern</strong>, can help students prepare more effectively. By following a structured study plan, practicing regularly, and revising important topics, candidates can improve their performance and increase their chances of securing admission to a prestigious NIT MCA program.</p>
 `;
 
 	return (
@@ -398,115 +417,277 @@ export default function SyllabusPageClient() {
 			<Topbar />
 			<Navbar />
 
-			<div className="hero" style={{ padding: '60px 0 40px', textAlign: 'center', overflow: 'hidden' }}>
+			{/* ── HERO ── */}
+			<div className="hero" style={{ padding: '56px 0 0', overflow: 'hidden' }}>
 				<motion.div
 					className="container"
-					style={{ maxWidth: '800px' }}
-					variants={containerVariants}
+					variants={stagger}
 					initial="hidden"
 					animate="show"
 				>
-					<motion.span variants={itemVariants} className="hero-badge">Landmark Institute</motion.span>
-					<motion.h1 variants={itemVariants} style={{ fontSize: 'clamp(30px, 4vw, 42px)', fontWeight: 700, lineHeight: 1.2, margin: '0 auto' }}>
-						NIMCET Syllabus 2026
-					</motion.h1>
+					<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', maxWidth: '680px' }}>
+						<motion.span variants={fadeUp} className="hero-badge">
+							<span /> Landmark Institute
+						</motion.span>
+						<motion.h1
+							variants={fadeUp}
+							style={{ fontSize: 'clamp(32px, 4.5vw, 52px)', fontWeight: 900, lineHeight: 1.1, marginBottom: '16px', letterSpacing: '-1px' }}
+						>
+							NIMCET <span className="accent">Syllabus</span>
+						</motion.h1>
+						<motion.p
+							variants={fadeUp}
+							className="hero-sub"
+							style={{ marginBottom: '28px' }}
+						>
+							Complete guidelines for NIMCET, CUET PG MCA & MCA entrance exams. Download official syllabus PDFs & prepare systematically.
+						</motion.p>
+						<motion.div variants={fadeUp} style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '48px' }}>
+							<a href="/enquiry" className="btn btn-green btn-lg">Enroll Now — Demo</a>
+							<a href="/our-courses" className="btn btn-outline btn-lg" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.4)' }}>View Courses</a>
+						</motion.div>
+					</div>
+
+					{/* Stats strip */}
+					<motion.div
+						variants={fadeUp}
+						className="hero-stats"
+						style={{ maxWidth: '680px', marginBottom: '0' }}
+					>
+						<div className="hero-stat">
+							<div className="hero-stat-num">120 <span>Q</span></div>
+							<div className="hero-stat-label">Total Questions</div>
+						</div>
+						<div className="hero-stat">
+							<div className="hero-stat-num">4 <span>Sec</span></div>
+							<div className="hero-stat-label">Subject Areas</div>
+						</div>
+						<div className="hero-stat">
+							<div className="hero-stat-num">1000<span>m</span></div>
+							<div className="hero-stat-label">Maximum Marks</div>
+						</div>
+						<div className="hero-stat">
+							<div className="hero-stat-num">17<span>+</span></div>
+							<div className="hero-stat-label">Years Legacy</div>
+						</div>
+					</motion.div>
 				</motion.div>
+				<div className="hero-wave">
+					<svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+						<path d="M0 60V30C240 0 480 60 720 30C960 0 1200 60 1440 30V60H0Z" fill="var(--bg)" />
+					</svg>
+				</div>
 			</div>
 
-			<main style={{ padding: '60px 0 80px', background: 'var(--bg)', overflow: 'hidden' }}>
-				<div className="container" style={{ maxWidth: '800px' }}>
+			<main style={{ background: 'var(--bg)', paddingBottom: '80px' }}>
+				<div className="container" style={{ maxWidth: '1200px' }}>
+					<div className="page-content-grid">
+						{/* Left Column */}
+						<div>
+							<motion.section
+								variants={stagger}
+								initial="hidden"
+								whileInView="show"
+								viewport={{ once: true, margin: '-80px' }}
+							>
+								<motion.h2
+									variants={fadeUp}
+									className="section-title"
+									style={{ marginBottom: '8px' }}
+								>
+									Official Syllabus & Brochures Download
+								</motion.h2>
+								<motion.p
+									variants={fadeUp}
+									style={{ fontSize: '15px', color: 'var(--text-muted)', marginBottom: '32px' }}
+								>
+									Select from the official guides and syllabus documents below. Click to request the download package.
+								</motion.p>
 
-					<motion.h2
-						variants={itemVariants}
-						initial="hidden"
-						whileInView="show"
-						viewport={{ once: true, margin: '-100px' }}
-						style={{ fontFamily: "'Poppins', sans-serif", fontSize: '24px', fontWeight: 800, marginTop: '48px', marginBottom: '8px', color: 'var(--slate)', borderBottom: '2px solid var(--border-light)', paddingBottom: '8px' }}
-					>
-						Official Syllabus & Brochures Download
-					</motion.h2>
-					<motion.p
-						variants={itemVariants}
-						initial="hidden"
-						whileInView="show"
-						viewport={{ once: true, margin: '-100px' }}
-						style={{ fontSize: '15px', color: 'var(--text-muted)', marginBottom: '32px' }}
-					>
-						Select from the official guides and syllabus documents below. Click to request the download package.
-					</motion.p>
+								<motion.div
+									className="downloads-grid"
+									variants={stagger}
+								>
+									{/* NIMCET Syllabus Card */}
+									<motion.div className="download-card" variants={fadeUp} whileHover={{ y: -4 }}>
+										<div>
+											<div className="download-card-header">
+												<div className="download-card-icon">📄</div>
+												<h3 className="download-card-title">NIMCET Syllabus PDF</h3>
+											</div>
+											<div className="download-card-tagline">
+												NIMCET Complete Information: Eligibility, Syllabus, Exam Pattern & Counselling
+											</div>
+											<p className="download-card-desc">
+												If you need personalized guidance, preparation strategies, or help with the admission process, you can connect with our expert counsellors.
+											</p>
+										</div>
+										<a href="/documents/NIMCET%20Syllabus%202026%20PDF.pdf" download className="btn btn-primary" style={{ justifyContent: 'center', width: '100%' }}>
+											Syllabus Download
+										</a>
+									</motion.div>
 
-					<motion.div
-						className="downloads-grid"
-						variants={containerVariants}
-						initial="hidden"
-						whileInView="show"
-						viewport={{ once: true, margin: '-100px' }}
-					>
-						{/* NIMCET Syllabus Card */}
-						<motion.div className="download-card" variants={itemVariants}>
-							<div>
-								<div className="download-card-header">
-									<div className="download-card-icon">📄</div>
-									<h3 className="download-card-title">NIMCET Syllabus 2026 PDF</h3>
+									{/* NIMCET Information Brochure Card */}
+									<motion.div className="download-card" variants={fadeUp} whileHover={{ y: -4 }}>
+										<div>
+											<div className="download-card-header">
+												<div className="download-card-icon">📕</div>
+												<h3 className="download-card-title">NIMCET Information Brochure</h3>
+											</div>
+											<div className="download-card-tagline">
+												NIMCET Complete Information: Eligibility, Syllabus, Exam Pattern & Counselling
+											</div>
+											<p className="download-card-desc">
+												If you need personalized guidance, preparation strategies, or help with the admission process, you can connect with our expert counsellors.
+											</p>
+										</div>
+										<a href="/documents/NIMCET%20Information%20Brochure.pdf" download className="btn btn-primary" style={{ justifyContent: 'center', width: '100%' }}>
+											Syllabus Download
+										</a>
+									</motion.div>
+
+									{/* CUET PG MCA Syllabus Card */}
+									<motion.div className="download-card" variants={fadeUp} whileHover={{ y: -4 }}>
+										<div>
+											<div className="download-card-header">
+												<div className="download-card-icon">📘</div>
+												<h3 className="download-card-title">Syllabus for CUET PG MCA</h3>
+											</div>
+											<div className="download-card-tagline">
+												CUET PG Complete Information: Eligibility, Syllabus, Exam Pattern & Participating Universities
+											</div>
+											<p className="download-card-desc">
+												If you need personalized guidance, preparation strategies, or help with the admission process, you can connect with our expert counsellors.
+											</p>
+										</div>
+										<a href="/documents/Syllabus%20for%20CUET%20PG%20MCA.pdf" download className="btn btn-primary" style={{ justifyContent: 'center', width: '100%' }}>
+											Syllabus Download
+										</a>
+									</motion.div>
+								</motion.div>
+							</motion.section>
+
+							<motion.div
+								className="prose-custom"
+								variants={fadeUp}
+								initial="hidden"
+								whileInView="show"
+								viewport={{ once: true, margin: '-100px' }}
+								dangerouslySetInnerHTML={{ __html: htmlContent }}
+							/>
+
+							{/* Interactive FAQ */}
+							<motion.section
+								variants={stagger}
+								initial="hidden"
+								whileInView="show"
+								viewport={{ once: true, margin: '-80px' }}
+								style={{ marginTop: '48px' }}
+							>
+								<motion.div variants={fadeUp}>
+									<span className="section-eyebrow">FAQ</span>
+									<h2 className="section-title" style={{ marginBottom: '20px' }}>Frequently Asked Questions</h2>
+								</motion.div>
+								<div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+									{faqData.map((item, i) => (
+										<motion.div
+											key={i}
+											variants={fadeUp}
+											className={`faq-item${openFaq === i ? ' open' : ''}`}
+										>
+											<div className="faq-q" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+												{item.q}
+												<div className="faq-toggle">
+													<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+												</div>
+											</div>
+											{openFaq === i && (
+												<div className="faq-a" style={{ display: 'block' }}>{item.a}</div>
+											)}
+										</motion.div>
+									))}
 								</div>
-								<div className="download-card-tagline">
-									NIMCET Complete Information: Eligibility, Syllabus, Exam Pattern & Counselling
+							</motion.section>
+						</div>
+
+						{/* Right Column (Sidebar CTA) */}
+						<div className="page-sidebar">
+							{/* Top NITs */}
+							<motion.div
+								variants={fadeUp}
+								initial="hidden"
+								whileInView="show"
+								viewport={{ once: true }}
+								style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 'var(--r-lg)', padding: '24px', boxShadow: 'var(--shadow)' }}
+							>
+								<h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 16, fontWeight: 700, color: 'var(--slate)', marginBottom: 16, paddingBottom: 8, borderBottom: '2px solid var(--border-light)' }}>
+									🏛 Top NITs Accepting NIMCET
+								</h3>
+								<div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+									{topNITs.map((nit) => (
+										<span key={nit} style={{ background: 'var(--blue-light)', color: 'var(--blue)', borderRadius: 'var(--r-full)', padding: '5px 12px', fontSize: 12.5, fontWeight: 600 }}>{nit}</span>
+									))}
 								</div>
-								<p className="download-card-desc">
-									If you need personalized guidance, preparation strategies, or help with the admission process, you can connect with our expert counsellors.
+							</motion.div>
+
+							{/* CTA Card */}
+							<motion.div
+								variants={fadeUp}
+								initial="hidden"
+								whileInView="show"
+								viewport={{ once: true }}
+								style={{
+									background: 'linear-gradient(135deg, var(--slate) 0%, #0F2A5E 100%)',
+									borderRadius: 'var(--r-lg)',
+									padding: '28px',
+									color: '#fff',
+									position: 'relative',
+									overflow: 'hidden',
+								}}
+							>
+								<div style={{ position: 'absolute', top: -20, right: -20, width: 100, height: 100, borderRadius: '50%', background: 'rgba(59, 130, 246, 0.2)' }} />
+								<div style={{ fontSize: 32, marginBottom: 12 }}>🚀</div>
+								<h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 18, fontWeight: 700, marginBottom: 8, color: '#fff' }}>
+									Start Your NIMCET Journey
+								</h3>
+								<p style={{ fontSize: 13.5, color: '#94A3B8', marginBottom: 20, lineHeight: 1.6 }}>
+									Join thousands of students who cracked NIMCET with Landmark&apos;s structured coaching program.
 								</p>
-							</div>
-							<a href="/documents/NIMCET%20Syllabus%202026%20PDF.pdf" download className="btn btn-primary" style={{ justifyContent: 'center', width: '100%' }}>
-								Syllabus Download
-							</a>
-						</motion.div>
+								<a href="/enquiry" className="btn btn-green" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
+									Book Demo Class
+								</a>
+								<a href="/our-courses" className="btn btn-outline" style={{ width: '100%', justifyContent: 'center', display: 'flex', marginTop: 10, color: '#94A3B8', borderColor: 'rgba(255,255,255,0.2)' }}>
+									View All Courses
+								</a>
+							</motion.div>
 
-						{/* NIMCET Information Brochure Card */}
-						<motion.div className="download-card" variants={itemVariants}>
-							<div>
-								<div className="download-card-header">
-									<div className="download-card-icon">📕</div>
-									<h3 className="download-card-title">NIMCET Information Brochure</h3>
-								</div>
-								<div className="download-card-tagline">
-									NIMCET Complete Information: Eligibility, Syllabus, Exam Pattern & Counselling
-								</div>
-								<p className="download-card-desc">
-									If you need personalized guidance, preparation strategies, or help with the admission process, you can connect with our expert counsellors.
-								</p>
-							</div>
-							<a href="/documents/NIMCET%20Information%20Brochure.pdf" download className="btn btn-primary" style={{ justifyContent: 'center', width: '100%' }}>
-								Syllabus Download
-							</a>
-						</motion.div>
-
-						{/* CUET PG MCA Syllabus Card */}
-						<motion.div className="download-card" variants={itemVariants}>
-							<div>
-								<div className="download-card-header">
-									<div className="download-card-icon">📘</div>
-									<h3 className="download-card-title">Syllabus for CUET PG MCA</h3>
-								</div>
-								<div className="download-card-tagline">
-									CUET PG Complete Information: Eligibility, Syllabus, Exam Pattern & Participating Universities
-								</div>
-								<p className="download-card-desc">
-									If you need personalized guidance, preparation strategies, or help with the admission process, you can connect with our expert counsellors.
-								</p>
-							</div>
-							<a href="/documents/Syllabus%20for%20CUET%20PG%20MCA.pdf" download className="btn btn-primary" style={{ justifyContent: 'center', width: '100%' }}>
-								Syllabus Download
-							</a>
-						</motion.div>
-					</motion.div>
-					<motion.div
-						className="prose-custom"
-						variants={itemVariants}
-						initial="hidden"
-						whileInView="show"
-						viewport={{ once: true, margin: '-100px' }}
-						dangerouslySetInnerHTML={{ __html: htmlContent }}
-					/>
+							{/* Batch options */}
+							<motion.div
+								variants={fadeUp}
+								initial="hidden"
+								whileInView="show"
+								viewport={{ once: true }}
+								style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 'var(--r-lg)', padding: '24px', boxShadow: 'var(--shadow)' }}
+							>
+								<h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 16, fontWeight: 700, color: 'var(--slate)', marginBottom: 16, paddingBottom: 8, borderBottom: '2px solid var(--border-light)' }}>
+									📅 Flexible Batches
+								</h3>
+								{[
+									{ label: 'Regular Batch', desc: '6–9 month comprehensive prep', tag: 'Most Popular', tagColor: 'var(--blue)' },
+									{ label: 'Weekend Batch', desc: 'For working professionals', tag: 'Flexible', tagColor: '#7C3AED' },
+									{ label: 'Crash Course', desc: 'Fast-track intensive session', tag: 'Quick', tagColor: '#EA580C' },
+								].map((b) => (
+									<div key={b.label} style={{ padding: '12px 0', borderBottom: '1px solid var(--border-light)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+										<div>
+											<div style={{ fontWeight: 600, fontSize: 14, color: 'var(--slate)' }}>{b.label}</div>
+											<div style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 2 }}>{b.desc}</div>
+										</div>
+										<span style={{ background: `${b.tagColor}18`, color: b.tagColor, borderRadius: 'var(--r-full)', padding: '3px 10px', fontSize: 11, fontWeight: 700 }}>{b.tag}</span>
+									</div>
+								))}
+							</motion.div>
+						</div>
+					</div>
 				</div>
 			</main>
 

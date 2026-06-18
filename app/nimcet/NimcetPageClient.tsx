@@ -104,7 +104,7 @@ export default function NimcetPageClient() {
               Expert faculty · Live + recorded classes · Weekly mock tests.
             </motion.p>
             <motion.div variants={fadeUp} style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '48px' }}>
-              <a href="/enquiry" className="btn btn-green btn-lg">Enroll Now — Free Demo</a>
+              <a href="/enquiry" className="btn btn-green btn-lg">Enroll Now — Demo</a>
               <a href="/our-courses" className="btn btn-outline btn-lg" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.4)' }}>View Courses</a>
             </motion.div>
           </div>
@@ -488,7 +488,7 @@ export default function NimcetPageClient() {
                   Join thousands of students who cracked NIMCET with Landmark&apos;s structured coaching program.
                 </p>
                 <a href="/enquiry" className="btn btn-green" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
-                  Book Free Demo Class
+                  Book Demo Class
                 </a>
                 <a href="/our-courses" className="btn btn-outline" style={{ width: '100%', justifyContent: 'center', display: 'flex', marginTop: 10, color: '#94A3B8', borderColor: 'rgba(255,255,255,0.2)' }}>
                   View All Courses

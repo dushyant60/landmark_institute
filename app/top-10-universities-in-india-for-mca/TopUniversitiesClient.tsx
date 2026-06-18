@@ -73,7 +73,7 @@ export default function TopUniversitiesClient() {
   <h4 style="margin-top: 0; color: var(--slate); font-weight: 700;">🏫 Prepare with Landmark Institute - India's Best MCA Coaching</h4>
   <p>Landmark Institute prepares students for All India MCA Entrance Tests (NIMCET, DU, JNU, Pune, HCU, BHU, BITS, IPU, Jamia, etc.). Our concept-oriented teaching methodology ensures that every student develops the absolute clarity required to solve difficult mathematical problems with speed and precision.</p>
   <p style="margin-bottom: 16px;">Learn under senior professors like Prof. R. Chadha (Ex-Faculty GGSIP University & Author of BCA Mathematics books) and Dr. Srish Malhotra (Maths Gold Medalist).</p>
-  <a href="/contactus/" class="btn" style="display: inline-flex; align-items: center; text-decoration: none;">Book a Free Counselling Session →</a>
+  <a href="/enquiry/" class="btn btn-primary" style="display: inline-flex; align-items: center; text-decoration: none; color: #fff;">Book a Counselling Session →</a>
 </div>
 
 <p><strong>Also Read:</strong></p>
@@ -188,7 +188,7 @@ export default function TopUniversitiesClient() {
                 <p style={{ fontSize: '13px', color: '#94A3B8', marginBottom: '16px', lineHeight: '1.55' }}>
                   Secure your seat in India's leading NIMCET and MCA entrance coaching program. Online & Offline batches available.
                 </p>
-                <Link href="/contactus/" className="btn btn-primary" style={{ display: 'flex', justifyContent: 'center', width: '100%', background: '#3B82F6', borderColor: '#3B82F6' }}>
+                <Link href="/enquiry/" className="btn btn-primary" style={{ display: 'flex', justifyContent: 'center', width: '100%', background: '#3B82F6', borderColor: '#3B82F6' }}>
                   Enquire Now
                 </Link>
               </div>

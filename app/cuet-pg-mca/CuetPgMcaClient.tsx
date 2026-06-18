@@ -1,29 +1,63 @@
 'use client';
 
+import { useState } from 'react';
 import { motion, Variants } from 'framer-motion';
+
+const faqData = [
+  {
+    q: 'Which is the best coaching for CUET PG MCA?',
+    a: 'Students should evaluate faculty quality, study material, mock tests, and student support before choosing a coaching institute. Landmark Institute is a preferred choice among many MCA aspirants.',
+  },
+  {
+    q: 'Is CUET PG MCA Online Coaching effective?',
+    a: 'Yes. Quality online coaching programs provide live classes, recorded lectures, mock tests, and doubt-solving support, making them highly effective.',
+  },
+  {
+    q: 'When should I start CUET PG Preparation?',
+    a: 'Ideally, students should begin preparation 8–10 months before the examination.',
+  },
+  {
+    q: 'Are CUET PG Online Courses suitable for working professionals?',
+    a: 'Yes. Flexible schedules and recorded sessions make online courses suitable for working professionals.',
+  },
+  {
+    q: 'How important are mock tests for CUET PG Exam Preparation?',
+    a: 'Mock tests improve speed, accuracy, confidence, and time management while helping students identify weak areas.',
+  },
+  {
+    q: 'Can I prepare for CUET PG MCA without coaching?',
+    a: 'Yes. However, coaching provides structured guidance, expert mentorship, quality study material, and performance tracking that many students find beneficial.',
+  },
+];
+import Link from 'next/link';
 import Topbar from '@/components/Topbar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
-const containerVariants: Variants = {
+const stagger: Variants = {
   hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
+  show: { opacity: 1, transition: { staggerChildren: 0.1 } },
 };
 
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
+const topUniversities = ['JNU', 'BHU', 'Delhi University', 'HCU', 'Pondicherry University', 'BBAU'];
+
+const eligibilityPoints = [
+  "Bachelor's degree in any discipline from a recognized university",
+  "Mathematics as a subject at 10+2 level or at Graduation level",
+  "Minimum 50% marks (45% for reserved categories) in graduation",
+  "No age limit specified by NTA for CUET PG MCA",
+];
+
 export default function CuetPgMcaClient() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const htmlContent = `
-<p><img src="/images/migrated/best-cuet-pg-mca-coaching-delhi-online-2027-300x156.jpeg" alt="Best CUET PG MCA Coaching in Delhi and Online by Landmark Institute for CUET PG Preparation 2027" style="max-width: 100%; height: auto; border-radius: var(--r-sm); margin: 24px 0; display: block;" /></p>
+<p><img src="/images/migrated/best-cuet-pg-mca-coaching-delhi-online-2027-300x156.jpeg" alt="Best CUET PG MCA Coaching in Delhi and Online by Landmark Institute for CUET PG Preparation" style="max-width: 100%; height: auto; border-radius: var(--r-sm); margin: 24px 0; display: block;" /></p>
 <h2>Looking for the Best CUET PG MCA Coaching?</h2>
 <p><span>If you are searching for the </span><strong><span>Best CUET PG MCA Coaching</span></strong><span> to achieve your MCA admission goals, you are already taking an important step in the right direction. Every year, thousands of students appear for the CUET PG MCA examination with the dream of securing admission to top universities. However, with increasing competition and changing exam patterns, success requires more than just self-study.</span></p>
 <p><span>A structured preparation strategy, expert guidance, quality study material, regular mock tests, and continuous mentorship can significantly improve your chances of success. This is why many aspirants choose professional <strong>CUET PG MCA Coaching</strong> programs to strengthen their preparation and stay ahead of the competition.</span></p>
@@ -110,8 +144,8 @@ export default function CuetPgMcaClient() {
 <li><span>Easy revision of concepts</span></li>
 </ul>
 <p><span>For students living outside Delhi, </span><strong><span>CUET PG Online Coaching India</span></strong><span> provides access to expert guidance without relocation.</span></p>
-<h2><span>CUET PG Online Coaching 2027 – Start Early for Better Results</span></h2>
-<p><span>Students targeting </span><strong><span>CUET PG Online Coaching 2027</span></strong><span> should begin preparation as early as possible.</span></p>
+<h2><strong>CUET PG Online Coaching – Start Early for Better Results</strong></h2>
+<p><span>Students targeting <strong>CUET PG Online Coaching</strong> should begin preparation as early as possible.</span></p>
 <p><span>Early preparation allows students to:</span></p>
 <ul>
 <li><span>Build strong fundamentals</span></li>
@@ -270,19 +304,6 @@ export default function CuetPgMcaClient() {
 <p><span>Whether you are searching for </span><strong><span>CUET PG MCA Coaching</span></strong><span>, </span><strong><span>CUET PG MCA Online Coaching</span></strong><span>, </span><strong><span>CUET PG Online Coaching India</span></strong><span>, or comprehensive </span><strong><span>CUET PG Online Courses</span></strong><span>, selecting the right institute can significantly improve your preparation journey.</span></p>
 <p><span>Landmark Institute continues to support MCA aspirants through quality education, experienced faculty, comprehensive study resources, and exam-oriented preparation strategies designed to help students achieve their academic goals.</span></p>
 <p><span></span></p>
-<h2><strong>Frequently Asked Questions</strong></h2>
-<h3><strong>Q1. Which is the best coaching for CUET PG MCA?</strong></h3>
-<p><strong>Ans. </strong>Students should evaluate faculty quality, study material, mock tests, and student support before choosing a coaching institute. Landmark Institute is a preferred choice among many MCA aspirants.</p>
-<h3><strong>Q2. Is CUET PG MCA Online Coaching effective?</strong></h3>
-<p><strong>Ans. </strong>Yes. Quality online coaching programs provide live classes, recorded lectures, mock tests, and doubt-solving support, making them highly effective.</p>
-<h3><strong>Q3. When should I start CUET PG Preparation?</strong></h3>
-<p><strong>Ans. </strong>Ideally, students should begin preparation 8–10 months before the examination.</p>
-<h3><strong>Q4. Are CUET PG Online Courses suitable for working professionals?</strong></h3>
-<p><strong>Ans. </strong>Yes. Flexible schedules and recorded sessions make online courses suitable for working professionals.</p>
-<h3><strong>Q5. How important are mock tests for CUET PG Exam Preparation?</strong></h3>
-<p><strong>Ans. </strong>Mock tests improve speed, accuracy, confidence, and time management while helping students identify weak areas.</p>
-<h3><strong>Q6. Can I prepare for CUET PG MCA without coaching?</strong></h3>
-<p><strong>Ans. </strong>Yes. However, coaching provides structured guidance, expert mentorship, quality study material, and performance tracking that many students find beneficial.</p>
 `;
 
   return (
@@ -290,31 +311,215 @@ export default function CuetPgMcaClient() {
       <Topbar />
       <Navbar />
 
-      <div className="hero" style={{ padding: '60px 0 40px', textAlign: 'center', overflow: 'hidden' }}>
+      {/* ── HERO ── */}
+      <div className="hero" style={{ padding: '56px 0 0', overflow: 'hidden' }}>
         <motion.div
           className="container"
-          style={{ maxWidth: '800px' }}
-          variants={containerVariants}
+          variants={stagger}
           initial="hidden"
           animate="show"
         >
-          <motion.span variants={itemVariants} className="hero-badge">Landmark Institute</motion.span>
-          <motion.h1 variants={itemVariants} style={{ fontSize: 'clamp(30px, 4vw, 42px)', fontWeight: 700, lineHeight: 1.2, margin: '0 auto' }}>
-            CUET PG MCA Coaching
-          </motion.h1>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', maxWidth: '680px' }}>
+            <motion.span variants={fadeUp} className="hero-badge">
+              <span /> Landmark Institute
+            </motion.span>
+            <motion.h1
+              variants={fadeUp}
+              style={{ fontSize: 'clamp(32px, 4.5vw, 52px)', fontWeight: 900, lineHeight: 1.1, marginBottom: '16px', letterSpacing: '-1px' }}
+            >
+              CUET PG MCA <span className="accent">Coaching</span>
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              className="hero-sub"
+              style={{ marginBottom: '28px' }}
+            >
+              Crack the CUET PG MCA entrance exam with India&apos;s trusted online and classroom coaching. Expert faculty, live sessions, and full-length mock tests.
+            </motion.p>
+            <motion.div variants={fadeUp} style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '48px' }}>
+              <a href="/enquiry" className="btn btn-green btn-lg">Enroll Now — Demo</a>
+              <a href="/our-courses" className="btn btn-outline btn-lg" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.4)' }}>View Courses</a>
+            </motion.div>
+          </div>
+
+          {/* Stats strip */}
+          <motion.div
+            variants={fadeUp}
+            className="hero-stats"
+            style={{ maxWidth: '680px', marginBottom: '0' }}
+          >
+            <div className="hero-stat">
+              <div className="hero-stat-num">75<span>Q</span></div>
+              <div className="hero-stat-label">Total Questions</div>
+            </div>
+            <div className="hero-stat">
+              <div className="hero-stat-num">105<span>m</span></div>
+              <div className="hero-stat-label">Test Duration</div>
+            </div>
+            <div className="hero-stat">
+              <div className="hero-stat-num">100<span>+</span></div>
+              <div className="hero-stat-label">Accepting Univ.</div>
+            </div>
+            <div className="hero-stat">
+              <div className="hero-stat-num">17<span>+</span></div>
+              <div className="hero-stat-label">Years Legacy</div>
+            </div>
+          </motion.div>
         </motion.div>
+        <div className="hero-wave">
+          <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0 60V30C240 0 480 60 720 30C960 0 1200 60 1440 30V60H0Z" fill="var(--bg)" />
+          </svg>
+        </div>
       </div>
 
-      <main style={{ padding: '60px 0 80px', background: 'var(--bg)', overflow: 'hidden' }}>
-        <div className="container" style={{ maxWidth: '800px' }}>
-          <motion.div
-            className="prose-custom"
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: '-100px' }}
-            dangerouslySetInnerHTML={{ __html: htmlContent }}
-          />
+      <main style={{ background: 'var(--bg)', paddingBottom: '80px' }}>
+        <div className="container" style={{ maxWidth: '1200px' }}>
+          <div className="page-content-grid">
+            {/* Left Column */}
+            <div>
+              <motion.div
+                className="prose-custom"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: '-100px' }}
+                dangerouslySetInnerHTML={{ __html: htmlContent }}
+              />
+
+              {/* Interactive FAQ */}
+              <motion.section
+                variants={stagger}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: '-80px' }}
+                style={{ marginTop: '48px' }}
+              >
+                <motion.div variants={fadeUp}>
+                  <span className="section-eyebrow">FAQ</span>
+                  <h2 className="section-title" style={{ marginBottom: '20px' }}>Frequently Asked Questions</h2>
+                </motion.div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  {faqData.map((item, i) => (
+                    <motion.div
+                      key={i}
+                      variants={fadeUp}
+                      className={`faq-item${openFaq === i ? ' open' : ''}`}
+                    >
+                      <div className="faq-q" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
+                        {item.q}
+                        <div className="faq-toggle">
+                          <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></svg>
+                        </div>
+                      </div>
+                      {openFaq === i && (
+                        <div className="faq-a" style={{ display: 'block' }}>{item.a}</div>
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.section>
+            </div>
+
+            {/* Right Column (Sidebar CTA) */}
+            <div className="page-sidebar">
+              {/* Eligibility Criteria */}
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 'var(--r-lg)', padding: '24px', boxShadow: 'var(--shadow)' }}
+              >
+                <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 16, fontWeight: 700, color: 'var(--slate)', marginBottom: 16, paddingBottom: 8, borderBottom: '2px solid var(--border-light)' }}>
+                  📋 Eligibility Criteria
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  {eligibilityPoints.map((pt, i) => (
+                    <li key={i} style={{ fontSize: 13, color: 'var(--text-mid)', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+                      <span style={{ width: 18, height: 18, background: 'var(--blue-light)', borderRadius: '50%', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, color: 'var(--blue)', fontWeight: 800, fontSize: 10, marginTop: 1 }}>{i + 1}</span>
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              {/* Top Universities */}
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 'var(--r-lg)', padding: '24px', boxShadow: 'var(--shadow)' }}
+              >
+                <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 16, fontWeight: 700, color: 'var(--slate)', marginBottom: 16, paddingBottom: 8, borderBottom: '2px solid var(--border-light)' }}>
+                  🏛 Top CUET PG Universities
+                </h3>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                  {topUniversities.map((uni) => (
+                    <span key={uni} style={{ background: 'var(--blue-light)', color: 'var(--blue)', borderRadius: 'var(--r-full)', padding: '5px 12px', fontSize: 12.5, fontWeight: 600 }}>{uni}</span>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* CTA Card */}
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                style={{
+                  background: 'linear-gradient(135deg, var(--slate) 0%, #0F2A5E 100%)',
+                  borderRadius: 'var(--r-lg)',
+                  padding: '28px',
+                  color: '#fff',
+                  position: 'relative',
+                  overflow: 'hidden',
+                }}
+              >
+                <div style={{ position: 'absolute', top: -20, right: -20, width: 100, height: 100, borderRadius: '50%', background: 'rgba(59, 130, 246, 0.2)' }} />
+                <div style={{ fontSize: 32, marginBottom: 12 }}>🚀</div>
+                <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 18, fontWeight: 700, marginBottom: 8, color: '#fff' }}>
+                  Start Your CUET PG Journey
+                </h3>
+                <p style={{ fontSize: 13.5, color: '#94A3B8', marginBottom: 20, lineHeight: 1.6 }}>
+                  Crack CUET PG MCA with Landmark&apos;s specialized prep program. Get structured study guides, live lessons, and weekly mock tests.
+                </p>
+                <a href="/enquiry" className="btn btn-green" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
+                  Book Demo Class
+                </a>
+                <a href="/our-courses" className="btn btn-outline" style={{ width: '100%', justifyContent: 'center', display: 'flex', marginTop: 10, color: '#94A3B8', borderColor: 'rgba(255,255,255,0.2)' }}>
+                  View All Courses
+                </a>
+              </motion.div>
+
+              {/* Batch options */}
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                style={{ background: '#fff', border: '1px solid var(--border)', borderRadius: 'var(--r-lg)', padding: '24px', boxShadow: 'var(--shadow)' }}
+              >
+                <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: 16, fontWeight: 700, color: 'var(--slate)', marginBottom: 16, paddingBottom: 8, borderBottom: '2px solid var(--border-light)' }}>
+                  📅 Flexible Batches
+                </h3>
+                {[
+                  { label: 'Regular Batch', desc: '6–9 month comprehensive prep', tag: 'Most Popular', tagColor: 'var(--blue)' },
+                  { label: 'Weekend Batch', desc: 'For working professionals', tag: 'Flexible', tagColor: '#7C3AED' },
+                  { label: 'Crash Course', desc: 'Fast-track intensive session', tag: 'Quick', tagColor: '#EA580C' },
+                ].map((b) => (
+                  <div key={b.label} style={{ padding: '12px 0', borderBottom: '1px solid var(--border-light)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div>
+                      <div style={{ fontWeight: 600, fontSize: 14, color: 'var(--slate)' }}>{b.label}</div>
+                      <div style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 2 }}>{b.desc}</div>
+                    </div>
+                    <span style={{ background: `${b.tagColor}18`, color: b.tagColor, borderRadius: 'var(--r-full)', padding: '3px 10px', fontSize: 11, fontWeight: 700 }}>{b.tag}</span>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
         </div>
       </main>
 

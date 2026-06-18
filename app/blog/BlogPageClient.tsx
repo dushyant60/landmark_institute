@@ -414,11 +414,11 @@ export default function BlogPageClient() {
               <div className="sidebar-widget" style={{ background: 'linear-gradient(135deg, #0F1A2E, #1a3360)', color: '#fff', border: 'none', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 100% 0%, rgba(59, 130, 246, 0.25) 0%, transparent 60%)', zIndex: 0 }} />
                 <div style={{ position: 'relative', zIndex: 1 }}>
-                  <h3 style={{ color: '#60A5FA', borderBottomColor: 'rgba(255,255,255,0.1)' }}>🚀 Free Counselling</h3>
+                  <h3 style={{ color: '#60A5FA', borderBottomColor: 'rgba(255,255,255,0.1)' }}>🚀 Counselling</h3>
                   <p style={{ fontSize: '13px', color: '#94A3B8', marginBottom: '16px', lineHeight: '1.55' }}>
                     Unsure which batch to join? Get free personalized guidance from our counsellors.
                   </p>
-                  <Link href="/contactus/" className="btn btn-primary" style={{ display: 'flex', justifyContent: 'center', width: '100%', background: '#3B82F6', borderColor: '#3B82F6' }}>
+                  <Link href="/enquiry/" className="btn btn-primary" style={{ display: 'flex', justifyContent: 'center', width: '100%', background: '#3B82F6', borderColor: '#3B82F6' }}>
                     Talk to Us →
                   </Link>
                 </div>

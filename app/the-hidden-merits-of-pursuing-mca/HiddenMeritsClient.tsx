@@ -96,7 +96,7 @@ export default function HiddenMeritsClient() {
   <h4 style="margin-top: 0; color: var(--slate); font-weight: 700;">🌟 Landmark Institute - India's No. 1 Coaching for MCA</h4>
   <p>Come to Landmark Institute and experience the best coaching for MCA exams. Get the expert support, direction, and guidance needed to secure top ranks.</p>
   <p style="margin-bottom: 16px;"><strong>Small Batch Sizes:</strong> Restricting batch size to a maximum of 40 students for personalized, individual attention.</p>
-  <a href="/contactus/" class="btn " style="display: inline-flex; align-items: center; text-decoration: none;">Get a Free Demo Class →</a>
+  <a href="/enquiry/" class="btn btn-primary" style="display: inline-flex; align-items: center; text-decoration: none; color: #fff;">Get a Demo Class →</a>
 </div>
 
 <p><strong>Also Read:</strong> <Link href="/everything-you-need-to-know-about-mca/"><strong>Everything you need to know about MCA</strong></Link></p>
@@ -208,7 +208,7 @@ export default function HiddenMeritsClient() {
                 <p style={{ fontSize: '13px', color: '#94A3B8', marginBottom: '16px', lineHeight: '1.55' }}>
                   Secure your seat in India's leading NIMCET and MCA entrance coaching program. Online & Offline batches available.
                 </p>
-                <Link href="/contactus/" className="btn btn-primary" style={{ display: 'flex', justifyContent: 'center', width: '100%', background: '#3B82F6', borderColor: '#3B82F6' }}>
+                <Link href="/enquiry/" className="btn btn-primary" style={{ display: 'flex', justifyContent: 'center', width: '100%', background: '#3B82F6', borderColor: '#3B82F6' }}>
                   Enquire Now
                 </Link>
               </div>

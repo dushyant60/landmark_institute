@@ -981,6 +981,62 @@ section {
   margin-bottom: 16px;
 }
 
+/* Toppers Flyers on Homepage */
+.toppers-flyers-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-top: 40px;
+  margin-bottom: 32px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.topper-flyer-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.topper-flyer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-color: var(--blue-light);
+}
+
+.topper-flyer-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: var(--r);
+  overflow: hidden;
+}
+
+.topper-flyer-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.topper-flyer-card:hover .topper-flyer-img {
+  transform: scale(1.01);
+}
+
+.topper-flyer-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--slate);
+  margin-top: 14px;
+  text-align: center;
+}
+
 /* ── FACULTY ── */
 .faculty-section {
   background: var(--white);

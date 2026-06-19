@@ -6,6 +6,7 @@ import Topbar from '@/components/Topbar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
+import ContactForm from '@/components/ContactForm';
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -58,13 +59,14 @@ export default function CuetPgPapersClient() {
 
       {/* ── HERO ── */}
       <div className="hero" style={{ padding: '56px 0 0', overflow: 'hidden' }}>
-        <motion.div
-          className="container"
-          variants={stagger}
-          initial="hidden"
-          animate="show"
-        >
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', maxWidth: '680px' }}>
+        <div className="hero-inner">
+          {/* Left Column */}
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            animate="show"
+            style={{ display: 'flex', flexDirection: 'column' }}
+          >
             <motion.span variants={fadeUp} className="hero-badge">
               <span /> Landmark Institute
             </motion.span>
@@ -85,27 +87,51 @@ export default function CuetPgPapersClient() {
                 Talk to an Expert
               </a>
             </motion.div>
-          </div>
 
-          <motion.div variants={fadeUp} className="hero-stats" style={{ maxWidth: '680px' }}>
-            <div className="hero-stat">
-              <div className="hero-stat-num">4<span>+</span></div>
-              <div className="hero-stat-label">Years of Papers</div>
-            </div>
-            <div className="hero-stat">
-              <div className="hero-stat-num">Free</div>
-              <div className="hero-stat-label">PDF Downloads</div>
-            </div>
-            <div className="hero-stat">
-              <div className="hero-stat-num">✓</div>
-              <div className="hero-stat-label">Answer Keys</div>
-            </div>
-            <div className="hero-stat">
-              <div className="hero-stat-num">Solved</div>
-              <div className="hero-stat-label">Bundle 2021–25</div>
+            {/* Stats strip */}
+            <motion.div variants={fadeUp} className="hero-stats" style={{ marginBottom: '0' }}>
+              <div className="hero-stat">
+                <div className="hero-stat-num">4<span>+</span></div>
+                <div className="hero-stat-label">Years of Papers</div>
+              </div>
+              <div className="hero-stat">
+                <div className="hero-stat-num">Free</div>
+                <div className="hero-stat-label">PDF Downloads</div>
+              </div>
+              <div className="hero-stat">
+                <div className="hero-stat-num">✓</div>
+                <div className="hero-stat-label">Answer Keys</div>
+              </div>
+              <div className="hero-stat">
+                <div className="hero-stat-num">Solved</div>
+                <div className="hero-stat-label">Bundle 2021–25</div>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Column — Counselling Form Card */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            className="hero-card"
+            style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.3)' }}
+          >
+            <h3>Get Counselling</h3>
+            <p>Talk to our experts &amp; plan your MCA journey</p>
+            <ContactForm buttonText="Book Counselling →" showMessageField={false} />
+            <div className="trust-badges">
+              <div className="trust-badge">
+                <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                No Spam
+              </div>
+              <div className="trust-badge">
+                <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                Expert Guidance
+              </div>
             </div>
           </motion.div>
-        </motion.div>
+        </div>
         <div className="hero-wave">
           <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
             <path d="M0 60V30C240 0 480 60 720 30C960 0 1200 60 1440 30V60H0Z" fill="var(--bg)" />

@@ -124,7 +124,7 @@ export default function EverythingMcaClient() {
 <div style="background: var(--blue-light); padding: 24px; border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.2); margin: 32px 0 24px;">
   <h4 style="margin-top: 0; color: var(--slate); font-weight: 700;">🤝 Ready to take the next step?</h4>
   <p style="margin-bottom: 16px;">Speak to our counselling team to plan your preparation strategy for top MCA colleges.</p>
-  <a href="/enquiry/" class="btn btn-primary" style="display: inline-flex; align-items: center; text-decoration: none; color: #fff;">Get Counselling →</a>
+  <a href="/contactus/" class="btn btn-primary" style="display: inline-flex; align-items: center; text-decoration: none; color: #fff;">Get Counselling →</a>
 </div>`;
 
   return (
@@ -233,7 +233,7 @@ export default function EverythingMcaClient() {
                 <p style={{ fontSize: '13px', color: '#94A3B8', marginBottom: '16px', lineHeight: '1.55' }}>
                   Secure your seat in India's leading NIMCET and MCA entrance coaching program. Online & Offline batches available.
                 </p>
-                <Link href="/enquiry/" className="btn btn-primary" style={{ display: 'flex', justifyContent: 'center', width: '100%', background: '#3B82F6', borderColor: '#3B82F6' }}>
+                <Link href="/contactus/" className="btn btn-primary" style={{ display: 'flex', justifyContent: 'center', width: '100%', background: '#3B82F6', borderColor: '#3B82F6' }}>
                   Enquire Now
                 </Link>
               </div>

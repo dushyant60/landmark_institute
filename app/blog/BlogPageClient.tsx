@@ -418,7 +418,7 @@ export default function BlogPageClient() {
                   <p style={{ fontSize: '13px', color: '#94A3B8', marginBottom: '16px', lineHeight: '1.55' }}>
                     Unsure which batch to join? Get free personalized guidance from our counsellors.
                   </p>
-                  <Link href="/enquiry/" className="btn btn-primary" style={{ display: 'flex', justifyContent: 'center', width: '100%', background: '#3B82F6', borderColor: '#3B82F6' }}>
+                  <Link href="/contactus/" className="btn btn-primary" style={{ display: 'flex', justifyContent: 'center', width: '100%', background: '#3B82F6', borderColor: '#3B82F6' }}>
                     Talk to Us →
                   </Link>
                 </div>

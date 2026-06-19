@@ -64,7 +64,7 @@ export default function Page() {
                   ))}
                 </ul>
               </div>
-              <a href="/enquiry/" className="btn btn-primary" style={{ marginTop: 'auto', width: '100%', justifyContent: 'center' }}>
+              <a href="/contactus/" className="btn btn-primary" style={{ marginTop: 'auto', width: '100%', justifyContent: 'center' }}>
                 Enquire Now
               </a>
             </div>
@@ -94,7 +94,7 @@ export default function Page() {
                   ))}
                 </ul>
               </div>
-              <a href="/enquiry/" className="btn btn-primary" style={{ marginTop: 'auto', width: '100%', justifyContent: 'center' }}>
+              <a href="/contactus/" className="btn btn-primary" style={{ marginTop: 'auto', width: '100%', justifyContent: 'center' }}>
                 Enquire Now
               </a>
             </div>
@@ -124,7 +124,7 @@ export default function Page() {
                   ))}
                 </ul>
               </div>
-              <a href="/enquiry/" className="btn btn-primary" style={{ marginTop: 'auto', width: '100%', justifyContent: 'center' }}>
+              <a href="/contactus/" className="btn btn-primary" style={{ marginTop: 'auto', width: '100%', justifyContent: 'center' }}>
                 Enquire Now
               </a>
             </div>
@@ -157,7 +157,7 @@ export default function Page() {
                   ))}
                 </ul>
               </div>
-              <a href="/enquiry/" className="btn btn-primary" style={{ marginTop: 'auto', width: '100%', justifyContent: 'center' }}>
+              <a href="/contactus/" className="btn btn-primary" style={{ marginTop: 'auto', width: '100%', justifyContent: 'center' }}>
                 Enquire Now
               </a>
             </div>
@@ -187,7 +187,7 @@ export default function Page() {
                     ))}
                   </ul>
                 </div>
-                <a href="/enquiry/" className="btn btn-green btn-lg" style={{ justifyContent: 'center', minWidth: '220px', display: 'flex', alignItems: 'center' }}>
+                <a href="/contactus/" className="btn btn-green btn-lg" style={{ justifyContent: 'center', minWidth: '220px', display: 'flex', alignItems: 'center' }}>
                   Enquire Now
                 </a>
               </div>

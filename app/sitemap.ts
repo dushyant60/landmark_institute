@@ -11,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/cuet-pg-mca/',
     '/cuet-pg-previous-year-question-papers/',
     '/dont-miss-this-crash-course-if-mca-is-your-dream/',
-    '/enquiry/',
     '/everything-you-need-to-know-about-mca/',
     '/exams/',
     '/faculty/',

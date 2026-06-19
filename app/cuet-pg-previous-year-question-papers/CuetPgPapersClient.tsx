@@ -81,7 +81,7 @@ export default function CuetPgPapersClient() {
               <a href="/documents/CUET-PG-Solved-Previous-Year-Paper-2021-2025.pdf" download className="btn btn-green btn-lg">
                 Download All Papers (2021–2025)
               </a>
-              <a href="/enquiry" className="btn btn-outline btn-lg" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.4)' }}>
+              <a href="/contactus/" className="btn btn-outline btn-lg" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.4)' }}>
                 Talk to an Expert
               </a>
             </motion.div>
@@ -376,7 +376,7 @@ export default function CuetPgPapersClient() {
                 <p style={{ fontSize: 13, color: '#94A3B8', marginBottom: 20, lineHeight: 1.6 }}>
                   Join Landmark Institute&apos;s CUET PG coaching for structured preparation, mock tests, and expert faculty support.
                 </p>
-                <a href="/enquiry" className="btn btn-green" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
+                <a href="/contactus/" className="btn btn-green" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
                   Book Counselling
                 </a>
                 <a href="/our-courses" className="btn btn-outline" style={{ width: '100%', justifyContent: 'center', display: 'flex', marginTop: 10, color: '#94A3B8', borderColor: 'rgba(255,255,255,0.2)' }}>

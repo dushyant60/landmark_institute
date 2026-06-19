@@ -94,7 +94,7 @@ export default function CareerOptionsClient() {
   <h4 style="margin-top: 0; color: var(--slate); font-weight: 700;">🌟 Landmark Institute - India's No. 1 Coaching for MCA Entrances</h4>
   <p>Join Landmark Institute to get the best academic direction, in-depth study material, and upgraded teaching methodologies. Under our personalized training program, we ensure every student is fully prepared to excel in NIMCET, CUET PG, and university entrances.</p>
   <p style="margin-bottom: 16px;">Get regular class tests, topic-wise worksheets, and detailed coverage of the mathematical and reasoning syllabus.</p>
-  <a href="/enquiry/" class="btn btn-primary" style="display: inline-flex; align-items: center; text-decoration: none; color: #fff;">Speak with a Career Counsellor →</a>
+  <a href="/contactus/" class="btn btn-primary" style="display: inline-flex; align-items: center; text-decoration: none; color: #fff;">Speak with a Career Counsellor →</a>
 </div>
 
 <p><strong>Also Read:</strong> <Link href="/everything-you-need-to-know-about-mca/"><strong>Everything you need to know about MCA</strong></Link></p>`;
@@ -205,7 +205,7 @@ export default function CareerOptionsClient() {
                 <p style={{ fontSize: '13px', color: '#94A3B8', marginBottom: '16px', lineHeight: '1.55' }}>
                   Secure your seat in India's leading NIMCET and MCA entrance coaching program. Online & Offline batches available.
                 </p>
-                <Link href="/enquiry/" className="btn btn-primary" style={{ display: 'flex', justifyContent: 'center', width: '100%', background: '#3B82F6', borderColor: '#3B82F6' }}>
+                <Link href="/contactus/" className="btn btn-primary" style={{ display: 'flex', justifyContent: 'center', width: '100%', background: '#3B82F6', borderColor: '#3B82F6' }}>
                   Enquire Now
                 </Link>
               </div>

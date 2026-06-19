@@ -131,7 +131,7 @@ export default function OnlineMcaPageClient() {
               Get expert-guided, structured coaching online — from the comfort of your home.
             </motion.p>
             <motion.div variants={fadeUp} style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '48px' }}>
-              <a href="/enquiry" className="btn btn-green btn-lg">Enroll Now — Demo</a>
+              <a href="/contactus/" className="btn btn-green btn-lg">Enroll Now — Demo</a>
               <a href="/our-courses" className="btn btn-outline btn-lg" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.4)' }}>View Courses</a>
             </motion.div>
           </div>
@@ -243,7 +243,7 @@ export default function OnlineMcaPageClient() {
                           ))}
                         </div>
                       </div>
-                      <a href="/enquiry" className="btn btn-primary" style={{ whiteSpace: 'nowrap', alignSelf: 'flex-start' }}>Enquire Now</a>
+                      <a href="/contactus/" className="btn btn-primary" style={{ whiteSpace: 'nowrap', alignSelf: 'flex-start' }}>Enquire Now</a>
                     </motion.div>
                   ))}
                 </motion.div>
@@ -436,7 +436,7 @@ export default function OnlineMcaPageClient() {
                 <p style={{ fontSize: 13.5, color: '#94A3B8', marginBottom: 20, lineHeight: 1.6 }}>
                   Get expert guidance, structured study plans, and mock tests for all top MCA entrance exams.
                 </p>
-                <a href="/enquiry" className="btn btn-green" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
+                <a href="/contactus/" className="btn btn-green" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
                   Book Demo Class
                 </a>
                 <a href="/our-courses" className="btn btn-outline" style={{ width: '100%', justifyContent: 'center', display: 'flex', marginTop: 10, color: '#94A3B8', borderColor: 'rgba(255,255,255,0.2)' }}>

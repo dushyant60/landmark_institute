@@ -67,7 +67,7 @@ export default function FreeResources() {
               Access your free study materials, topic-wise NIMCET PDF notes, and formula sheets instantly.
             </p>
             <Link
-              href="/enquiry/"
+              href="/contactus/"
               className="btn btn-green"
               style={{ width: '100%', justifyContent: 'center', padding: '14px', fontSize: '16px', display: 'flex', textDecoration: 'none' }}
             >

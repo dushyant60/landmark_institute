@@ -198,7 +198,7 @@ export default function KanpurPageClient() {
               Empower your MCA entrance preparation in Kanpur. Expert guidance, comprehensive mocks, and one-on-one mentorship for NIMCET, JNU, and DU.
             </motion.p>
             <motion.div variants={fadeUp} style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '48px' }}>
-              <a href="/enquiry" className="btn btn-green btn-lg">Enroll Now — Demo</a>
+              <a href="/contactus/" className="btn btn-green btn-lg">Enroll Now — Demo</a>
               <a href="/our-courses" className="btn btn-outline btn-lg" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.4)' }}>View Courses</a>
             </motion.div>
           </div>
@@ -313,7 +313,7 @@ export default function KanpurPageClient() {
                 <p style={{ fontSize: 13.5, color: '#94A3B8', marginBottom: 20, lineHeight: 1.6 }}>
                   Book a free demo session at our Kanpur center or online. Prepare with veteran faculty and top rankers.
                 </p>
-                <a href="/enquiry" className="btn btn-green" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
+                <a href="/contactus/" className="btn btn-green" style={{ width: '100%', justifyContent: 'center', display: 'flex' }}>
                   Book Demo Class
                 </a>
                 <a href="/our-courses" className="btn btn-outline" style={{ width: '100%', justifyContent: 'center', display: 'flex', marginTop: 10, color: '#94A3B8', borderColor: 'rgba(255,255,255,0.2)' }}>

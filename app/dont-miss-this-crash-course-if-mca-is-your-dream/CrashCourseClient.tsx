@@ -112,7 +112,7 @@ export default function CrashCourseClient() {
   <h4 style="margin-top: 0; color: var(--slate); font-weight: 700;">📅 Course Launch & Demo Dates</h4>
   <p style="margin-bottom: 8px;"><strong>Course Launch Date:</strong> 26th</p>
   <p style="margin-bottom: 16px;"><strong>Demo Classes:</strong> 26th and 28th December</p>
-  <a href="/enquiry/" class="btn btn-primary" style="display: inline-flex; align-items: center; text-decoration: none; color: #fff;">Register Now →</a>
+  <a href="/contactus/" class="btn btn-primary" style="display: inline-flex; align-items: center; text-decoration: none; color: #fff;">Register Now →</a>
 </div>
 
 <figure style="margin: 32px 0 0 0; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md);"><img src="/images/migrated/Dont-miss-this-Crash-Course-if-MCA-is-your-dream-1.png" alt="Don't miss this Crash Course if MCA is your Dream!" style="width: 100%; height: auto; max-height: 450px; object-fit: cover; display: block;" /></figure>`;
@@ -223,7 +223,7 @@ export default function CrashCourseClient() {
                 <p style={{ fontSize: '13px', color: '#94A3B8', marginBottom: '16px', lineHeight: '1.55' }}>
                   Secure your seat in India's leading NIMCET and MCA entrance coaching program. Online & Offline batches available.
                 </p>
-                <Link href="/enquiry/" className="btn btn-primary" style={{ display: 'flex', justifyContent: 'center', width: '100%', background: '#3B82F6', borderColor: '#3B82F6' }}>
+                <Link href="/contactus/" className="btn btn-primary" style={{ display: 'flex', justifyContent: 'center', width: '100%', background: '#3B82F6', borderColor: '#3B82F6' }}>
                   Enquire Now
                 </Link>
               </div>

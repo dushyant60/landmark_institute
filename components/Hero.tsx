@@ -2,6 +2,7 @@
 
 import { motion, Variants } from 'framer-motion';
 import Link from 'next/link';
+import ContactForm from '@/components/ContactForm';
 
 const checkPath = 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z';
 const waPath =
@@ -103,18 +104,10 @@ export default function Hero() {
           <h3>Get Counselling</h3>
           <p>Talk to our experts &amp; plan your MCA journey</p>
 
-          <div style={{ margin: '24px 0 28px', textAlign: 'center' }}>
-            <p style={{ fontSize: '15.5px', color: 'var(--text-muted)', lineHeight: '1.6', marginBottom: '24px' }}>
-              Have questions about batches, fees, or exam patterns? Take the first step towards your dream NIT today with our expert counselors.
-            </p>
-            <Link
-              href="/enquiry/"
-              className="btn btn-primary"
-              style={{ width: '100%', justifyContent: 'center', padding: '14px', fontSize: '16px', display: 'flex', textDecoration: 'none' }}
-            >
-              Get Counselling →
-            </Link>
-          </div>
+          <ContactForm
+            buttonText="Book Counselling →"
+            showMessageField={false}
+          />
 
           <div className="trust-badges">
             <div className="trust-badge">

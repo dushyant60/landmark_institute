@@ -17,7 +17,6 @@ const sitemapData = [
       { label: 'Home', href: '/' },
       { label: 'About Us', href: '/about-us/' },
       { label: 'Contact Us', href: '/contactus/' },
-      { label: 'Enquiry Form', href: '/enquiry/' },
       { label: 'Faculty & Mentors', href: '/faculty/' },
       { label: 'Our Success Results', href: '/results/' },
       { label: 'Student Central', href: '/student-central/' },

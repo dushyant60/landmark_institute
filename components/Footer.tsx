@@ -61,7 +61,7 @@ const myPagesCol1 = [
   { label: '#1 Best Nimcet Coaching in Patna | Online Nimcet Course.', href: '/nimcet-coaching-in-patna/' },
   { label: 'Best Institute for Cuet Pg Mca Coaching', href: '/cuet-pg-mca/' },
   { label: 'Blog', href: '/blog/' },
-  { label: 'Enquiry', href: '/enquiry/' },
+  { label: 'Contact Us', href: '/contactus/' },
   { label: 'MCA Entrance Syllabus', href: '/syllabus/' },
   { label: 'Nimcet', href: '/nimcet/' },
   { label: 'Notifications', href: '/notification/' },

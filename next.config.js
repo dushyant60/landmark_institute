@@ -16,6 +16,8 @@ const nextConfig = {
       { source: '/courses/', destination: '/our-courses/', permanent: true },
       { source: '/contact', destination: '/contactus/', permanent: true },
       { source: '/contact/', destination: '/contactus/', permanent: true },
+      { source: '/enquiry', destination: '/contactus/', permanent: true },
+      { source: '/enquiry/', destination: '/contactus/', permanent: true },
       // Results — old anchor → new dedicated page
       { source: '/results-page', destination: '/results/', permanent: true },
     ];

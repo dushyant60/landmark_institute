@@ -1,0 +1,27 @@
+# robots.txt — Landmark Institute
+# https://www.landmarkinstitute.com
+
+# -----------------------------------------------
+# Allow all search engine crawlers
+# -----------------------------------------------
+User-agent: *
+Allow: /
+
+# -----------------------------------------------
+# Block internal Next.js & server-only routes
+# (these are never meant to be indexed)
+# -----------------------------------------------
+Disallow: /api/
+Disallow: /_next/
+Disallow: /icon
+Disallow: /icon.png
+
+# -----------------------------------------------
+# Utility/duplicate pages — no indexing value
+# -----------------------------------------------
+Disallow: /sitemap.html
+
+# -----------------------------------------------
+# Sitemap location
+# -----------------------------------------------
+Sitemap: https://www.landmarkinstitute.com/sitemap.xml

@@ -99,6 +99,51 @@ const examsData = [
     },
     colleges: 'VJTI Mumbai, SPIT Mumbai, PUMBA Pune, K.J. Somaiya Mumbai, MET Mumbai, and colleges across Maharashtra.',
   },
+  {
+    code: 'IPU',
+    flagStyle: { background: '#E0F2FE', color: '#0369A1' },
+    name: 'IPU CET',
+    fullname: 'Indraprastha University Common Entrance Test',
+    desc: 'State-level entrance examination conducted by GGSIPU for admission to affiliated MCA colleges in Delhi and NCR.',
+    eligibility: 'BCA/B.Sc. (CS/IT)/BIT/B.Voc. OR Graduate in any discipline with Mathematics at 10+2 or Graduation. Minimum 50% aggregate marks.',
+    pattern: {
+      questions: '100 Questions',
+      duration: '150 Minutes (2.5 Hours)',
+      subjects: 'Mathematics (25 Qs), English Language & Comprehension (25 Qs), Computer Awareness (25 Qs), Logical & Analytical Ability (25 Qs)',
+      marking: '+4 Marks for correct answer, -1 Mark for wrong answer',
+    },
+    colleges: 'CDAC Noida, USICT (Dwarka Campus), JIMS, VIPS, MSIT, and other top GGSIPU affiliated colleges in Delhi NCR.',
+  },
+  {
+    code: 'JMI',
+    flagStyle: { background: '#F1F5F9', color: '#475569' },
+    name: 'JAMIA MCA',
+    fullname: 'Jamia Millia Islamia MCA Entrance',
+    desc: 'University-level entrance examination conducted by JMI, Delhi, for admission to its highly reputed regular and self-financed MCA programmes.',
+    eligibility: "Bachelor's degree in any discipline with Mathematics as a main subject at 10+2 or Graduation level with at least 50% aggregate marks.",
+    pattern: {
+      questions: '100 Questions',
+      duration: '105 Minutes',
+      subjects: 'Mathematics & Statistics (50 Qs), Computer Science (20 Qs), Reasoning & Aptitude (20 Qs), General English (10 Qs)',
+      marking: '+1 Mark for correct, -0.25 Mark for wrong answer',
+    },
+    colleges: 'Department of Computer Science, Jamia Millia Islamia (New Delhi).',
+  },
+  {
+    code: 'IGD',
+    flagStyle: { background: '#FEE2E2', color: '#B91C1C' },
+    name: 'IGDTUW',
+    fullname: 'Indira Gandhi Delhi Technical University for Women MCA Admission',
+    desc: 'Premier engineering university for women in Delhi. MCA admissions are conducted based on NIMCET scores or through its own counseling process.',
+    eligibility: 'Only for female candidates. BCA/B.Sc. (CS/IT) or equivalent, or Graduate with Math at 10+2 or Graduation. Minimum 60% aggregate marks (50% for SC/ST/PD).',
+    pattern: {
+      questions: 'NIMCET Score Based',
+      duration: 'Standard NIMCET pattern applies',
+      subjects: 'Shortlisting and seat allotment are done via NIMCET scores and rank-based counseling',
+      marking: 'Refer to NIMCET marking scheme',
+    },
+    colleges: 'Indira Gandhi Delhi Technical University for Women (Kashmere Gate Campus, Delhi).',
+  },
 ];
 
 const heroContainerVariants: Variants = {
@@ -342,7 +387,7 @@ export default function ExamsPageClient() {
 
                 {/* Actions */}
                 <div className="exam-cta-bar">
-                  <a href="/#contact" className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '13px' }}>
+                  <a href="/contactus/" className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '13px' }}>
                     Enquire for Batch →
                   </a>
                   {/* <a href="#" className="btn btn-outline" style={{ padding: '8px 16px', fontSize: '13px' }}>

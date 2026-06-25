@@ -102,7 +102,7 @@ export default function Page() {
             {/* Course 3: 1-Year Offline Weekend Programme */}
             <div className="course-card">
               <div>
-                <span className="course-tag tag-orange">Weekend Batch</span>
+                <span className="course-tag tag-orange">Hybrid Batch</span>
                 <h3 style={{ fontSize: '19px', fontWeight: 700, color: 'var(--slate)', marginTop: '8px', marginBottom: '16px' }}>
                   1-Year Offline Weekend Programme For MCA Entrance Exam
                 </h3>
@@ -137,7 +137,7 @@ export default function Page() {
                   Crash Course Batch – Online Mode
                 </h3>
                 <div style={{ fontSize: '12.5px', color: 'var(--blue)', fontWeight: 600, marginBottom: '12px' }}>
-                  ⏳ Batch Starts: January 2026
+                  ⏳ Batch Starts: July 2026
                 </div>
                 <ul style={{ listStyleType: 'none', paddingLeft: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   {[

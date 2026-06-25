@@ -7,6 +7,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import ContactForm from '@/components/ContactForm';
+import LeadCapturePopup from '@/components/LeadCapturePopup';
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -429,6 +430,8 @@ export default function CuetPgPapersClient() {
 
       <Footer />
       <FloatingWhatsApp />
+      <LeadCapturePopup />
     </>
   );
 }
+

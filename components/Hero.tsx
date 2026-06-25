@@ -55,7 +55,7 @@ export default function Hero() {
             MCA entrance exams. 17 years of proven results.
           </motion.p>
           <motion.div variants={itemVariants} className="hero-btns">
-            <a href="/#contact" className="btn btn-primary btn-lg">
+            <a href="/contactus/" className="btn btn-primary btn-lg">
               Apply Now →
             </a>
             <a

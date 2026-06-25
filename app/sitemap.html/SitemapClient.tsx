@@ -111,7 +111,8 @@ export default function SitemapClient() {
       </div>
 
       {/* CSS Overrides */}
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .sitemap-hero {
           padding: 60px 0 45px;
           text-align: center;
@@ -282,3 +283,7 @@ export default function SitemapClient() {
     </>
   );
 }
+
+
+
+

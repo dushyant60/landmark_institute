@@ -1,5 +1,5 @@
 const stats = [
-  { num: '17+', label: 'Years of Excellence' },
+  { num: '19+', label: 'Years of Excellence' },
   { num: '6000+', label: 'Students Trained' },
   { num: '500+', label: 'NIT Selections' },
   { num: '100+', label: 'NIMCET 2025 Selections' },

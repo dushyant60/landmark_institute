@@ -29,7 +29,7 @@ const courses = [
     tag: 'Weekends',
     tagClass: 'tag-orange',
     featured: false,
-    title: 'Weekend Batch',
+    title: 'Hybrid Batch',
     desc: 'Designed for working professionals and students with a weekday schedule. Saturday & Sunday intensive sessions covering the complete syllabus at a steady pace.',
     features: ['Sat–Sun Classes', 'Online + Offline', 'Recorded Backup', 'Mock Tests'],
     seats: 'New batch starting soon',

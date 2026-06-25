@@ -3,13 +3,13 @@ import Topbar from '@/components/Topbar';
 import Navbar from '@/components/Navbar';
 
 export const metadata: Metadata = {
-  title: 'India’s No.1 Institute for MCA Entrance Coaching & NIMCET Coaching',
+  title: 'NIMCET & MCA Entrance Coaching in India - Landmark Institute',
   description:
-    'Best MCA Entrance Coaching Institute provides offline or online mca coaching for entrance exam preparation. 100+ Selections in NIMCET- 2025.',
+    "India's No.1 NIMCET & MCA Entrance Coaching Institute. 100+ Selections in NIMCET 2026. Online & Delhi Offline Batches. Enroll Now for NIMCET 2027.",
   openGraph: {
-    title: 'India’s No.1 Institute for MCA Entrance Coaching & NIMCET Coaching',
+    title: 'NIMCET & MCA Entrance Coaching in India - Landmark Institute',
     description:
-      'Best MCA Entrance Coaching Institute provides offline or online mca coaching for entrance exam preparation. 100+ Selections in NIMCET- 2025.',
+      "India's No.1 NIMCET & MCA Entrance Coaching Institute. 100+ Selections in NIMCET 2026. Online & Delhi Offline Batches. Enroll Now for NIMCET 2027.",
     url: 'https://www.landmarkinstitute.com/',
   },
 };
@@ -32,8 +32,29 @@ import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import LeadCapturePopup from '@/components/LeadCapturePopup';
 
 export default function Home() {
+  const schemaJson = {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    'name': 'Landmark Institute',
+    'url': 'https://www.landmarkinstitute.com/',
+    'logo': 'http://www.landmarkinstitute.com/wp-content/uploads/2018/01/landmarklogo4vrt-1.png',
+    'description': "India's No.1 NIMCET & MCA Entrance Coaching Institute. 100+ Selections in NIMCET 2026. Online & Delhi Offline Batches. Enroll Now for NIMCET 2027.",
+    'address': {
+      '@type': 'PostalAddress',
+      'streetAddress': 'Ground Floor, 3/24, Block 1, West Patel Nagar, Patel Nagar',
+      'addressLocality': 'New Delhi',
+      'postalCode': '110008',
+      'addressCountry': 'IN'
+    },
+    'telephone': '+91 999 999 2338, +91 995 369 2399'
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }}
+      />
       <Topbar />
       <Navbar />
       <Hero />
@@ -82,3 +103,7 @@ export default function Home() {
     </>
   );
 }
+
+
+
+

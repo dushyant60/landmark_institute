@@ -45,6 +45,27 @@ const exams = [
     desc: 'Maharashtra MCA Common Entrance Test for admissions to MCA programmes across Maharashtra.',
     links: ['Syllabus', 'Pattern', 'Previous Papers'],
   },
+  {
+    code: 'IPU',
+    flagStyle: { background: '#E0F2FE', color: '#0369A1' },
+    name: 'IPU CET',
+    desc: 'Guru Gobind Singh Indraprastha University Common Entrance Test for admission to top affiliated MCA institutes in Delhi NCR.',
+    links: ['Syllabus', 'Pattern', 'Previous Papers'],
+  },
+  {
+    code: 'JMI',
+    flagStyle: { background: '#F1F5F9', color: '#475569' },
+    name: 'JAMIA MCA',
+    desc: "Jamia Millia Islamia MCA Entrance Exam for entering one of India's prestigious central universities with stellar placement records.",
+    links: ['Syllabus', 'Pattern', 'Previous Papers'],
+  },
+  {
+    code: 'IGD',
+    flagStyle: { background: '#FEE2E2', color: '#B91C1C' },
+    name: 'IGDTUW',
+    desc: 'Indira Gandhi Delhi Technical University for Women MCA admissions — a premier engineering university for women in Delhi.',
+    links: ['Syllabus', 'Pattern', 'Previous Papers'],
+  },
 ];
 
 const headerVariants: Variants = {

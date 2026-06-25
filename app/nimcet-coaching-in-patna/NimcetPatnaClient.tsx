@@ -351,7 +351,7 @@ export default function NimcetPatnaClient() {
                 </h3>
                 {[
                   { label: 'Regular Batch', desc: '6–9 month comprehensive prep', tag: 'Most Popular', tagColor: 'var(--blue)' },
-                  { label: 'Weekend Batch', desc: 'For working professionals', tag: 'Flexible', tagColor: '#7C3AED' },
+                  { label: 'Hybrid Batch', desc: 'For working professionals', tag: 'Flexible', tagColor: '#7C3AED' },
                   { label: 'Crash Course', desc: 'Fast-track intensive session', tag: 'Quick', tagColor: '#EA580C' },
                 ].map((b) => (
                   <div key={b.label} style={{ padding: '12px 0', borderBottom: '1px solid var(--border-light)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

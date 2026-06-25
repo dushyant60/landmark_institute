@@ -69,7 +69,7 @@ export default function OnlineMcaPageClient() {
     },
     {
       tag: 'Intensive', tagClass: 'tag-orange',
-      title: 'Crash Course & Weekend Batch',
+      title: 'Crash Course & Hybrid Batch',
       desc: 'Short-term intensive sessions for last-minute exam prep — perfect for MAH MCA CET or NIMCET.',
       features: ['Fast-paced syllabus', 'Weekend timing', 'High-yield topics'],
     },

@@ -8,56 +8,57 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import ContactForm from '@/components/ContactForm';
+import LeadCapturePopup from '@/components/LeadCapturePopup';
 
 const stagger: Variants = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.1 } },
+	hidden: { opacity: 0 },
+	show: { opacity: 1, transition: { staggerChildren: 0.1 } },
 };
 
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+	hidden: { opacity: 0, y: 24 },
+	show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
 const topNITs = ['NIT Trichy', 'NIT Warangal', 'NIT Surathkal', 'NIT Calicut', 'NIT Allahabad', 'NIT Rourkela'];
 
 const faqData = [
-  {
-    q: 'What is included in the NIMCET syllabus?',
-    a: 'The NIMCET syllabus includes Mathematics, Logical Reasoning, Computer Awareness, and General English.',
-  },
-  {
-    q: 'What is the latest NIMCET exam pattern?',
-    a: 'The NIMCET exam pattern consists of multiple-choice questions designed to test mathematical ability, reasoning skills, computer knowledge, and English proficiency.',
-  },
-  {
-    q: 'Is Mathematics important in the MCA NIMCET syllabus?',
-    a: 'Yes. Mathematics is the most important section of the MCA NIMCET syllabus and plays a major role in determining the final rank.',
-  },
-  {
-    q: 'Is NIMCET difficult to crack?',
-    a: 'NIMCET is competitive, but students can achieve a good rank through consistent preparation, regular practice, and mock tests.',
-  },
-  {
-    q: 'How much time is required to complete the MCA entrance exam syllabus?',
-    a: 'Most candidates prepare for approximately 6–12 months depending on their academic background and current preparation level.',
-  },
-  {
-    q: 'Can I crack NIMCET without coaching?',
-    a: 'Yes. With a disciplined study plan, quality study material, previous year papers, and mock tests, students can successfully crack NIMCET through self-study.',
-  },
-  {
-    q: 'Why is understanding the NIMCET exam syllabus important?',
-    a: 'Understanding the NIMCET exam syllabus helps students focus on important topics, allocate study time effectively, and prepare in a structured manner.',
-  },
-  {
-    q: 'What is the best way to prepare for the NIMCET syllabus?',
-    a: 'The best approach is to study regularly, solve previous year papers, attempt mock tests, revise frequently, and focus on Mathematics throughout the preparation journey.',
-  },
+	{
+		q: 'What is included in the NIMCET syllabus?',
+		a: 'The NIMCET syllabus includes Mathematics, Logical Reasoning, Computer Awareness, and General English.',
+	},
+	{
+		q: 'What is the latest NIMCET exam pattern?',
+		a: 'The NIMCET exam pattern consists of multiple-choice questions designed to test mathematical ability, reasoning skills, computer knowledge, and English proficiency.',
+	},
+	{
+		q: 'Is Mathematics important in the MCA NIMCET syllabus?',
+		a: 'Yes. Mathematics is the most important section of the MCA NIMCET syllabus and plays a major role in determining the final rank.',
+	},
+	{
+		q: 'Is NIMCET difficult to crack?',
+		a: 'NIMCET is competitive, but students can achieve a good rank through consistent preparation, regular practice, and mock tests.',
+	},
+	{
+		q: 'How much time is required to complete the MCA entrance exam syllabus?',
+		a: 'Most candidates prepare for approximately 6–12 months depending on their academic background and current preparation level.',
+	},
+	{
+		q: 'Can I crack NIMCET without coaching?',
+		a: 'Yes. With a disciplined study plan, quality study material, previous year papers, and mock tests, students can successfully crack NIMCET through self-study.',
+	},
+	{
+		q: 'Why is understanding the NIMCET exam syllabus important?',
+		a: 'Understanding the NIMCET exam syllabus helps students focus on important topics, allocate study time effectively, and prepare in a structured manner.',
+	},
+	{
+		q: 'What is the best way to prepare for the NIMCET syllabus?',
+		a: 'The best approach is to study regularly, solve previous year papers, attempt mock tests, revise frequently, and focus on Mathematics throughout the preparation journey.',
+	},
 ];
 
 export default function SyllabusPageClient() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+	const [openFaq, setOpenFaq] = useState<number | null>(null);
 	const htmlContent = `
 <img src="/images/migrated/NIMCET-Syllabus-2026-Mca-Entrance-Exam-Syllabus-Updated​.jpeg" alt="NIMCET Syllabus covering Mathematics, Logical Reasoning, Computer Awareness, English, and MCA Entrance Exam Pattern" style="max-width: 100%; height: auto; border-radius: var(--r-sm); margin: 24px 0; display: block;" />
 <a href="#">Syllabus</a>
@@ -699,7 +700,7 @@ export default function SyllabusPageClient() {
 								</h3>
 								{[
 									{ label: 'Regular Batch', desc: '6–9 month comprehensive prep', tag: 'Most Popular', tagColor: 'var(--blue)' },
-									{ label: 'Weekend Batch', desc: 'For working professionals', tag: 'Flexible', tagColor: '#7C3AED' },
+									{ label: 'Hybrid Batch', desc: 'For working professionals', tag: 'Flexible', tagColor: '#7C3AED' },
 									{ label: 'Crash Course', desc: 'Fast-track intensive session', tag: 'Quick', tagColor: '#EA580C' },
 								].map((b) => (
 									<div key={b.label} style={{ padding: '12px 0', borderBottom: '1px solid var(--border-light)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -718,6 +719,7 @@ export default function SyllabusPageClient() {
 
 			<Footer />
 			<FloatingWhatsApp />
+			<LeadCapturePopup />
 		</>
 	);
 }

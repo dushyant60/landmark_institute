@@ -75,7 +75,8 @@ export default function ContactPageClient() {
       </div>
 
       {/* Custom Styles */}
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .info-section {
           padding: 60px 0 80px;
           background: var(--bg);
@@ -190,19 +191,19 @@ export default function ContactPageClient() {
           >
             {/* Office Hours */}
             <motion.div className="info-block" variants={leftItemVariants}>
-              <h3>Office Hours</h3>
+              <h3>Office Hours Timming</h3>
               <ul className="hours-list">
                 <li className="hours-row">
-                  <span>Monday – Friday</span>
-                  <strong>9:00 AM – 9:00 PM</strong>
+                  <span>Working Days:</span>
+                  <strong>Tuesday to Sunday</strong>
                 </li>
                 <li className="hours-row">
-                  <span>Saturday</span>
-                  <strong>9:00 AM – 9:00 PM</strong>
+                  <span>Timing:</span>
+                  <strong>9:00 AM – 5:00 PM</strong>
                 </li>
                 <li className="hours-row">
-                  <span>Sunday</span>
-                  <strong>9:00 AM – 9:00 PM</strong>
+                  <span>Closed:</span>
+                  <strong>Monday</strong>
                 </li>
               </ul>
               <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginTop: '20px', lineHeight: '1.5' }}>
@@ -221,7 +222,7 @@ export default function ContactPageClient() {
                 <li><strong>By Road:</strong> Centrally positioned on main Patel Road. Cabs and local buses stop right outside the coaching center.</li>
                 <li><strong>Parking:</strong> Visitor parking is available directly in the service lane adjacent to the main road entrance.</li>
               </ul>
-              
+
               <a
                 href="https://maps.app.goo.gl/BrzaYLDeE9WWURZR8"
                 target="_blank"
@@ -249,3 +250,4 @@ export default function ContactPageClient() {
     </>
   );
 }
+

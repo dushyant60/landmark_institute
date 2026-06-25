@@ -47,8 +47,8 @@ export default function NimcetPageClient() {
   const examSections = [
     { subject: 'Mathematics', count: '50', icon: '📐', color: '#3B82F6', bg: '#EFF6FF' },
     { subject: 'Logical Reasoning', count: '40', icon: '🧠', color: '#8B5CF6', bg: '#F5F3FF' },
-    { subject: 'Computer Awareness', count: '10', icon: '💻', color: '#0891B2', bg: '#ECFEFF' },
-    { subject: 'English', count: '20', icon: '📝', color: '#059669', bg: '#ECFDF5' },
+    { subject: 'Computer Awareness', count: '20', icon: '💻', color: '#0891B2', bg: '#ECFEFF' },
+    { subject: 'English', count: '10', icon: '📝', color: '#059669', bg: '#ECFDF5' },
   ];
 
   const features = [
@@ -533,7 +533,7 @@ export default function NimcetPageClient() {
                 </h3>
                 {[
                   { label: 'Regular Batch', desc: '6–9 month comprehensive prep', tag: 'Most Popular', tagColor: 'var(--blue)' },
-                  { label: 'Weekend Batch', desc: 'For working professionals', tag: 'Flexible', tagColor: '#7C3AED' },
+                  { label: 'Hybrid Batch', desc: 'For working professionals', tag: 'Flexible', tagColor: '#7C3AED' },
                   { label: 'Crash Course', desc: 'Fast-track intensive session', tag: 'Quick', tagColor: '#EA580C' },
                 ].map((b) => (
                   <div key={b.label} style={{ padding: '12px 0', borderBottom: '1px solid var(--border-light)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -561,3 +561,6 @@ export default function NimcetPageClient() {
     </>
   );
 }
+
+
+

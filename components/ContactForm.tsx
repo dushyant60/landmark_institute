@@ -19,11 +19,41 @@ export default function ContactForm({
   showMessageField = true,
 }: ContactFormProps) {
   const [formData, setFormData] = useState({ name: '', phone: '', course: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          course: formData.course,
+          message: formData.message,
+          formType: 'contact',
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        setSubmitError(result.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setSubmitError('Failed to send message. Please check your internet connection.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -83,7 +113,7 @@ export default function ContactForm({
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             />
           </div>
-          
+
           <div className="form-field">
             <label htmlFor="form-phone">Phone Number *</label>
             <input
@@ -109,7 +139,7 @@ export default function ContactForm({
                 <option value="">Select a course...</option>
                 <option value="1 Year Online NIMCET Batch">1 Year Online NIMCET Batch</option>
                 <option value="Regular Offline Batch (Delhi)">Regular Offline Batch (Delhi)</option>
-                <option value="Weekend Online Batch">Weekend Online Batch</option>
+                <option value="Weekend Online Batch">Hybrid Batch</option>
                 <option value="Crash Course (3-4 Months)">Crash Course (3-4 Months)</option>
                 <option value="CUET PG MCA Batch">CUET PG MCA Batch</option>
                 <option value="Test Series Only">Test Series Only</option>
@@ -143,11 +173,26 @@ export default function ContactForm({
 
           <button
             type="submit"
+            disabled={isSubmitting}
             className="btn btn-primary"
-            style={{ width: '100%', justifyContent: 'center', padding: '12px', fontSize: '15px', marginTop: '10px' }}
+            style={{
+              width: '100%',
+              justifyContent: 'center',
+              padding: '12px',
+              fontSize: '15px',
+              marginTop: '10px',
+              opacity: isSubmitting ? 0.7 : 1,
+              cursor: isSubmitting ? 'not-allowed' : 'pointer'
+            }}
           >
-            {buttonText}
+            {isSubmitting ? 'Sending...' : buttonText}
           </button>
+
+          {submitError && (
+            <p style={{ color: '#E11D48', fontSize: '14px', marginTop: '10px', textAlign: 'center' }}>
+              {submitError}
+            </p>
+          )}
         </form>
       )}
     </div>

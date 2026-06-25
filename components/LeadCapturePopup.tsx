@@ -8,8 +8,11 @@ const closePath = 'M6 18L18 6M6 6l12 12';
 export default function LeadCapturePopup() {
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [pendingDownloadUrl, setPendingDownloadUrl] = useState<string | null>(null);
 
   const showPopup = useCallback(() => {
     setIsOpen(true);
@@ -23,6 +26,10 @@ export default function LeadCapturePopup() {
   }, []);
 
   useEffect(() => {
+    // Prevent auto-showing if user already submitted in this session
+    if (typeof window !== 'undefined' && localStorage.getItem('lead_capture_submitted') === 'true') {
+      return;
+    }
     const timer = setTimeout(showPopup, 3000);
     return () => clearTimeout(timer);
   }, [showPopup]);
@@ -31,9 +38,26 @@ export default function LeadCapturePopup() {
     const handleTriggerClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const anchor = target.closest('a');
-      if (anchor && anchor.hash && (anchor.hash.startsWith('#popmake-') || anchor.classList.contains('trigger-popup'))) {
-        e.preventDefault();
-        showPopup();
+      if (anchor) {
+        // Trigger popup for manual trigger anchors
+        if (anchor.hash && (anchor.hash.startsWith('#popmake-') || anchor.classList.contains('trigger-popup'))) {
+          e.preventDefault();
+          setPendingDownloadUrl(null);
+          showPopup();
+        }
+        // Intercept download buttons/links
+        else if (anchor.hasAttribute('download') || anchor.getAttribute('href')?.endsWith('.pdf') || anchor.getAttribute('href')?.includes('/documents/')) {
+          const href = anchor.getAttribute('href');
+          if (href) {
+            // If already submitted in this session, allow normal download
+            if (typeof window !== 'undefined' && localStorage.getItem('lead_capture_submitted') === 'true') {
+              return;
+            }
+            e.preventDefault();
+            setPendingDownloadUrl(href);
+            showPopup();
+          }
+        }
       }
     };
     document.addEventListener('click', handleTriggerClick);
@@ -42,6 +66,9 @@ export default function LeadCapturePopup() {
 
   useEffect(() => {
     const handleVisibilityChange = () => {
+      if (typeof window !== 'undefined' && localStorage.getItem('lead_capture_submitted') === 'true') {
+        return;
+      }
       if (!document.hidden && !isOpen && !submitted) {
         const timer = setTimeout(showPopup, 1000);
         return () => clearTimeout(timer);
@@ -63,14 +90,56 @@ export default function LeadCapturePopup() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
 
-    setSubmitted(true);
-    setTimeout(() => {
-      hidePopup();
-    }, 2000);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          formType: 'lead_capture',
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('lead_capture_submitted', 'true');
+        }
+
+        // Trigger automatic download if it was a download link click
+        if (pendingDownloadUrl) {
+          const a = document.createElement('a');
+          a.href = pendingDownloadUrl;
+          a.download = '';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          setPendingDownloadUrl(null);
+        }
+
+        setTimeout(() => {
+          hidePopup();
+        }, 3000);
+      } else {
+        setSubmitError(result.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setSubmitError('Failed to send. Please check your internet connection.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleClose = () => {
@@ -136,9 +205,25 @@ export default function LeadCapturePopup() {
               </div>
             </div>
 
-            <button type="submit" className="btn btn-primary btn-lg popup-submit" style={{ width: '100%', justifyContent: 'center' }}>
-              Send me the Guide!
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="btn btn-primary btn-lg popup-submit"
+              style={{
+                width: '100%',
+                justifyContent: 'center',
+                opacity: isSubmitting ? 0.7 : 1,
+                cursor: isSubmitting ? 'not-allowed' : 'pointer'
+              }}
+            >
+              {isSubmitting ? 'Sending...' : 'Send me the Guide!'}
             </button>
+
+            {submitError && (
+              <p style={{ color: '#E11D48', fontSize: '13px', marginTop: '8px', textAlign: 'center' }}>
+                {submitError}
+              </p>
+            )}
 
             <div className="trust-badges">
               <div className="trust-badge">

@@ -144,7 +144,8 @@ export default function AboutPageClient() {
       </div>
 
       {/* CSS Overrides */}
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .about-section {
           padding: 60px 0 80px;
           background: var(--bg);
@@ -412,7 +413,7 @@ export default function AboutPageClient() {
       {/* Main About Content */}
       <section className="about-section">
         <div className="container">
-          
+
           {/* Section 1: Intro */}
           <motion.div
             className="intro-grid"
@@ -430,10 +431,10 @@ export default function AboutPageClient() {
                 Headquartered at Ground Floor, 3/24, Block 1, West Patel Nagar, Patel Nagar, New Delhi -110008, we bridge the gap between graduate mathematics and high-stakes competitive examinations. Our courses are structured to nurture problem-solving speeds and analytical logic in students, translating complex topics into masterable elements.
               </p>
             </div>
-            
+
             <div className="stats-card">
               <div className="stat-box" style={{ borderRight: '1px solid var(--border-light)', borderBottom: '1px solid var(--border-light)' }}>
-                <h3>17+</h3>
+                <h3>19+</h3>
                 <p>Years Legacy</p>
               </div>
               <div className="stat-box" style={{ borderBottom: '1px solid var(--border-light)' }}>

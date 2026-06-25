@@ -28,7 +28,7 @@ export default function AdmissionAlert() {
             Admission Open
           </span>
           <h2 className="section-title" style={{ marginTop: '16px' }}>Join for Demo Classes</h2>
-          <p className="section-sub">Registration Open for New Batches for 2026-2027 (Offline/Online)</p>
+          <p className="section-sub">Registration Open for New Batches for 2027-2028 (Offline/Online)</p>
         </motion.div>
 
         <motion.div
@@ -49,19 +49,19 @@ export default function AdmissionAlert() {
                 <li style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '28px', height: '28px', borderRadius: '50%', background: 'var(--blue-light)', color: 'var(--blue)', fontWeight: 700, fontSize: '14px' }}>✓</span>
                   <span style={{ fontSize: '15.5px', fontWeight: 600, color: 'var(--slate)' }}>
-                    1-Year & 2-Year Weekend Batch (Offline)
+                    Online Live Classes
                   </span>
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '28px', height: '28px', borderRadius: '50%', background: 'var(--blue-light)', color: 'var(--blue)', fontWeight: 700, fontSize: '14px' }}>✓</span>
                   <span style={{ fontSize: '15.5px', fontWeight: 600, color: 'var(--slate)' }}>
-                    1-Year & 2-Year Regular Fully Residential Batch (Offline)
+                    Hybrid Batch
                   </span>
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '28px', height: '28px', borderRadius: '50%', background: 'var(--blue-light)', color: 'var(--blue)', fontWeight: 700, fontSize: '14px' }}>✓</span>
                   <span style={{ fontSize: '15.5px', fontWeight: 600, color: 'var(--slate)' }}>
-                    1-Year & 2-Year Online Batches
+                    Regular Offline Batch (Patel Nagar, Delhi)
                   </span>
                 </li>
               </ul>

@@ -23,12 +23,12 @@ const itemVariants: Variants = {
 
 export default function NotificationPageClient() {
   const htmlContent = `
-<h2>Join Our New Batches for MCA Entrance Exam 2026-27!</h2>
+<h2>Our New Batch Starts From July 2026</h2>
 
 <p>Hello Students,</p>
 <p>Are you targeting MCA Entrance Exams 2027 such as NIMCET, CUET-PG, MAH CET, or other exams?</p>
 <p>📢 Registrations are now open for all batches:</p>
-<p>1-Year Online Batch – Live interactive classes<br /> 1-Year Offline Weekend Batch<br /> 1-Year Offline Regular Batch</p>
+<p>✓ Online Live Classes<br /> ✓ Hybrid Batch<br /> ✓ Regular Offline Batch (Patel Nagar, Delhi)</p>
 <p>🎯 Enroll now to get a special discount on fees and book your seat in the 1st batch (limited seats available).</p>
 <p>📧 Contact us today for details and registration.<br /><a href="https://wa.link/rruo21" target="_blank" rel="noopener noreferrer">https://wa.link/rruo21</a> / 7678249991</p>
 

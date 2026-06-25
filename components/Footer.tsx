@@ -43,7 +43,7 @@ const socials = [
 const courses = [
   { label: '1 Year Online Batch', href: '/courses' },
   { label: 'Offline Regular Batch', href: '/courses' },
-  { label: 'Weekend Batch', href: '/courses' },
+  { label: 'Hybrid Batch', href: '/courses' },
   { label: 'Crash Course', href: '/courses' },
   { label: 'Test Series', href: '/courses' },
 ];
@@ -55,6 +55,9 @@ const exams = [
   { label: 'JNU MCA', href: '/exams' },
   { label: 'BHU MCA', href: '/exams' },
   { label: 'MAH MCA CET', href: '/exams' },
+  { label: 'IPU CET', href: '/exams' },
+  { label: 'JAMIA', href: '/exams' },
+  { label: 'IGDTUW', href: '/exams' },
 ];
 
 const myPagesCol1 = [

@@ -5,7 +5,7 @@ import { motion, Variants } from 'framer-motion';
 const cards = [
   {
     icon: 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z',
-    title: '17+ Years of Proven Results',
+    title: '19+ Years of Proven Results',
     desc: 'Since 2007, we have consistently produced top AIR rankers in NIMCET and all major MCA entrance exams. Our track record speaks for itself.',
   },
   {

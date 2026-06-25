@@ -72,10 +72,10 @@ const specializedPrograms = [
   {
     title: 'Crash Course Batch – Online Mode',
     category: 'MCA',
-    tag: 'Starts Jan 2026',
+    tag: 'Starts July 2026',
     tagClass: 'tag-purple',
     featured: false,
-    extraInfo: 'Batch Starts: January 2026',
+    extraInfo: 'Batch Starts: July 2026',
     features: [
       'Live classes – Interactive sessions with top faculty.',
       'Full course coverage with fast-paced, structured preparation.',
@@ -294,7 +294,7 @@ export default function CoursesPageClient() {
                 </ul>
 
                 <a
-                  href="/#contact"
+                  href="/contactus/"
                   className={`btn ${course.featured ? 'btn-primary' : 'btn-outline'}`}
                   style={{ width: '100%', justifyContent: 'center', marginTop: 'auto', padding: '12px' }}
                 >
@@ -356,7 +356,7 @@ export default function CoursesPageClient() {
                 </ul>
 
                 <a
-                  href="/#contact"
+                  href="/contactus/"
                   className="btn btn-outline"
                   style={{ width: '100%', justifyContent: 'center', marginTop: 'auto', padding: '12px' }}
                 >

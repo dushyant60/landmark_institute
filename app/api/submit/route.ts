@@ -37,6 +37,7 @@ export async function POST(request: Request) {
         user,
         pass,
       },
+      tls: { rejectUnauthorized: false },
     });
 
     const isLeadCapture = formType === 'lead_capture';

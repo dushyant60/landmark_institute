@@ -199,7 +199,7 @@ export default function ContactPageClient() {
                 </li>
                 <li className="hours-row">
                   <span>Timing:</span>
-                  <strong>9:00 AM – 5:00 PM</strong>
+                  <strong>10:00 AM – 6:00 PM</strong>
                 </li>
                 <li className="hours-row">
                   <span>Closed:</span>

@@ -47,12 +47,12 @@ export default function Navbar() {
           <Link href="/" className="logo" onClick={closeMobileMenu}>
             <div className="logo-mark">
               <Image
-                src="http://www.landmarkinstitute.com/wp-content/uploads/2018/01/landmarklogo4vrt-1.png"
+                src="/icon.png"
                 alt="Landmark Institute logo"
                 width={150}
                 height={60}
                 className="logo-img"
-                unoptimized
+                priority
               />
             </div>
           </Link>

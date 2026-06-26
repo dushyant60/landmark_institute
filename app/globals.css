@@ -32,6 +32,10 @@
   --r-full: 999px;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   color: var(--text);
@@ -39,6 +43,7 @@ body {
   line-height: 1.6;
   font-size: 16px;
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
 h1,
@@ -554,6 +559,9 @@ section {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+  /* Safety net: never exceed viewport width */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .section-eyebrow {
@@ -2208,14 +2216,28 @@ footer {
   gap: 16px;
 }
 
+@media (max-width: 1200px) {
+  .downloads-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Tablet — collapse sidebar to single column */
 @media (max-width: 1024px) {
   .page-content-grid {
-    grid-template-columns: 1fr;
+    /* minmax(0,1fr) prevents grid children from overflowing the column */
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .page-sidebar {
     position: static;
+  }
+
+  /* Ensure the left column content never exceeds grid width */
+  .page-content-grid>div {
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 }
 
@@ -2368,6 +2390,14 @@ footer {
 }
 
 /* ── PROSE CUSTOM TYPOGRAPHY (MIGRATED PAGES) ── */
+.prose-custom {
+  /* Prevent any child from causing horizontal scroll */
+  overflow-x: hidden;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
 .prose-custom h1,
 .prose-custom h2,
 .prose-custom h3,
@@ -2387,13 +2417,13 @@ footer {
 }
 
 .prose-custom h2 {
-  font-size: clamp(20px, 3vw, 26px);
+  font-size: clamp(18px, 4.5vw, 26px);
   border-bottom: 2px solid var(--border-light);
   padding-bottom: 8px;
 }
 
 .prose-custom h3 {
-  font-size: clamp(17px, 2.5vw, 20px);
+  font-size: clamp(15px, 3.5vw, 20px);
 }
 
 .prose-custom p {
@@ -2438,6 +2468,21 @@ footer {
   border-collapse: collapse;
   margin-bottom: 1.5em;
   font-size: 14.5px;
+}
+
+/* Table responsive container */
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5em;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+}
+
+.table-scroll table {
+  margin-bottom: 0 !important;
+  border: none !important;
 }
 
 .prose-custom th,
@@ -2498,7 +2543,7 @@ footer {
 /* ── DOWNLOAD CARDS & GRIDS ── */
 .downloads-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 32px;
   margin-bottom: 48px;
@@ -2867,7 +2912,8 @@ footer {
   /* ── Popup Modal ── */
   .popup-overlay {
     padding: 12px;
-    align-items: flex-end; /* sheet from bottom on phones */
+    align-items: flex-end;
+    /* sheet from bottom on phones */
   }
 
   .popup-modal {
@@ -2921,6 +2967,10 @@ footer {
     height: 220px !important;
   }
 
+  .prose-custom .video-wrapper iframe {
+    height: 100% !important;
+  }
+
   /* ── Download cards: single col & compact padding ── */
   .downloads-grid {
     grid-template-columns: 1fr !important;
@@ -2931,5 +2981,239 @@ footer {
 
   .download-card {
     padding: 20px;
+  }
+
+  /* ── Hero text & layout ── */
+  .hero {
+    padding-top: 15px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(24px, 7vw, 32px) !important;
+    letter-spacing: -0.5px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-sub {
+    font-size: 14px !important;
+    margin-bottom: 20px !important;
+    line-height: 1.6 !important;
+  }
+
+  .hero-badge {
+    font-size: 11px !important;
+    padding: 5px 10px !important;
+    margin-bottom: 14px !important;
+  }
+
+  /* ── Hero buttons: full width stacked ── */
+  .hero-btns,
+  .hero>*>*>div[style*="flexWrap"] {
+    flex-direction: column !important;
+    gap: 10px !important;
+    margin-bottom: 28px !important;
+  }
+
+  .btn-lg {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 13px 20px !important;
+    font-size: 14px !important;
+  }
+
+  /* ── Hero stats: 2x2 compact ── */
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .hero-stat {
+    padding: 14px 8px !important;
+  }
+
+  .hero-stat-num {
+    font-size: 20px !important;
+  }
+
+  .hero-stat-label {
+    font-size: 10px !important;
+  }
+
+  /* ── Hero wave: smaller gap ── */
+  .hero-wave {
+    margin-top: 24px !important;
+    height: 40px !important;
+  }
+
+  /* ── Container: tighter padding ── */
+  .container {
+    padding: 0 14px !important;
+  }
+
+  .hero-inner {
+    padding: 0 14px !important;
+  }
+
+  /* ── Section headings ── */
+  .section-title {
+    font-size: clamp(20px, 6vw, 26px) !important;
+  }
+
+  .section-sub {
+    font-size: 14px !important;
+  }
+
+  /* ── Prose content section ── */
+  .prose-custom {
+    overflow-x: hidden;
+    word-break: break-word;
+  }
+
+  .prose-custom h2 {
+    font-size: clamp(17px, 4.5vw, 22px) !important;
+    margin-top: 1.2em !important;
+  }
+
+  .prose-custom h3 {
+    font-size: clamp(15px, 4vw, 18px) !important;
+  }
+
+  .prose-custom p {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+
+  .prose-custom ul,
+  .prose-custom ol {
+    padding-left: 1.2em !important;
+  }
+
+  .prose-custom li {
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+  }
+
+  .prose-custom img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 16px 0 !important;
+  }
+
+  /* ── Tables: scrollable with min-width ── */
+  .table-scroll {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--r-sm) !important;
+  }
+
+  .table-scroll table,
+  .prose-custom table {
+    min-width: 380px;
+    font-size: 13px !important;
+  }
+
+  .prose-custom th,
+  .prose-custom td {
+    padding: 8px 10px !important;
+    font-size: 13px !important;
+    white-space: normal !important;
+  }
+
+  /* ── FAQ items ── */
+  .faq-q {
+    font-size: 13.5px !important;
+    padding: 14px 12px !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    line-height: 1.4 !important;
+  }
+
+  .faq-toggle {
+    width: 22px !important;
+    height: 22px !important;
+    flex-shrink: 0 !important;
+    margin-top: 2px !important;
+  }
+
+  .faq-a {
+    font-size: 13px !important;
+    padding: 0 12px 14px !important;
+    line-height: 1.65 !important;
+  }
+}
+
+/* ── Extra-small screens (≤ 480px) ── */
+@media (max-width: 480px) {
+
+  /* Keep container from hitting screen edges */
+  .container {
+    padding: 0 12px !important;
+  }
+
+  .hero-inner {
+    padding: 0 12px !important;
+  }
+
+  /* Ensure all buttons are full width at this size */
+  .btn-lg {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Download cards: minimal padding */
+  .download-card {
+    padding: 16px !important;
+  }
+
+  .download-card-title {
+    font-size: 14px !important;
+  }
+
+  .download-card-tagline,
+  .download-card-desc {
+    font-size: 12.5px !important;
+  }
+
+  /* Prose content: compact at 480px */
+  .prose-custom h2 {
+    font-size: clamp(16px, 4.5vw, 20px) !important;
+  }
+
+  .prose-custom h3 {
+    font-size: clamp(14px, 4vw, 17px) !important;
+  }
+
+  .prose-custom p,
+  .prose-custom li {
+    font-size: 13.5px !important;
+    line-height: 1.65 !important;
+  }
+
+  .prose-custom th,
+  .prose-custom td {
+    padding: 7px 8px !important;
+    font-size: 12.5px !important;
+  }
+
+  /* Stats band: 2-col */
+  .stats-band-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Footer: 1-col */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Page content grid top spacing */
+  .page-content-grid {
+    padding-top: 16px !important;
+    gap: 16px !important;
+  }
+
+  /* Sidebar cards: tighter padding */
+  .page-sidebar>* {
+    padding: 18px !important;
   }
 }

@@ -4,9 +4,9 @@ import { GoogleTagManager } from '@next/third-parties/google';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Landmark Institute – India's #1 MCA Entrance Coaching",
+  title: "Landmark Institute - India's No.1 Institute for MCA Entrance",
   description:
-    'Expert preparation for NIMCET, CUET PG MCA, DU MCA, JNU MCA, BHU MCA & all MCA entrance exams. 17 years · 6000+ students · 500+ NIT selections.',
+    'Best MCA Entrance Coaching Institute provides offline or online mca coaching for mca entrance exam preparation. 100+ Selections in NIMCET-2026.',
   verification: {
     google: 'pqPgR777UhMxs7b0kEH4bL8L096_4GLE0Drk0-FKTzQ',
   },

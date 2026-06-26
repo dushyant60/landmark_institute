@@ -3,13 +3,13 @@ import Topbar from '@/components/Topbar';
 import Navbar from '@/components/Navbar';
 
 export const metadata: Metadata = {
-  title: 'NIMCET & MCA Entrance Coaching in India - Landmark Institute',
+  title: "Landmark Institute - India's No.1 Institute for MCA Entrance",
   description:
-    "India's No.1 NIMCET & MCA Entrance Coaching Institute. 100+ Selections in NIMCET 2026. Online & Delhi Offline Batches. Enroll Now for NIMCET 2027.",
+    'Best MCA Entrance Coaching Institute provides offline or online mca coaching for mca entrance exam preparation. 100+ Selections in NIMCET-2026.',
   openGraph: {
-    title: 'NIMCET & MCA Entrance Coaching in India - Landmark Institute',
+    title: "Landmark Institute - India's No.1 Institute for MCA Entrance",
     description:
-      "India's No.1 NIMCET & MCA Entrance Coaching Institute. 100+ Selections in NIMCET 2026. Online & Delhi Offline Batches. Enroll Now for NIMCET 2027.",
+      'Best MCA Entrance Coaching Institute provides offline or online mca coaching for mca entrance exam preparation. 100+ Selections in NIMCET-2026.',
     url: 'https://www.landmarkinstitute.com/',
   },
 };
@@ -37,8 +37,8 @@ export default function Home() {
     '@type': 'EducationalOrganization',
     'name': 'Landmark Institute',
     'url': 'https://www.landmarkinstitute.com/',
-    'logo': 'http://www.landmarkinstitute.com/wp-content/uploads/2018/01/landmarklogo4vrt-1.png',
-    'description': "India's No.1 NIMCET & MCA Entrance Coaching Institute. 100+ Selections in NIMCET 2026. Online & Delhi Offline Batches. Enroll Now for NIMCET 2027.",
+    'logo': 'https://www.landmarkinstitute.com/icon.png',
+    'description': 'Best MCA Entrance Coaching Institute provides offline or online mca coaching for mca entrance exam preparation. 100+ Selections in NIMCET-2026.',
     'address': {
       '@type': 'PostalAddress',
       'streetAddress': 'Ground Floor, 3/24, Block 1, West Patel Nagar, Patel Nagar',

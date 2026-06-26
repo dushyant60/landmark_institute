@@ -1,1 +1,1 @@
-Landmark Institute 2026
+Landmark Institute

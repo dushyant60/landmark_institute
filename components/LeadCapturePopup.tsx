@@ -1,11 +1,13 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import { usePathname } from 'next/navigation';
 
 const checkPath = 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z';
 const closePath = 'M6 18L18 6M6 6l12 12';
 
 export default function LeadCapturePopup() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,9 +32,10 @@ export default function LeadCapturePopup() {
     if (typeof window !== 'undefined' && localStorage.getItem('lead_capture_submitted') === 'true') {
       return;
     }
+    setIsOpen(false);
     const timer = setTimeout(showPopup, 3000);
     return () => clearTimeout(timer);
-  }, [showPopup]);
+  }, [showPopup, pathname]);
 
   useEffect(() => {
     const handleTriggerClick = (e: MouseEvent) => {

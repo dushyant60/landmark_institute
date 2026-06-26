@@ -6,7 +6,6 @@ import Navbar from '@/components/Navbar';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
-import LeadCapturePopup from '@/components/LeadCapturePopup';
 
 const checkIcon = (
   <svg className="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -372,7 +371,6 @@ export default function CoursesPageClient() {
       <Contact />
       <Footer />
       <FloatingWhatsApp />
-      <LeadCapturePopup />
     </>
   );
 }

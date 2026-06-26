@@ -6,7 +6,6 @@ import Navbar from '@/components/Navbar';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
-import LeadCapturePopup from '@/components/LeadCapturePopup';
 
 const checkPath = 'M5 13l4 4L19 7';
 
@@ -237,7 +236,6 @@ export default function FacultyPageClient() {
       <Contact />
       <Footer />
       <FloatingWhatsApp />
-      <LeadCapturePopup />
     </>
   );
 }

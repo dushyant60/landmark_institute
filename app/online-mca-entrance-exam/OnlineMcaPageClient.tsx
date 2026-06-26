@@ -6,7 +6,6 @@ import Topbar from '@/components/Topbar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
-import LeadCapturePopup from '@/components/LeadCapturePopup';
 import ContactForm from '@/components/ContactForm';
 
 const fadeUp: Variants = {
@@ -490,7 +489,6 @@ export default function OnlineMcaPageClient() {
 
       <Footer />
       <FloatingWhatsApp />
-      <LeadCapturePopup />
     </>
   );
 }

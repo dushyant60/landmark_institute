@@ -6,7 +6,6 @@ import Topbar from '@/components/Topbar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
-import LeadCapturePopup from '@/components/LeadCapturePopup';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
 
 const containerVariants: Variants = {
@@ -264,7 +263,6 @@ Fees vary by course selection and mode (online/offline). We offer flexible fee p
 
       <Footer />
       <FloatingWhatsApp />
-      <LeadCapturePopup />
     </>
   );
 }

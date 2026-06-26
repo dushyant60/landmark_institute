@@ -6,7 +6,6 @@ import Topbar from '@/components/Topbar';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
-import LeadCapturePopup from '@/components/LeadCapturePopup';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
 
 const containerVariants: Variants = {
@@ -254,7 +253,6 @@ export default function CareerOptionsClient() {
 
       <Footer />
       <FloatingWhatsApp />
-      <LeadCapturePopup />
     </>
   );
 }

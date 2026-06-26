@@ -7,7 +7,6 @@ import Navbar from '@/components/Navbar';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
-import LeadCapturePopup from '@/components/LeadCapturePopup';
 
 const sitemapData = [
   {
@@ -279,7 +278,6 @@ export default function SitemapClient() {
       <Contact />
       <Footer />
       <FloatingWhatsApp />
-      <LeadCapturePopup />
     </>
   );
 }

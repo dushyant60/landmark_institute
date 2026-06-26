@@ -29,7 +29,6 @@ import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
-import LeadCapturePopup from '@/components/LeadCapturePopup';
 
 export default function Home() {
   const schemaJson = {
@@ -99,7 +98,6 @@ export default function Home() {
       <Footer />
 
       <FloatingWhatsApp />
-      <LeadCapturePopup />
     </>
   );
 }

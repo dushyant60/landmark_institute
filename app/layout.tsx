@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import { GoogleTagManager } from '@next/third-parties/google';
+import LeadCapturePopup from '@/components/LeadCapturePopup';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <GoogleTagManager gtmId="GTM-WN4L8NG" />
       <body>
         {children}
+        <LeadCapturePopup />
 
         {/* Google Analytics */}
         <Script

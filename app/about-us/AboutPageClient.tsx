@@ -6,7 +6,6 @@ import Navbar from '@/components/Navbar';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
-import LeadCapturePopup from '@/components/LeadCapturePopup';
 
 const timelineData = [
   {
@@ -523,7 +522,6 @@ export default function AboutPageClient() {
       <Contact />
       <Footer />
       <FloatingWhatsApp />
-      <LeadCapturePopup />
     </>
   );
 }

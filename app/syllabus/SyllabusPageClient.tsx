@@ -8,7 +8,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import ContactForm from '@/components/ContactForm';
-import LeadCapturePopup from '@/components/LeadCapturePopup';
 
 const stagger: Variants = {
 	hidden: { opacity: 0 },
@@ -514,7 +513,6 @@ export default function SyllabusPageClient() {
 
 			<Footer />
 			<FloatingWhatsApp />
-			<LeadCapturePopup />
 		</>
 	);
 }

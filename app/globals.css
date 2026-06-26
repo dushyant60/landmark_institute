@@ -2860,3 +2860,76 @@ footer {
     padding: 30px 24px;
   }
 }
+
+/* ── MOBILE RESPONSIVE FIXES ── */
+@media (max-width: 600px) {
+
+  /* ── Popup Modal ── */
+  .popup-overlay {
+    padding: 12px;
+    align-items: flex-end; /* sheet from bottom on phones */
+  }
+
+  .popup-modal {
+    padding: 24px 18px 28px;
+    border-radius: var(--r-lg) var(--r-lg) 0 0;
+    max-width: 100%;
+    max-height: 92dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Stack Email & Phone fields vertically inside popup */
+  .popup-modal .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .popup-header h2 {
+    font-size: 17px !important;
+  }
+
+  .popup-header p {
+    font-size: 13px !important;
+  }
+
+  /* ── Syllabus hero: hide right-side form card on mobile ── */
+  .hero .hero-card {
+    display: none;
+  }
+
+  .hero-inner {
+    padding: 0 16px;
+    gap: 0;
+  }
+
+  /* ── Syllabus page content grid: reduce top padding ── */
+  .page-content-grid {
+    padding-top: 24px;
+    gap: 20px;
+  }
+
+  /* ── Prose tables: horizontal scroll ── */
+  .prose-custom table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  /* ── Syllabus youtube iframe: full-width, shorter height ── */
+  .prose-custom iframe {
+    height: 220px !important;
+  }
+
+  /* ── Download cards: single col & compact padding ── */
+  .downloads-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+    margin-top: 20px;
+    margin-bottom: 28px;
+  }
+
+  .download-card {
+    padding: 20px;
+  }
+}

@@ -114,7 +114,7 @@ export default function SyllabusPageClient() {
 								<div className="hero-stat-label">Maximum Marks</div>
 							</div>
 							<div className="hero-stat">
-								<div className="hero-stat-num">17<span>+</span></div>
+								<div className="hero-stat-num">19<span>+</span></div>
 								<div className="hero-stat-label">Years Legacy</div>
 							</div>
 						</motion.div>

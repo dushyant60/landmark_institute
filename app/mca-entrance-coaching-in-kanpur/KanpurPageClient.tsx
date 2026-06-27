@@ -82,7 +82,7 @@ export default function KanpurPageClient() {
 
 <h2>Why Landmark Institute?</h2>
 
-<p>With more than 17 years of experience, the Landmark Institute has become a prominent name in NIMCET coaching in Kanpur and other MCA entrance coaching programs. Their success rate, dedication and personal views make them a favorite option for students not only in Kanpur, but also from neighboring cities.</p>
+<p>With more than 19 years of experience, the Landmark Institute has become a prominent name in NIMCET coaching in Kanpur and other MCA entrance coaching programs. Their success rate, dedication and personal views make them a favorite option for students not only in Kanpur, but also from neighboring cities.</p>
 
 <h2>Courses Offered</h2>
 
@@ -223,7 +223,7 @@ export default function KanpurPageClient() {
                 <div className="hero-stat-label">Flexible Batches</div>
               </div>
               <div className="hero-stat">
-                <div className="hero-stat-num">17<span>+</span></div>
+                <div className="hero-stat-num">19<span>+</span></div>
                 <div className="hero-stat-label">Years Legacy</div>
               </div>
             </motion.div>

@@ -23,7 +23,7 @@ const itemVariants: Variants = {
 
 export default function NotificationPageClient() {
   const htmlContent = `
-<h2>Our New Batch Starts From July 2026</h2>
+<h2>Our New Batch Starts From July 2027</h2>
 
 <p>Hello Students,</p>
 <p>Are you targeting MCA Entrance Exams 2027 such as NIMCET, CUET-PG, MAH CET, or other exams?</p>

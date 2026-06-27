@@ -68,7 +68,7 @@ export default function WhyLandmark() {
           <span className="section-eyebrow">Why Choose Us</span>
           <h2 className="section-title">India&apos;s #1 MCA Entrance Institute</h2>
           <p className="section-sub">
-            17 years of consistent top results across every major MCA entrance exam. Here&apos;s
+            19 years of consistent top results across every major MCA entrance exam. Here&apos;s
             what sets us apart.
           </p>
         </motion.div>

@@ -217,7 +217,7 @@ export default function ContactPageClient() {
                 Our head office is located at Ground Floor, 3/24, Block 1, West Patel Nagar, Patel Nagar, New Delhi -110008, situated at an extremely accessible location for local and commuting students:
               </p>
               <ul className="directions-list">
-                <li><strong>By Metro:</strong> Take the Blue Line Metro. Get off at West Patel Nagar Station. We are a 1-minute walk from the station exit (Pillar no. 220).</li>
+                <li><strong>By Metro:</strong> Take the Blue Line Metro. Get off at West Patel Nagar Station. We are a 1-minute walk from the station exit (Pillar no. 197).</li>
                 <li><strong>By Road:</strong> Centrally positioned on main Patel Road. Cabs and local buses stop right outside the coaching center.</li>
                 <li><strong>Parking:</strong> Visitor parking is available directly in the service lane adjacent to the main road entrance.</li>
               </ul>

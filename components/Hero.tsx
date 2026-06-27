@@ -51,8 +51,8 @@ export default function Hero() {
           </motion.h1>
           <motion.p variants={itemVariants} className="hero-sub">
             Expert preparation for{' '}
-            <strong>NIMCET, CUET PG MCA, DU MCA, JNU MCA, BHU MCA, Jamia</strong> &amp; all
-            MCA entrance exams. 17 years of proven results.
+            <strong>NIMCET, CUET PG MCA, DU MCA, JNU MCA, BHU MCA, Jamia, IPU CET , IGDTUW</strong> &amp; all
+            MCA entrance exams. 19 years of proven results.
           </motion.p>
           <motion.div variants={itemVariants} className="hero-btns">
             <a href="/contactus/" className="btn btn-primary btn-lg">
@@ -76,7 +76,7 @@ export default function Hero() {
 
           <motion.div variants={itemVariants} className="hero-stats">
             <div className="hero-stat">
-              <div className="hero-stat-num">17<span>+</span></div>
+              <div className="hero-stat-num">19<span>+</span></div>
               <div className="hero-stat-label">Years Experience</div>
             </div>
             <div className="hero-stat">

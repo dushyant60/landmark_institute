@@ -45,7 +45,6 @@ const courses = [
   { label: 'Offline Regular Batch', href: '/courses' },
   { label: 'Hybrid Batch', href: '/courses' },
   { label: 'Crash Course', href: '/courses' },
-  { label: 'Test Series', href: '/courses' },
 ];
 
 const exams = [
@@ -88,7 +87,7 @@ export default function Footer() {
           <div className="footer-brand">
             <h3>Landmark Institute</h3>
             <p>
-              India&apos;s most trusted MCA entrance coaching institute since 2007. 17+ years · 6000+
+              India&apos;s most trusted MCA entrance coaching institute since 2007. 19+ years · 6000+
               students · 500+ NIT selections.
             </p>
             <div style={{ display: 'flex', gap: '10px', marginTop: '16px' }}>
@@ -172,7 +171,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span>© 2025 Landmark Institute. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} Landmark Institute. All rights reserved.</span>
           <div style={{ display: 'flex', gap: '16px' }}>
             <Link href="/privacy-policy/">Privacy Policy</Link>
             <Link href="/terms-and-conditions/">Terms &amp; Conditions</Link>

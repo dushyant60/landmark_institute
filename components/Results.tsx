@@ -9,9 +9,9 @@ const toppers = [
 ];
 
 const resultFlyers = [
+  { src: '/images/migrated/cuet_pg_2026.jpeg', alt: 'CUET PG Selection Details' },
   { src: '/images/migrated/nimcet_toopers_2025.jpeg', alt: 'NIMCET Results & Toppers' },
   { src: '/images/migrated/CUET_PG_MCA_2025.jpeg', alt: 'CUET PG MCA Toppers' },
-  { src: '/images/migrated/cuet_pg_2026.jpeg', alt: 'CUET PG Selection Details' },
   { src: '/images/migrated/nimcet_2024.jpeg', alt: 'NIMCET Ranks & Results' },
 ];
 
@@ -42,9 +42,9 @@ export default function Results() {
           {resultFlyers.map((flyer) => (
             <div className="topper-flyer-card" key={flyer.src}>
               <div className="topper-flyer-wrapper">
-                <Image 
-                  src={flyer.src} 
-                  alt={flyer.alt} 
+                <Image
+                  src={flyer.src}
+                  alt={flyer.alt}
                   width={1200}
                   height={800}
                   className="topper-flyer-img"

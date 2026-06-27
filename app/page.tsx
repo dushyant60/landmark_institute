@@ -17,6 +17,7 @@ import Hero from '@/components/Hero';
 import ResultsTicker from '@/components/ResultsTicker';
 import StatsBand from '@/components/StatsBand';
 import WhyLandmark from '@/components/WhyLandmark';
+import BatchAnnouncement from '@/components/BatchAnnouncement';
 import Courses from '@/components/Courses';
 import Results from '@/components/Results';
 import VideoTestimonials from '@/components/VideoTestimonials';
@@ -58,8 +59,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <ResultsTicker />
-
-
+      <BatchAnnouncement />
       <WhyLandmark />
       <div className="section-divider" />
 

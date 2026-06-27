@@ -9,9 +9,9 @@ import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
 const resultImages = [
+  { src: '/images/migrated/cuet_pg_2026.jpeg', alt: 'CUET PG Selection Details' },
   { src: '/images/migrated/nimcet_toopers_2025.jpeg', alt: 'NIMCET Results & Toppers' },
   { src: '/images/migrated/CUET_PG_MCA_2025.jpeg', alt: 'CUET PG MCA Toppers' },
-  { src: '/images/migrated/cuet_pg_2026.jpeg', alt: 'CUET PG Selection Details' },
   { src: '/images/migrated/nimcet_2024.jpeg', alt: 'NIMCET Ranks & Results' },
   { src: '/images/migrated/ipucet_mca_2024.jpeg', alt: 'IPU CET MCA Selections' },
   { src: '/images/migrated/mahcet_mca_2024.jpeg', alt: 'MAH CET MCA Ranks' },

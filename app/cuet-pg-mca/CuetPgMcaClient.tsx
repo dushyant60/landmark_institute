@@ -362,7 +362,7 @@ export default function CuetPgMcaClient() {
                 <div className="hero-stat-label">Accepting Univ.</div>
               </div>
               <div className="hero-stat">
-                <div className="hero-stat-num">17<span>+</span></div>
+                <div className="hero-stat-num">19<span>+</span></div>
                 <div className="hero-stat-label">Years Legacy</div>
               </div>
             </motion.div>

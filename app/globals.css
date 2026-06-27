@@ -2938,9 +2938,12 @@ footer {
     font-size: 13px !important;
   }
 
-  /* ── Syllabus hero: hide right-side form card on mobile ── */
+  /* ── Syllabus hero: keep right-side form card on mobile ── */
   .hero .hero-card {
-    display: none;
+    display: block;
+    margin: 24px auto 0;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .hero-inner {

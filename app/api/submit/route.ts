@@ -100,8 +100,7 @@ export async function POST(request: Request) {
     // Send the email
     await transporter.sendMail({
       from: `"Landmark Institute Website" <${user}>`,
-      to: recipients, // Sends to both neeraj@landmarkinstitute.com and neeraj.meripadhai@gmail.com
-      replyTo: email || undefined, // Allow direct reply to the student's email if provided
+      to: recipients.split(','), // Sends to all recipients as an array
       subject,
       text: textContent,
       html: htmlContent,
